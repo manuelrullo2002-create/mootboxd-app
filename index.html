@@ -3440,7 +3440,7 @@ async function checkSession() {
         ),
         api(
           'getData',
-          []
+          [token]
         )
       ]);
 
@@ -3542,11 +3542,23 @@ async function load() {
 
   try {
 
-    const data =
-      await api(
-        'getData',
-        []
-      );
+    const token =
+  sessionStorage.getItem(
+    "mootboxd_token"
+  );
+
+const adminToken =
+  sessionStorage.getItem(
+    "mootboxd_admin_token"
+  );
+
+const data =
+  await api(
+    'getData',
+    [
+      adminToken || token
+    ]
+  );
 
     const afterGetData =
       performance.now();
