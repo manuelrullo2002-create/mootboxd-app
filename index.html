@@ -5288,7 +5288,21 @@ async function toggleMyFilm(filmId) {
     return;
   }
 
-  setSaving(true);
+  const key =
+    session.memberId +
+    "|" +
+    filmId;
+
+  const previous =
+    !!D.watched[key];
+
+  /*
+   * Aggiornamento immediato della UI.
+   */
+  D.watched[key] =
+    !previous;
+
+  render();
 
   try {
 
@@ -5301,17 +5315,19 @@ async function toggleMyFilm(filmId) {
         ]
       );
 
+    /*
+     * Sincronizza con il valore
+     * effettivamente salvato dal server.
+     */
     D.watched[
       result.memberId +
       "|" +
       result.filmId
     ] = result.watched;
 
-    render();
-
     /*
-     * Se il film è aperto nel modal,
-     * aggiorna immediatamente stato e pulsante.
+     * Se il modal è aperto, aggiorna
+     * solo il modal.
      */
     const filmModal =
       document.getElementById("filmModal");
@@ -5325,14 +5341,23 @@ async function toggleMyFilm(filmId) {
 
   } catch (error) {
 
+    /*
+     * Rollback se il server rifiuta
+     * il cambiamento.
+     */
+    if (previous) {
+      D.watched[key] = true;
+    } else {
+      delete D.watched[key];
+    }
+
+    render();
+
     alert(
       "Errore: " +
       error.message
     );
 
-  } finally {
-
-    setSaving(false);
   }
 }
 
@@ -5343,7 +5368,21 @@ async function toggleAdminFilm(memberId, filmId) {
     return;
   }
 
-  setSaving(true);
+  const key =
+    memberId +
+    "|" +
+    filmId;
+
+  const previous =
+    !!D.watched[key];
+
+  /*
+   * Aggiornamento immediato.
+   */
+  D.watched[key] =
+    !previous;
+
+  render();
 
   try {
 
@@ -5357,24 +5396,33 @@ async function toggleAdminFilm(memberId, filmId) {
         ]
       );
 
+    /*
+     * Sincronizza con il server.
+     */
     D.watched[
       result.memberId +
       "|" +
       result.filmId
     ] = result.watched;
 
-    render();
-
   } catch (error) {
+
+    /*
+     * Rollback.
+     */
+    if (previous) {
+      D.watched[key] = true;
+    } else {
+      delete D.watched[key];
+    }
+
+    render();
 
     alert(
       "Errore: " +
       error.message
     );
 
-  } finally {
-
-    setSaving(false);
   }
 }
 
@@ -5450,6 +5498,9 @@ async function tog(memberId, filmId) {
   const previous =
     !!D.watched[key];
 
+  /*
+   * Aggiornamento immediato.
+   */
   D.watched[key] =
     !previous;
 
@@ -5474,10 +5525,11 @@ async function tog(memberId, filmId) {
       result.filmId
     ] = result.watched;
 
-    render();
-
   } catch (error) {
 
+    /*
+     * Rollback.
+     */
     if (previous) {
       D.watched[key] = true;
     } else {
@@ -5492,7 +5544,6 @@ async function tog(memberId, filmId) {
     );
   }
 }
-
 
 /* =========================
    INDICATORE SALVATAGGIO
