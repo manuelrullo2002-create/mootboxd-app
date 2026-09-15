@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="it">
 
 <head>
@@ -7,37 +6,28 @@
   <meta charset="UTF-8">
 
   <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-  >
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+>
+
+  <meta name="theme-color" content="#0f1117">
+  <meta name="color-scheme" content="dark">
 
   <title>MOOTBOXD</title>
 
-  <!-- Icona iPhone -->
-
+  <!-- Icona app -->
   <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="./icons/mootboxd-icon.png.png"
-  >
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="https://manuelrullo2002-create.github.io/mootboxd-app/icons/mootboxd-icon.png.png"
+>
 
-  <!-- Favicon -->
-
-  <link
-    rel="icon"
-    type="image/png"
-    href="./icons/mootboxd-icon.png.png"
-  >
-
-  <!-- PWA -->
-
-  <link
-    rel="manifest"
-    href="./manifest.json"
-  >
+<link
+  rel="icon"
+  href="https://manuelrullo2002-create.github.io/mootboxd-app/icons/mootboxd-icon.png.png"
+>
 
   <!-- iPhone / iPad -->
-
   <meta
     name="apple-mobile-web-app-capable"
     content="yes"
@@ -54,108 +44,5946 @@
   >
 
   <!-- Android / browser -->
-
   <meta
     name="mobile-web-app-capable"
     content="yes"
   >
 
-  <meta
-    name="theme-color"
-    content="#0f1117"
-  >
+<style>
 
-  <style>
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  background-color: #0f1117 !important;
+}
 
-    html,
-    body {
-      margin: 0;
-      width: 100%;
-      height: 100%;
-      background: #0f1117;
-    }
+html {
+  min-height: 100%;
+}
 
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-      color: white;
-    }
+body {
+  color: #ffffff;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
 
-    .screen {
-      text-align: center;
-    }
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0f1117 !important;
+}
 
-    .logo {
-      width: 110px;
-      height: 110px;
-      object-fit: cover;
-      border-radius: 24px;
-      margin-bottom: 20px;
-    }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: #0f1117;
+  z-index: -9999;
+  pointer-events: none;
+}
 
-    .title {
-      font-size: 28px;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
+*{box-sizing:border-box}body{margin:0;background:#0f1117;color:#f5f6fa;font:15px system-ui,-apple-system,Segoe UI,sans-serif}
+.wrap{max-width:1150px;margin:auto;padding:28px 18px 55px}h1{margin:0;font-size:30px}.sub,.muted{color:#9ca3b2}.top{display:flex;justify-content:space-between;gap:20px;margin-bottom:24px;align-items:start}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}.card,.panel{background:#171a23;border:1px solid #2a2f3d;border-radius:14px}.card{padding:17px}.big{font-size:27px;font-weight:750;margin-top:3px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{overflow:hidden}.head{padding:15px 17px;border-bottom:1px solid #2a2f3d;display:flex;justify-content:space-between;gap:10px;align-items:center}.head h2{font-size:17px;margin:0}
+.member{padding:15px 17px;border-bottom:1px solid #2a2f3d}.member:last-child,.film:last-child{border:0}.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.name{font-weight:700}.stats{font-size:12px;color:#9ca3b2}.pct{font-size:20px;font-weight:750}.bar{height:9px;background:#292e3a;border-radius:99px;margin-top:10px;overflow:hidden}.fill{height:100%;background:#d9b36c}
+.form{display:grid;grid-template-columns:1fr auto auto;gap:7px;padding:13px 17px;border-bottom:1px solid #2a2f3d}input{background:#1e2230;color:#fff;border:1px solid #2a2f3d;border-radius:8px;padding:9px 10px;min-width:0}.btn{border:1px solid #2a2f3d;background:#1e2230;color:#fff;padding:9px 12px;border-radius:8px;cursor:pointer}.primary{background:#d9b36c;color:#16130d;border-color:#d9b36c;font-weight:700}
+.list{padding:8px 17px}.item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #2a2f3d}.films{max-height:560px;overflow:auto}.film{display:grid;grid-template-columns:1fr auto;gap:12px;padding:12px 17px;border-bottom:1px solid #2a2f3d}.title{font-weight:650}.meta{font-size:12px;color:#9ca3b2}.checks{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}.check{
+  width:38px;
+  height:31px;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #2a2f3d;
+  border-radius:7px;
+  background:#1e2230;
+  color:#9ca3b2;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:600;
+  line-height:1;
+}.check.on{background:#78c6a3;color:#0d1712;font-weight:800}.danger{background:none;border:0;color:#9ca3b2;cursor:pointer}.empty{text-align:center;padding:25px;color:#9ca3b2}
 
-    .subtitle {
-      margin-top: 8px;
-      font-size: 14px;
-      opacity: .6;
-    }
+/* =========================
+   SPAZIATURA INTERNA
+   ========================= */
 
-  </style>
+.panel {
+  padding: 22px;
+}
 
+.item {
+  padding: 12px 14px;
+}
+
+.member {
+  padding: 14px 4px;
+}
+
+.film {
+  padding: 14px 16px;
+}
+
+.title {
+  padding-left: 2px;
+}
+
+.meta,
+.stats {
+  padding-left: 2px;
+}
+.missing-panel {
+  padding: 24px;
+}
+
+#missingFilms {
+  margin-top: 8px;
+}
+
+#missingFilms .item {
+  padding: 14px 16px;
+}
+#films {
+  padding: 4px 0;
+}
+
+#films .film {
+  margin-bottom: 8px;
+}
+
+#films .checks {
+  padding-left: 12px;
+}
+
+.film-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  flex: 1;
+}
+
+.film-poster {
+  width: 64px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 7px;
+  flex-shrink: 0;
+  display: block;
+  background: #1e2230;
+}
+
+.film-info > div:last-child {
+  min-width: 0;
+}
+
+.film .title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.film .meta {
+  margin-top: 5px;
+}
+
+.film {
+  padding: 12px 16px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.film .checks {
+  flex-shrink: 0;
+  padding-left: 8px;
+}
+
+/* MODAL FILM */
+
+.film-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.78);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.film-modal.open {
+  display: flex;
+}
+
+.film-modal-box {
+  width: min(760px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #151821;
+  border: 1px solid #2a2f3d;
+  border-radius: 14px;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+
+.film-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: #252a38;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.film-modal-content {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.film-modal-poster {
+  width: 220px;
+  max-width: 40%;
+  border-radius: 9px;
+  display: block;
+  object-fit: cover;
+}
+
+.film-modal-info {
+  padding-top: 8px;
+  flex: 1;
+}
+
+.film-modal-title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.film-modal-year {
+  color: #9ca3b2;
+  margin-bottom: 24px;
+}
+
+
+.film-modal-status {
+  padding: 14px 16px;
+  border-radius: 9px;
+  background: #1e2230;
+  border: 1px solid #2a2f3d;
+  margin-bottom: 16px;
+}
+
+.film-modal-status-label {
+  color: #9ca3b2;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.film-modal-status-value {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.film-modal-action {
+  margin-top: 12px;
+}
+
+.film-modal-action .btn {
+  width: 100%;
+}
+
+.film-poster {
+  cursor: pointer;
+}
+
+
+/* =========================
+   FILM DA RECUPERARE
+   ========================= */
+
+.missing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.missing-card {
+  min-width: 0;
+  background: #1e2230;
+  border: 1px solid #2a2f3d;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.missing-poster-wrap {
+  aspect-ratio: 2 / 3;
+  background: #151821;
+  overflow: hidden;
+}
+
+.missing-poster {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.missing-no-poster {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  text-align: center;
+  color: #6f7685;
+  font-size: 13px;
+}
+
+.missing-info {
+  padding: 12px;
+}
+
+.missing-title {
+  font-weight: 750;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.missing-year {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #9ca3b2;
+}
+
+.missing-action {
+  margin-top: 10px;
+}
+
+.missing-action .btn {
+  width: 100%;
+}
+
+/* =========================
+   PROGRESSO MEMBRI / FILM SETTIMANA
+   ========================= */
+
+/* =========================
+   PROGRESSO MEMBRI / FILM SETTIMANA
+   ========================= */
+
+.dashboard-main-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: 18px !important;
+  width: 100% !important;
+  margin-bottom: 18px;
+  align-items: start;
+}
+
+.dashboard-main-grid > section {
+  min-width: 0;
+}
+
+.weekly-film-panel {
+  padding: 30px;
+}
+
+.weekly-film-label {
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #9ca3b2;
+  margin-bottom: 22px;
+}
+
+.weekly-film {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  width: 100%;
+}
+
+.weekly-film-poster {
+  width: 280px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  background: #1e2230;
+  display: block;
+  cursor: pointer;
+}
+
+.weekly-film-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.weekly-film-title {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.weekly-film-year {
+  margin-top: 7px;
+  color: #9ca3b2;
+  font-size: 18px;
+}
+
+.weekly-film-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.weekly-film-detail {
+  padding: 7px 11px;
+  background: #1e2230;
+  border: 1px solid #2a2f3d;
+  border-radius: 7px;
+  color: #c8ccd6;
+  font-size: 14px;
+}
+
+.weekly-film-synopsis {
+  margin-top: 24px;
+  color: #c8ccd6;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.weekly-film-date {
+  margin-top: 22px;
+  padding-top: 17px;
+  border-top: 1px solid #2a2f3d;
+  color: #9ca3b2;
+  font-size: 15px;
+}
+
+.weekly-film-date strong {
+  color: #f5f6fa;
+}
+
+/* =====================================================
+   MOBILE — BLOCCO UNICO
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+  html,
+  body {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+  }
+
+  body {
+    line-height: 1.45;
+  }
+
+  /* PAGINA */
+
+  .wrap {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 22px 16px 60px !important;
+  }
+
+
+  /* HEADER */
+
+  .top {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    margin-bottom: 20px !important;
+  }
+
+  h1 {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+
+  .sub {
+    font-size: 17px !important;
+    line-height: 1.5 !important;
+  }
+
+
+  /* PROFILO / LOGOUT */
+
+  .top > div:last-child {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+
+  /* =====================================================
+     STATISTICHE
+     ===================================================== */
+
+  .cards {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .card {
+    width: 100% !important;
+    min-height: 115px !important;
+    padding: 22px 20px !important;
+    border-radius: 16px !important;
+  }
+
+  .card .muted {
+    font-size: 17px !important;
+  }
+
+  .card .big,
+  .big {
+    font-size: 32px !important;
+    line-height: 1.15 !important;
+    margin-top: 8px !important;
+  }
+
+
+  /* =====================================================
+     PANNELLI
+     ===================================================== */
+
+  .grid {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .panel {
+    width: 100% !important;
+    max-width: none !important;
+    border-radius: 14px !important;
+  }
+
+  .panel .head {
+    min-height: 72px !important;
+    padding: 20px 18px !important;
+  }
+
+  .panel .head h2 {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+  }
+
+  .panel .head .muted {
+    font-size: 15px !important;
+  }
+
+
+  /* =====================================================
+     IL TUO PROGRESSO
+     ===================================================== */
+
+  .panel[style*="text-align:center"] {
+    width: 100% !important;
+    padding: 24px 18px !important;
+    margin-bottom: 18px !important;
+  }
+
+  #missingText {
+    font-size: 30px !important;
+    line-height: 1.25 !important;
+  }
+
+  #personalStats {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+  }
+
+
+  /* =====================================================
+     PROGRESSO MEMBRI
+     ===================================================== */
+
+  .member {
+    width: 100% !important;
+    min-height: 120px !important;
+    padding: 20px 18px !important;
+  }
+
+  .member .name {
+    font-size: 19px !important;
+  }
+
+  .member .stats {
+    font-size: 15px !important;
+  }
+
+  .member .pct {
+    font-size: 25px !important;
+  }
+
+  .member .bar {
+    height: 13px !important;
+    margin-top: 14px !important;
+  }
+
+
+  /* =====================================================
+     FILM DA RECUPERARE
+     ===================================================== */
+
+  .missing-panel {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .missing-panel > div:first-child {
+    padding: 20px 18px !important;
+  }
+
+  .missing-panel > div:first-child > div:first-child {
+    font-size: 22px !important;
+  }
+
+  #missingCountLabel {
+    font-size: 16px !important;
+  }
+
+  .missing-grid {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    padding: 0 12px 14px !important;
+  }
+
+  .missing-card {
+    width: 100% !important;
+    border-radius: 12px !important;
+  }
+
+  .missing-info {
+    padding: 11px !important;
+  }
+
+  .missing-title {
+    font-size: 15px !important;
+    line-height: 1.3 !important;
+  }
+
+
+  /* =====================================================
+     LISTA FILM
+     ===================================================== */
+
+  .films {
+    width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  #films {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  #films .film {
+    width: 100% !important;
+    min-height: 135px !important;
+    padding: 18px 14px !important;
+    margin: 0 !important;
+    margin-bottom: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+
+  .film-info {
+    min-width: 0 !important;
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+  }
+
+  .film-poster {
+    width: 90px !important;
+    height: 126px !important;
+    flex-shrink: 0 !important;
+    border-radius: 9px !important;
+  }
+
+  .film .title {
+    font-size: 19px !important;
+    line-height: 1.35 !important;
+  }
+
+  .film .meta {
+    font-size: 15px !important;
+    margin-top: 7px !important;
+  }
+
+  .film .checks {
+    flex-shrink: 0 !important;
+    padding-left: 0 !important;
+    gap: 7px !important;
+  }
+
+  .check {
+    width: 46px !important;
+    height: 46px !important;
+    min-height: 46px !important;
+    font-size: 15px !important;
+    border-radius: 9px !important;
+  }
+
+
+  /* =====================================================
+     PULSANTI / INPUT
+     ===================================================== */
+
+  .btn {
+    min-height: 48px !important;
+    padding: 12px 16px !important;
+    font-size: 17px !important;
+  }
+
+  input,
+  select {
+    min-height: 52px !important;
+    font-size: 17px !important;
+  }
+
+
+  /* =====================================================
+     LOGIN MEMBRO + ADMIN
+     ===================================================== */
+
+  #loginScreen,
+  #adminLoginScreen {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 16px !important;
+  }
+
+  #loginScreen > div,
+  #adminLoginScreen > div {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 36px 26px !important;
+    border-radius: 18px !important;
+  }
+
+  #loginScreen h1,
+  #adminLoginScreen h1 {
+    font-size: 34px !important;
+    line-height: 1.2 !important;
+  }
+
+  #loginScreen p,
+  #adminLoginScreen p {
+    font-size: 18px !important;
+    line-height: 1.5 !important;
+  }
+
+  #loginScreen input,
+  #loginScreen select,
+  #adminLoginScreen input,
+  #adminLoginScreen select {
+    width: 100% !important;
+    min-height: 58px !important;
+    padding: 14px 15px !important;
+    font-size: 18px !important;
+  }
+
+  #loginScreen button,
+  #adminLoginScreen button {
+    width: 100% !important;
+    min-height: 58px !important;
+    padding: 14px !important;
+    font-size: 18px !important;
+  }
+
+
+  /* =====================================================
+     MODAL
+     ===================================================== */
+
+  .film-modal {
+    padding: 10px !important;
+  }
+
+  .film-modal-box {
+    width: 100% !important;
+    max-width: none !important;
+    max-height: 94vh !important;
+    padding: 22px !important;
+  }
+
+  .film-modal-title {
+    font-size: 25px !important;
+  }
+
+}
+
+/* =========================================
+   MOOTBOXD - MOBILE OVERRIDE DEFINITIVO
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  body {
+    font-size: 20px !important;
+  }
+
+  .wrap {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 28px 14px 70px !important;
+  }
+
+  /* TITOLO */
+  h1 {
+    font-size: 38px !important;
+    line-height: 1.1 !important;
+  }
+
+  .sub {
+    font-size: 19px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* CARDS SUPERIORI */
+  .cards {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-bottom: 22px !important;
+  }
+
+  .card {
+    width: 100% !important;
+    min-height: 125px !important;
+    padding: 24px !important;
+  }
+
+  .card .muted {
+    font-size: 18px !important;
+  }
+
+  .big {
+    font-size: 36px !important;
+    line-height: 1.15 !important;
+  }
+
+  /* TITOLI SEZIONI */
+  .head {
+    padding: 22px 20px !important;
+    min-height: 75px !important;
+  }
+
+  .head h2 {
+    font-size: 25px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* PANNELLI */
+  .panel {
+    width: 100% !important;
+    border-radius: 16px !important;
+  }
+
+  /* PROGRESSO MEMBRI */
+  .member {
+    padding: 22px 20px !important;
+    min-height: 135px !important;
+  }
+
+  .name {
+    font-size: 21px !important;
+  }
+
+  .stats {
+    font-size: 16px !important;
+  }
+
+  .pct {
+    font-size: 27px !important;
+  }
+
+  .bar {
+    height: 12px !important;
+    margin-top: 13px !important;
+  }
+
+  /* LISTA FILM */
+  .films {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .film {
+    display: grid !important;
+    grid-template-columns: 105px minmax(0, 1fr) !important;
+    gap: 16px !important;
+    padding: 22px 18px !important;
+    min-height: 155px !important;
+  }
+
+  .film-poster {
+    width: 105px !important;
+    height: 148px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+  }
+
+  .title {
+    font-size: 21px !important;
+    line-height: 1.25 !important;
+  }
+
+  .meta {
+    font-size: 16px !important;
+    margin-top: 6px !important;
+  }
+
+  /* PALLINI MEMBRI */
+  .checks {
+    gap: 7px !important;
+    margin-top: 15px !important;
+  }
+
+  .check {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    font-size: 17px !important;
+    border-radius: 10px !important;
+  }
+
+  /* FORM ADMIN */
+  .form {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    padding: 18px !important;
+  }
+
+  input,
+  .btn {
+    width: 100% !important;
+    min-height: 48px !important;
+    font-size: 18px !important;
+  }
+
+}
+
+@media screen and (max-width: 1000px) {
+
+  body {
+    font-size: 22px !important;
+  }
+
+  .wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 30px 18px 70px !important;
+  }
+
+  h1 {
+    font-size: 40px !important;
+  }
+
+  .sub {
+    font-size: 20px !important;
+  }
+
+  .cards {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .card {
+    padding: 25px !important;
+    min-height: 130px !important;
+  }
+
+  .big {
+    font-size: 38px !important;
+  }
+
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .head {
+    padding: 24px 20px !important;
+  }
+
+  .head h2 {
+    font-size: 27px !important;
+  }
+
+  .member {
+    padding: 24px 20px !important;
+  }
+
+  .name {
+    font-size: 23px !important;
+  }
+
+  .stats {
+    font-size: 17px !important;
+  }
+
+  .pct {
+    font-size: 28px !important;
+  }
+
+  .film {
+    grid-template-columns: 95px 1fr !important;
+    gap: 16px !important;
+    padding: 18px 16px !important;
+  }
+
+  .film-poster {
+    width: 95px !important;
+    height: 135px !important;
+  }
+
+  .title {
+    font-size: 23px !important;
+  }
+
+  .meta {
+    font-size: 17px !important;
+  }
+
+  .check {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 18px !important;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+
+  /* LOGIN */
+  #loginScreen > div {
+    width: calc(100% - 32px) !important;
+    max-width: 620px !important;
+    padding: 36px 30px !important;
+    border-radius: 20px !important;
+  }
+
+  #loginScreen h2 {
+    font-size: 30px !important;
+    margin-bottom: 12px !important;
+  }
+
+  #loginScreen p {
+    font-size: 19px !important;
+    line-height: 1.4 !important;
+  }
+
+  #loginScreen select,
+  #loginScreen input,
+  #loginScreen button {
+    min-height: 58px !important;
+    font-size: 20px !important;
+  }
+
+  /* FILM DEL CLUB */
+  .films {
+    max-height: 900px !important;
+    height: 900px !important;
+    overflow: auto !important;
+  }
+
+  /* Lascia che la pagina continui verso il basso */
+  .wrap {
+    padding-bottom: 80px !important;
+  }
+
+  /* FILM DEL CLUB — compatto su mobile */
+.films .member {
+  padding: 10px 12px !important;
+  gap: 8px !important;
+}
+
+.films .member .avatar {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  font-size: 12px !important;
+}
+
+.films .member .name {
+  font-size: 16px !important;
+  line-height: 1.15 !important;
+}
+
+.films .member .stats {
+  font-size: 13px !important;
+}
+
+.films .member .pct {
+  font-size: 16px !important;
+}
+.films .film {
+  grid-template-columns: 60px minmax(0, 1fr) !important;
+  gap: 10px !important;
+}
+
+.films .film-poster {
+  width: 60px !important;
+  height: 86px !important;
+}
+
+.films .film .title {
+  font-size: 18px !important;
+  line-height: 1.25 !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+}
+
+@media screen and (max-width: 700px) {
+
+  .weekly-film-panel {
+    padding: 20px !important;
+  }
+
+  .weekly-film {
+    gap: 16px !important;
+  }
+
+  .weekly-film-poster {
+    width: 120px !important;
+    height: 175px !important;
+  }
+
+  .weekly-film-title {
+    font-size: 23px !important;
+  }
+
+  .weekly-film-year {
+    font-size: 15px !important;
+  }
+
+  .weekly-film-details {
+    margin-top: 12px !important;
+  }
+
+  .weekly-film-synopsis {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+  .dashboard-main-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .weekly-film-panel {
+    padding: 22px !important;
+  }
+
+  .weekly-film {
+    flex-direction: row !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+  }
+
+  .weekly-film-poster {
+    width: 165px !important;
+    height: 235px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .weekly-film-info {
+    min-width: 0 !important;
+    flex: 1 !important;
+  }
+
+  .weekly-film-title {
+    font-size: 29px !important;
+    line-height: 1.15 !important;
+  }
+
+  .weekly-film-year {
+    font-size: 18px !important;
+  }
+
+  .weekly-film-details {
+    margin-top: 16px !important;
+    gap: 8px !important;
+  }
+
+  .weekly-film-detail {
+    font-size: 14px !important;
+    padding: 7px 10px !important;
+  }
+
+  .weekly-film-synopsis {
+    font-size: 17px !important;
+    line-height: 1.55 !important;
+  }
+
+  .weekly-film-date {
+    font-size: 15px !important;
+  }
+
+}
+
+.film-admin-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.film-admin-form textarea {
+  grid-column: 1 / -1;
+  min-height: 90px;
+  resize: vertical;
+}
+
+.film-admin-submit {
+  grid-column: 1 / -1;
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+  .film-admin-form {
+    grid-template-columns: 1fr;
+  }
+
+  .film-admin-form textarea,
+  .film-admin-submit {
+    grid-column: auto;
+  }
+
+}
+
+.film-modal-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.film-modal-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 8px 11px;
+  background: #1e2230;
+  border: 1px solid #2a2f3d;
+  border-radius: 7px;
+  color: #c8ccd6;
+  font-size: 14px;
+}
+
+.film-modal-detail-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  color: #8f96a6;
+  font-weight: 700;
+}
+
+.film-modal-synopsis {
+  margin-top: 22px;
+  margin-bottom: 30px;
+}
+
+.film-modal-section-label,
+.film-modal-discussion-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: #8f96a6;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.film-modal-synopsis-text {
+  color: #c8ccd6;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.film-modal-discussion {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding-top: 16px;
+  border-top: 1px solid #2a2f3d;
+}
+
+.film-modal-discussion-date {
+  color: #f5f6fa;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* =========================
+   FILM DELLA SETTIMANA
+   LAYOUT DESKTOP
+   ========================= */
+
+@media (min-width: 1001px) {
+
+  .weekly-film {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 28px !important;
+    width: 100% !important;
+  }
+
+  .weekly-film-poster {
+    width: 280px !important;
+    height: 400px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .weekly-film-info {
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  .weekly-film-title {
+    font-size: 36px !important;
+  }
+
+  .weekly-film-year {
+    font-size: 19px !important;
+  }
+
+  .weekly-film-synopsis {
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+  }
+
+}
+
+/* =========================
+   FILM DELLA SETTIMANA
+   LAYOUT MOBILE
+   ========================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .weekly-film-panel {
+    padding: 22px !important;
+  }
+
+  .weekly-film {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .weekly-film-poster {
+    width: 165px !important;
+    height: auto !important;
+    min-height: 100% !important;
+    object-fit: cover !important;
+    align-self: stretch !important;
+    flex-shrink: 0 !important;
+  }
+
+  .weekly-film-info {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .weekly-film-title {
+    font-size: 30px !important;
+    line-height: 1.1 !important;
+  }
+
+  .weekly-film-year {
+    font-size: 19px !important;
+    margin-top: 7px !important;
+  }
+
+  .weekly-film-details {
+    margin-top: 17px !important;
+    gap: 8px !important;
+  }
+
+  .weekly-film-detail {
+    font-size: 14px !important;
+    padding: 7px 10px !important;
+  }
+
+  .weekly-film-synopsis {
+    margin-top: 20px !important;
+    font-size: 17px !important;
+    line-height: 1.55 !important;
+  }
+
+  .weekly-film-date {
+    margin-top: 22px !important;
+    font-size: 15px !important;
+  }
+
+}
+
+/* =========================
+   FILM DELLA SETTIMANA
+   ULTIME REGOLE RESPONSIVE
+   ========================= */
+
+
+/* COMPUTER */
+
+@media (min-width: 1001px) {
+
+  .dashboard-main-grid {
+    align-items: stretch !important;
+  }
+
+  .weekly-film-panel {
+    height: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+}
+
+
+/* TELEFONO */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .weekly-film {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    gap: 18px !important;
+  }
+
+  .weekly-film-poster {
+    width: 145px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 2 / 3 !important;
+    object-fit: cover !important;
+    align-self: flex-start !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Regia e genere */
+
+  .weekly-film-detail {
+    font-size: 16px !important;
+    padding: 8px 11px !important;
+  }
+
+  /* Sinossi */
+
+  .weekly-film-synopsis {
+    font-size: 20px !important;
+    line-height: 1.55 !important;
+  }
+
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+  .weekly-film {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    gap: 18px !important;
+  }
+
+  .weekly-film-poster-wrap {
+    width: 145px !important;
+    min-width: 145px !important;
+    align-self: stretch !important;
+    flex-shrink: 0 !important;
+    overflow: hidden !important;
+    border-radius: 10px !important;
+    background: #1e2230 !important;
+    cursor: pointer !important;
+  }
+
+  .weekly-film-poster-wrap .weekly-film-poster {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+  }
+
+  /* Regia e genere */
+
+  .weekly-film-detail {
+    font-size: 16px !important;
+    padding: 8px 11px !important;
+  }
+
+  /* Sinossi */
+
+  .weekly-film-synopsis {
+    font-size: 20px !important;
+    line-height: 1.55 !important;
+  }
+
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+  .weekly-film {
+    gap: 24px !important;
+    align-items: flex-start !important;
+  }
+
+    .weekly-film-poster-wrap {
+    width: 300px !important;
+    min-width: 300px !important;
+    height: 450px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .weekly-film-poster-wrap .weekly-film-poster {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    aspect-ratio: 2 / 3 !important;
+  }
+
+  .weekly-film-info {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .weekly-film-detail {
+    font-size: 16px !important;
+  }
+
+  .weekly-film-synopsis {
+    font-size: 20px !important;
+    line-height: 1.55 !important;
+  }
+
+}
+
+/* =========================================
+   FILM DA RECUPERARE — ALLINEAMENTO VISTO
+   ========================================= */
+
+.missing-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.missing-poster-wrap {
+  flex-shrink: 0 !important;
+}
+
+.missing-info {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+  min-height: 0 !important;
+}
+
+.missing-action {
+  margin-top: auto !important;
+  padding-top: 16px !important;
+  flex-shrink: 0 !important;
+}
+
+.missing-action .btn {
+  width: 100% !important;
+  display: block !important;
+}
+
+
+/* =========================================
+   SUGGERIMENTI FILM DEL CLUB
+   ========================================= */
+
+.film-club-hint,
+.film-club-action-hint {
+  font-size: 12px !important;
+  line-height: 1.3 !important;
+}
+
+.film-club-hint {
+  margin-top: 4px !important;
+}
+
+.film-club-action-hint {
+  text-align: right !important;
+  max-width: 220px !important;
+  white-space: normal !important;
+}
+
+@media screen and (max-width: 600px) {
+
+  .film-club-hint,
+  .film-club-action-hint {
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+  }
+
+    .film-club-action-hint {
+    max-width: 180px !important;
+    text-align: right !important;
+    flex-shrink: 0 !important;
+    white-space: normal !important;
+  }
+
+}
+
+
+#missingCountLabel {
+  font-size: 12px !important;
+  line-height: 1.3 !important;
+}
+
+/* =========================================
+   TITOLI SEZIONI PRINCIPALI
+   ========================================= */
+
+.missing-panel .head h2,
+.dashboard-main-grid .head h2,
+.film-club-section .head h2 {
+  font-size: 35px !important;
+  line-height: 1.25 !important;
+}
+
+@media screen and (max-width: 600px) {
+  .missing-panel .head h2,
+  .dashboard-main-grid .head h2,
+  .film-club-section .head h2 {
+    font-size: 35px !important;
+    line-height: 1.25 !important;
+  }
+}
+
+.missing-panel-title {
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+}
+
+#missingCountLabel {
+  font-size: 12px !important;
+}
+
+.weekly-film-label {
+  font-size: 20px !important;
+  line-height: 1.25 !important;
+  font-weight: 800 !important;
+}
+
+#missingCountLabel {
+  font-size: 16px !important;
+  line-height: 1.3 !important;
+  margin-top: 5px !important;
+}
+
+@media screen and (max-width: 600px) {
+  #missingCountLabel {
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+  }
+}
+
+#missingCountLabel {
+  font-size: 24px !important;
+  line-height: 1.3 !important;
+  margin-top: 5px !important;
+}
+
+/* =========================================
+   ADMIN LOGIN
+   ========================================= */
+
+/* Desktop: stessa larghezza del login membri */
+#adminLoginScreen .admin-login-box {
+  width: 100% !important;
+  max-width: 380px !important;
+  box-sizing: border-box !important;
+}
+
+
+/* Tablet / schermi intermedi */
+@media screen and (max-width: 1000px) {
+
+  #adminLoginScreen .admin-login-box {
+    width: calc(100% - 32px) !important;
+    max-width: 620px !important;
+    padding: 36px 30px !important;
+    box-sizing: border-box !important;
+  }
+
+}
+
+
+/* Telefono */
+@media screen and (max-width: 600px) {
+
+  #adminLoginScreen .admin-login-box {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 36px 26px !important;
+    box-sizing: border-box !important;
+  }
+
+  #adminLoginScreen .admin-login-box #adminPin {
+    height: 100px !important;
+    min-height: 100px !important;
+    padding: 20px 15px !important;
+    font-size: 18px !important;
+  }
+
+  #adminLoginScreen .admin-login-box button {
+    height: 100px !important;
+    min-height: 100px !important;
+    padding: 20px !important;
+    font-size: 18px !important;
+  }
+
+#adminLoginScreen .admin-login-box #adminPin {
+  margin-bottom: 20px !important;
+}
+
+#adminLoginScreen .admin-login-box button {
+  width: 100% !important;
+  min-height: 72px !important;
+  height: 72px !important;
+  padding: 20px !important;
+  font-size: 18px !important;
+  line-height: 1.2 !important;
+  box-sizing: border-box !important;
+}
+
+#adminLoginScreen .admin-login-box button + button {
+  margin-top: 12px !important;
+}
+}
+
+@media screen and (max-width: 1000px) {
+
+  /* LOGIN MEMBRI + ADMIN */
+
+  #loginScreen > div,
+  #adminLoginScreen .admin-login-box {
+
+    width: calc(100% - 32px) !important;
+
+    max-width: 620px !important;
+
+    padding: 36px 30px !important;
+
+    border-radius: 20px !important;
+
+  }
+
+
+  #loginScreen h2,
+  #adminLoginScreen h2 {
+
+    font-size: 30px !important;
+
+    margin-bottom: 12px !important;
+
+  }
+
+
+  #loginScreen p,
+  #adminLoginScreen p {
+
+    font-size: 19px !important;
+
+    line-height: 1.4 !important;
+
+  }
+
+
+  #loginScreen select,
+  #loginScreen input,
+  #loginScreen button,
+
+  #adminLoginScreen select,
+  #adminLoginScreen input,
+  #adminLoginScreen button {
+
+    min-height: 58px !important;
+
+    font-size: 20px !important;
+
+  }
+
+}
+
+.ranking-panel {
+  padding: 30px;
+}
+
+.ranking-header {
+  margin-bottom: 24px;
+}
+
+.ranking-title {
+  font-size: 35px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.ranking-subtitle {
+  margin-top: 5px;
+  color: #9ca3b2;
+  font-size: 20px;
+}
+
+.ranking-item {
+  display: grid;
+  grid-template-columns: 55px 90px minmax(0, 1fr) 120px;
+  gap: 18px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #2a2f3d;
+  cursor: pointer;
+}
+
+.ranking-item:first-child {
+  border-top: 1px solid #2a2f3d;
+}
+
+.ranking-position {
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.ranking-poster {
+  width: 90px;
+  height: 135px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  background: #151821;
+}
+
+.ranking-no-poster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: #6f7685;
+  font-size: 12px;
+  text-align: center;
+}
+
+.ranking-info {
+  min-width: 0;
+}
+
+.ranking-rating {
+  min-width: 0;
+  text-align: right;
+  align-self: center;
+  transform: translateY(0px);
+  padding-right: 12px;
+}
+
+.ranking-film-title {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+.ranking-film-year {
+  margin-top: 4px;
+  color: #9ca3b2;
+  font-size: 14px;
+}
+
+.ranking-film-director {
+  margin-top: 7px;
+  color: #c8ccd6;
+  font-size: 14px;
+}
+
+.ranking-score {
+  margin-top: 0;
+  font-size: 40px;
+  font-weight: 800;
+  text-align: right;
+}
+
+.ranking-score-clickable {
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.ranking-score-clickable:hover {
+  opacity: 0.75;
+}
+
+.ranking-watched {
+  margin-top: 5px;
+  color: #9ca3b2;
+  font-size: 14px;
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+
+  .ranking-panel {
+    padding: 20px 14px;
+  }
+
+  .ranking-title {
+    font-size: 30px;
+  }
+
+  .ranking-subtitle {
+    font-size: 20px;
+  }
+
+  .ranking-item {
+    grid-template-columns: 32px 70px minmax(0, 1fr) 82px;
+    gap: 9px;
+    padding: 12px 0;
+  }
+
+  .ranking-position {
+    font-size: 17px;
+  }
+
+  .ranking-poster {
+    width: 70px;
+    height: 105px;
+    border-radius: 7px;
+  }
+
+  .ranking-film-title {
+    font-size: 17px;
+  }
+
+  .ranking-film-year,
+  .ranking-film-director {
+    font-size: 12px;
+  }
+
+  .ranking-score {
+    font-size: 25px;
+    text-align: right;
+  }
+
+  .ranking-watched {
+    font-size: 12px;
+    text-align: right;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .ranking-rating {
+    align-self: start;
+    padding-top: 20px;
+    transform: translateY(0);
+    padding-right: 6px;
+  }
+}
+
+.main-nav {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 18px;
+}
+
+.main-nav-toggle {
+  width: 46px;
+  height: 42px;
+
+  background: #171a23;
+  color: #f5f6fa;
+
+  border: 1px solid #2a2f3d;
+  border-radius: 8px;
+
+  font-size: 22px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.main-nav-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+
+  width: 190px;
+
+  display: none;
+  flex-direction: column;
+
+  padding: 6px;
+
+  background: #171a23;
+  border: 1px solid #2a2f3d;
+  border-radius: 10px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+.main-nav-menu.open {
+  display: flex;
+}
+
+.main-nav-item {
+  width: 100%;
+
+  padding: 11px 12px;
+
+  background: transparent;
+  border: 0;
+  border-radius: 7px;
+
+  color: #c8ccd6;
+
+  font-size: 15px;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.main-nav-item:hover {
+  background: #1e2230;
+  color: #fff;
+}
+
+.main-nav-item.active {
+  background: #1e2230;
+  color: #fff;
+  font-weight: 700;
+}
+
+#memberList,
+#filmAdminList {
+  max-height: 420px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 6px;
+}
+
+/* Scrollbar */
+#memberList::-webkit-scrollbar,
+#filmAdminList::-webkit-scrollbar {
+  width: 7px;
+}
+
+#memberList::-webkit-scrollbar-track,
+#filmAdminList::-webkit-scrollbar-track {
+  background: #151821;
+  border-radius: 10px;
+}
+
+#memberList::-webkit-scrollbar-thumb,
+#filmAdminList::-webkit-scrollbar-thumb {
+  background: #3a4050;
+  border-radius: 10px;
+}
+
+#memberList::-webkit-scrollbar-thumb:hover,
+#filmAdminList::-webkit-scrollbar-thumb:hover {
+  background: #4a5163;
+}
+
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+
+  #memberList,
+  #filmAdminList {
+    max-height: 360px;
+    padding-right: 4px;
+  }
+
+}
+
+.ranking-score {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.ranking-watched {
+  margin-top: 5px;
+  color: #9ca3b2;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .ranking-rating {
+    transform: translateY(-6px);
+  }
+
+  .ranking-score {
+    font-size: 17px;
+  }
+
+  .ranking-watched {
+    font-size: 12px;
+  }
+}
+
+.film-ratings-modal-box {
+  position: relative;
+  width: min(440px, calc(100% - 32px));
+  max-height: min(720px, calc(100vh - 40px));
+  overflow-y: auto;
+  background: #151821;
+  border-radius: 16px;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.film-ratings-modal-content {
+  padding-top: 8px;
+}
+
+.film-ratings-modal-title {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.25;
+  padding-right: 30px;
+}
+
+.film-ratings-modal-year {
+  margin-top: 5px;
+  color: #9ca3b2;
+  font-size: 14px;
+}
+
+.film-ratings-modal-average {
+  margin-top: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #2a2f3d;
+}
+
+#filmRatingsModalAverage {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.film-ratings-modal-list {
+  margin-top: 8px;
+}
+
+.film-rating-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid #2a2f3d;
+}
+
+.film-rating-name {
+  min-width: 0;
+  color: #e5e7eb;
+  font-size: 15px;
+}
+
+.film-rating-value {
+  flex-shrink: 0;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.film-ratings-empty {
+  padding: 20px 0;
+  color: #9ca3b2;
+  text-align: center;
+}
+
+.ranking-rating-clickable {
+  cursor: pointer;
+}
+
+.ranking-rating-clickable:hover {
+  opacity: 0.75;
+}
+
+@media (max-width: 600px) {
+
+  .film-ratings-modal-box {
+    width: calc(100% - 24px);
+    max-height: calc(100vh - 24px);
+    padding: 24px 20px;
+    border-radius: 14px;
+  }
+
+  .film-ratings-modal-title {
+    font-size: 22px;
+  }
+
+  #filmRatingsModalAverage {
+    font-size: 28px;
+  }
+
+  .film-rating-row {
+    padding: 11px 0;
+  }
+
+  .film-rating-name {
+    font-size: 14px;
+  }
+
+  .film-rating-value {
+    font-size: 16px;
+  }
+
+  .ranking-header {
+  align-items: flex-start;
+  }
+
+  .ranking-hint {
+  font-size: 20px;
+  white-space: normal;
+  max-width: 150px;
+  }
+
+  #profileName {
+  font-size: 19px !important;
+  }
+
+#profileSigla {
+  font-size: 13px !important;
+  }
+
+.top .main-nav-toggle {
+  width: 50px;
+  height: 50px;
+  font-size: 27px;
+  }
+
+#mainNavMenu {
+  min-width: 250px;
+  padding: 10px;
+  }
+
+#mainNavMenu .main-nav-item {
+  font-size: 19px;
+  padding: 17px 20px;
+  min-height: 56px;
+  }
+
+}
+
+.ranking-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.ranking-hint {
+  color: #9ca3b2;
+  font-size: 15px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* =========================
+   MENU + PROFILO
+   ========================= */
+
+#profileName {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+}
+
+#profileSigla {
+  font-size: 14px !important;
+}
+
+/* Pulsante menu affianco al nome */
+.top .main-nav-toggle {
+  width: 52px;
+  height: 52px;
+  font-size: 28px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenitore del menu */
+#mainNavMenu {
+  padding: 8px;
+  min-width: 220px;
+}
+
+/* Voci del menu */
+#mainNavMenu .main-nav-item {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 15px 18px;
+  min-height: 52px;
+}
+
+html {
+  overscroll-behavior-y: none !important;
+}
+
+body {
+  overscroll-behavior-y: none !important;
+}
+
+</style>
 </head>
-
 <body>
 
-  <div class="screen">
+  <!-- =========================
+       LOGIN MEMBRI
+       ========================= -->
 
-    <img
-      class="logo"
-      src="./icons/mootboxd-icon.png.png"
-      alt="MOOTBOXD"
+  <div
+    id="loginScreen"
+    style="
+      position:fixed;
+      inset:0;
+      background:#0f1117;
+      z-index:9999;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    "
+  >
+
+    <div
+      style="
+        width:100%;
+        max-width:380px;
+        background:#171a23;
+        border:1px solid #2a2f3d;
+        border-radius:16px;
+        padding:28px;
+      "
     >
 
-    <div class="title">
-      MOOTBOXD
-    </div>
+      <div
+        style="
+          font-size:28px;
+          font-weight:800;
+          margin-bottom:6px;
+        "
+      >
+        🎬 MOOTBOXD
+      </div>
 
-    <div class="subtitle">
-      App del club
+      <div
+        class="muted"
+        style="margin-bottom:24px;"
+      >
+        Accedi al tuo profilo
+      </div>
+
+      <select
+        id="loginMember"
+        style="
+          width:100%;
+          background:#1e2230;
+          color:#fff;
+          border:1px solid #2a2f3d;
+          border-radius:8px;
+          padding:10px;
+          margin-bottom:10px;
+        "
+      >
+      </select>
+
+      <input
+        id="loginPin"
+        type="password"
+        inputmode="numeric"
+        maxlength="4"
+        placeholder="PIN a 4 cifre"
+        style="
+          width:100%;
+          margin-bottom:10px;
+        "
+      >
+
+      <button
+        class="btn primary"
+        onclick="login()"
+        style="width:100%;"
+      >
+        Accedi
+      </button>
+
+      <button
+        class="btn"
+        onclick="showAdminLogin()"
+        style="
+          width:100%;
+          margin-top:8px;
+        "
+      >
+        Accesso Admin
+      </button>
+
+      <div
+        id="loginError"
+        style="
+          color:#e88;
+          margin-top:12px;
+          font-size:13px;
+          display:none;
+        "
+      >
+      </div>
+
     </div>
 
   </div>
 
-  <script>
 
-    const mootboxdUrl =
-      "https://script.google.com/macros/s/AKfycbyEDc9UdRs4ZkrckSS1JSMAbIiG-FBEaIWd1e1qHUtGegM8yfduqPgLc_aaTLO_0g/exec";
+  <!-- =========================
+       LOGIN ADMIN
+       ========================= -->
 
-    const isStandalone =
-      window.navigator.standalone === true ||
-      window.matchMedia(
-        "(display-mode: standalone)"
-      ).matches;
+  <div
+    id="adminLoginScreen"
+    style="
+      position:fixed;
+      inset:0;
+      background:#0f1117;
+      z-index:10000;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    "
+  >
 
-    if (isStandalone) {
+    
+    
+<div
+  class="admin-login-box"
+  style="
+    width:100%;
+    max-width:380px;
+    background:#171a23;
+    border:1px solid #2a2f3d;
+    border-radius:16px;
+    padding:28px;
+    box-sizing:border-box;
+  "
+>
 
-      window.location.replace(
-        mootboxdUrl
+      
+
+
+      <div
+        style="
+          font-size:24px;
+          font-weight:800;
+          margin-bottom:6px;
+        "
+      >
+        Accesso Admin
+      </div>
+
+      <div
+        class="muted"
+        style="margin-bottom:20px;"
+      >
+        Area riservata alla gestione del club
+      </div>
+
+      <input
+        id="adminPin"
+        type="password"
+        inputmode="numeric"
+        maxlength="4"
+        placeholder="PIN Admin"
+        style="
+          width:100%;
+          margin-bottom:10px;
+        "
+      >
+
+      <button
+        class="btn primary"
+        onclick="loginAdmin()"
+        style="width:100%;"
+      >
+        Entra
+      </button>
+
+      <button
+        class="btn"
+        onclick="closeAdminLogin()"
+        style="
+          width:100%;
+          margin-top:8px;
+        "
+      >
+        Torna indietro
+      </button>
+
+      <div
+        id="adminLoginError"
+        style="
+          color:#e88;
+          margin-top:12px;
+          font-size:13px;
+          display:none;
+        "
+      >
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       APP PRINCIPALE
+       ========================= -->
+
+  <div class="wrap">
+<div class="top">
+
+  <div>
+    <h1>🎬 MOOTBOXD</h1>
+    <div class="sub">
+      Dashboard condivisa — progresso sui film del club
+    </div>
+  </div>
+
+  <div style="
+  display:flex;
+  align-items:center;
+  gap:10px;
+">
+
+  <div style="text-align:right;">
+    <div
+      id="profileName"
+      style="font-weight:700;">
+      —
+    </div>
+
+    <div
+      id="profileSigla"
+      class="muted"
+      style="font-size:12px;">
+    </div>
+  </div>
+
+  <button
+    class="main-nav-toggle"
+    onclick="toggleMainMenu()"
+    aria-label="Apri menu"
+  >
+    ☰
+  </button>
+
+</div>
+</div>
+<div id="mainNav" class="main-nav">
+
+  <div
+    id="mainNavMenu"
+    class="main-nav-menu"
+  >
+
+    <button
+      class="main-nav-item active"
+      onclick="showPage('home')"
+    >
+      Home
+    </button>
+
+    <button
+      class="main-nav-item"
+      onclick="showPage('ranking')"
+    >
+      Classifica
+    </button>
+
+    <button
+      id="adminNavItem"
+      class="main-nav-item"
+      onclick="showPage('admin')"
+      style="display:none;"
+    >
+      Gestione
+    </button>
+
+    <button
+      class="main-nav-item"
+      onclick="logout()"
+    >
+      Esci
+    </button>
+
+  </div>
+
+</div>
+
+<section
+  id="rankingPage"
+  style="display:none;"
+>
+  <div class="panel ranking-panel">
+
+    <div class="ranking-header">
+
+  <div>
+    <div class="ranking-title">Classifica</div>
+    <div class="ranking-subtitle">
+      I film più apprezzati dal club
+    </div>
+  </div>
+
+  <div class="ranking-hint">
+    Clicca sulla media per vedere<br> 
+    il voto di ogni membro
+  </div>
+
+</div>
+
+    <div id="rankingList"></div>
+
+  </div>
+</section>
+<div id="homePage">
+
+  <div class="cards"><div class="card"><div class="muted">Film del club</div><div class="big" id="filmsN">—</div></div><div class="card"><div class="muted">Membri</div><div class="big" id="membersN">—</div></div><div class="card"><div class="muted">Progresso del club</div><div class="big" id="avg">—</div></div></div>
+
+  <div
+  class="panel"
+  style="
+    margin-bottom:18px;
+    padding:24px;
+    text-align:center;
+  "
+>
+  <div
+    class="muted"
+    style="
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-size:12px;
+      font-weight:700;
+    ">
+    Il tuo progresso
+  </div>
+
+  <div
+    id="missingText"
+    style="
+      font-size:32px;
+      font-weight:850;
+      margin-top:6px;
+    ">
+    —
+  </div>
+
+  <div
+    id="personalStats"
+    class="muted"
+    style="margin-top:4px;">
+  </div>
+
+  <div
+    class="bar"
+    style="
+      max-width:650px;
+      margin:16px auto 0;
+      height:12px;
+    ">
+    <div
+      id="personalFill"
+      class="fill"
+      style="width:0%;">
+    </div>
+  </div>
+</div>
+
+  <div class="panel missing-panel" style="margin-bottom:18px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <div>
+        <div class="missing-panel-title">
+          Film che devi recuperare
+        </div>
+
+        <div
+          id="missingCountLabel"
+          class="muted"
+          style="font-size:13px;margin-top:3px;"
+        >
+          —
+        </div>
+      </div>
+    </div>
+
+    <div id="missingFilms"></div>
+  </div>
+
+
+  <div class="dashboard-main-grid">
+
+    <section class="panel">
+
+      <div class="head">
+        <h2>Progresso dei membri</h2>
+        <span class="muted">visti / totali</span>
+      </div>
+
+      <div id="members"></div>
+
+    </section>
+
+
+    <section
+      id="weeklyFilmPanel"
+      class="panel weekly-film-panel"
+    >
+
+      <div class="weekly-film-label">
+        Film della settimana
+      </div>
+
+      <div
+        id="weeklyFilm"
+        class="weekly-film"
+      >
+        <div class="empty">
+          —
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <section
+    class="panel film-club-section"
+    style="margin-top:18px"
+  >
+
+    <div class="head">
+
+      <div>
+
+        <h2>Film del club</h2>
+
+        <div class="muted film-club-hint">
+          Clicca sul poster per vedere le informazioni del film
+        </div>
+
+      </div>
+
+      <span class="muted film-club-action-hint">
+        Clicca la tua iniziale per segnare un film come visto / non visto
+      </span>
+
+    </div>
+
+    <div
+      class="films"
+      id="films"
+    ></div>
+
+  </section>
+
+</div>
+
+
+<!-- =========================
+     PAGINA GESTIONE ADMIN
+     ========================= -->
+
+<section
+  id="adminPanel"
+  class="panel"
+  style="display:none;"
+>
+
+  <div class="head">
+    <h2>Gestione membri & film</h2>
+    <span class="muted">solo Admin</span>
+  </div>
+
+
+  <!-- MEMBRI -->
+
+  <div class="head">
+    <h2>Membri</h2>
+  </div>
+
+  <div class="form">
+
+    <input
+      id="mn"
+      placeholder="Nome membro"
+    >
+
+    <button
+      class="btn primary"
+      onclick="addM()"
+    >
+      Aggiungi
+    </button>
+
+  </div>
+
+  <div
+    class="list"
+    id="memberList"
+  ></div>
+
+
+  <!-- FILM -->
+
+  <div
+    class="head"
+    style="margin-top:24px;"
+  >
+    <h2>Film</h2>
+  </div>
+
+  <div class="film-admin-form">
+
+    <input
+      id="ft"
+      placeholder="Titolo"
+    >
+
+    <input
+      id="fy"
+      placeholder="Anno"
+    >
+
+    <input
+      id="fr"
+      placeholder="Regista"
+    >
+
+    <input
+      id="fg"
+      placeholder="Genere"
+    >
+
+    <input
+      id="fd"
+      placeholder="Data discussione"
+    >
+
+    <textarea
+      id="fs"
+      placeholder="Sinossi"
+    ></textarea>
+
+    <button
+      class="btn primary film-admin-submit"
+      onclick="addF()"
+    >
+      Aggiungi
+    </button>
+
+  </div>
+
+  <div
+    class="list"
+    id="filmAdminList"
+  ></div>
+
+</section>
+<script>
+  const API_URL =
+  'https://mootboxd-api.manuelrullo2002.workers.dev/';
+
+async function api(action, args = []) {
+
+  const response = await fetch(API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'text/plain;charset=utf-8'
+    },
+    body: JSON.stringify({
+      action: action,
+      args: args
+    })
+  });
+
+  const text = await response.text();
+
+  let result;
+
+  try {
+    result = JSON.parse(text);
+  } catch (error) {
+    throw new Error(
+      'Risposta API non valida: ' + text
+    );
+  }
+
+  if (!response.ok) {
+    throw new Error(
+      result.error ||
+      'Errore HTTP ' + response.status
+    );
+  }
+
+  if (!result.success) {
+    throw new Error(
+      result.error || 'Errore API.'
+    );
+  }
+
+  return result.data;
+}
+
+let D = null;
+let saving = false;
+let session = null;
+let adminSession = null;
+
+
+/* =========================
+   LOGIN
+   ========================= */
+
+async function showLogin() {
+
+  const loginScreen =
+    document.getElementById("loginScreen");
+
+  const select =
+    document.getElementById("loginMember");
+
+  loginScreen.style.display = "flex";
+
+  if (D && D.members && D.members.length) {
+
+    select.innerHTML =
+      '<option value="">Seleziona il tuo nome</option>' +
+      D.members.map(function(member) {
+
+        return `
+          <option value="${esc(member.id)}">
+            ${esc(member.name)}
+          </option>
+        `;
+
+      }).join("");
+
+    return;
+  }
+
+  select.innerHTML =
+    '<option value="">Caricamento nomi…</option>';
+
+  select.disabled = true;
+
+  try {
+
+    const members =
+      await api('getMembersForLogin', []);
+
+    if (!D) {
+      D = {};
+    }
+
+    D.members = members;
+
+    select.innerHTML =
+      '<option value="">Seleziona il tuo nome</option>' +
+      members.map(function(member) {
+
+        return `
+          <option value="${esc(member.id)}">
+            ${esc(member.name)}
+          </option>
+        `;
+
+      }).join("");
+
+    select.disabled = false;
+
+  } catch (error) {
+
+    console.error(
+      "Errore caricamento membri:",
+      error
+    );
+
+    select.innerHTML =
+      '<option value="">Errore nel caricamento</option>';
+
+    select.disabled = false;
+
+  }
+}
+
+async function login() {
+
+  const memberId =
+    document.getElementById("loginMember").value;
+
+  const pin =
+    document.getElementById("loginPin").value.trim();
+
+  const errorBox =
+    document.getElementById("loginError");
+
+  errorBox.style.display = "none";
+
+  if (!memberId) {
+
+    errorBox.textContent =
+      "Seleziona il tuo nome.";
+
+    errorBox.style.display = "block";
+
+    return;
+  }
+
+  if (!/^\d{4}$/.test(pin)) {
+
+    errorBox.textContent =
+      "Inserisci un PIN di 4 cifre.";
+
+    errorBox.style.display = "block";
+
+    return;
+  }
+
+  try {
+
+    const result =
+      await api(
+        'loginMember',
+        [memberId, pin]
+      );
+
+    session = result;
+
+    sessionStorage.setItem(
+      "mootboxd_token",
+      result.token
+    );
+
+    document.getElementById(
+      "loginScreen"
+    ).style.display = "none";
+
+    document.getElementById(
+      "loginPin"
+    ).value = "";
+
+    updateProfile();
+
+    load();
+
+  } catch (error) {
+
+    errorBox.textContent =
+      error.message;
+
+    errorBox.style.display =
+      "block";
+
+  }
+}
+
+function showAdminLogin() {
+
+  document.getElementById(
+    "loginScreen"
+  ).style.display = "none";
+
+  document.getElementById(
+    "adminLoginScreen"
+  ).style.display = "flex";
+
+  document.getElementById(
+    "adminPin"
+  ).value = "";
+
+  document.getElementById(
+    "adminLoginError"
+  ).style.display = "none";
+}
+
+
+function closeAdminLogin() {
+
+  document.getElementById(
+    "adminLoginScreen"
+  ).style.display = "none";
+
+  document.getElementById(
+    "loginScreen"
+  ).style.display = "flex";
+}
+
+async function loginAdmin() {
+
+  const pin =
+    document.getElementById("adminPin").value.trim();
+
+  const errorBox =
+    document.getElementById("adminLoginError");
+
+  errorBox.style.display = "none";
+
+  if (!/^\d{4}$/.test(pin)) {
+
+    errorBox.textContent =
+      "Inserisci un PIN Admin di 4 cifre.";
+
+    errorBox.style.display = "block";
+
+    return;
+  }
+
+  try {
+
+    const result =
+      await api(
+        'loginAdmin',
+        [pin]
+      );
+
+    adminSession = result;
+
+    sessionStorage.setItem(
+      "mootboxd_admin_token",
+      result.token
+    );
+
+    document.getElementById(
+      "adminLoginScreen"
+    ).style.display = "none";
+
+    document.getElementById(
+      "loginScreen"
+    ).style.display = "none";
+
+    document.getElementById(
+      "adminPanel"
+    ).style.display = "block";
+
+    updateProfile();
+
+    load();
+
+  } catch (error) {
+
+    errorBox.textContent =
+      error.message;
+
+    errorBox.style.display =
+      "block";
+
+  }
+}
+
+async function checkAdminSession() {
+
+  const token =
+    sessionStorage.getItem(
+      "mootboxd_admin_token"
+    );
+
+  if (!token) {
+    return false;
+  }
+
+  try {
+
+    const result =
+      await api(
+        'getAdminSession',
+        [token]
+      );
+
+    if (!result) {
+
+      sessionStorage.removeItem(
+        "mootboxd_admin_token"
+      );
+
+      adminSession = null;
+
+      document.getElementById(
+        "adminPanel"
+      ).style.display = "none";
+
+      showLogin();
+
+      return false;
+    }
+
+    adminSession = {
+      token: token,
+      role: "admin"
+    };
+
+    document.getElementById(
+      "loginScreen"
+    ).style.display = "none";
+
+    document.getElementById(
+      "adminLoginScreen"
+    ).style.display = "none";
+
+    document.getElementById(
+      "adminPanel"
+    ).style.display = "block";
+
+    updateProfile();
+
+    load();
+
+    return true;
+
+  } catch (error) {
+
+    sessionStorage.removeItem(
+      "mootboxd_admin_token"
+    );
+
+    adminSession = null;
+
+    showLogin();
+
+    return false;
+  }
+}
+
+async function logout() {
+
+  /* =========================
+     LOGOUT ADMIN
+     ========================= */
+
+  if (adminSession) {
+
+    const token =
+      sessionStorage.getItem(
+        "mootboxd_admin_token"
+      );
+
+    if (token) {
+
+      try {
+
+        await api(
+          'logoutAdmin',
+          [token]
+        );
+
+      } catch (error) {
+
+        console.error(
+          "Errore logout Admin:",
+          error
+        );
+
+      }
+    }
+
+    sessionStorage.removeItem(
+      "mootboxd_admin_token"
+    );
+
+    adminSession = null;
+
+    document.getElementById(
+      "adminPanel"
+    ).style.display = "none";
+
+    showLogin();
+
+    return;
+  }
+
+
+  /* =========================
+     LOGOUT MEMBRO
+     ========================= */
+
+  const token =
+    sessionStorage.getItem(
+      "mootboxd_token"
+    );
+
+  if (token) {
+
+    try {
+
+      await api(
+        'logoutMember',
+        [token]
+      );
+
+    } catch (error) {
+
+      console.error(
+        "Errore logout membro:",
+        error
       );
 
     }
+  }
 
-  </script>
+  sessionStorage.removeItem(
+    "mootboxd_token"
+  );
 
+  session = null;
+
+  document.getElementById(
+    "adminPanel"
+  ).style.display = "none";
+
+  document.getElementById(
+    "loginScreen"
+  ).style.display = "flex";
+}
+
+
+async function checkSession() {
+
+  const adminToken =
+    sessionStorage.getItem(
+      "mootboxd_admin_token"
+    );
+
+  if (adminToken) {
+  await checkAdminSession();
+  return;
+}
+
+  const token =
+    sessionStorage.getItem(
+      "mootboxd_token"
+    );
+
+  if (!token) {
+
+    showLogin();
+
+    return;
+  }
+
+  try {
+
+    const results =
+      await Promise.all([
+        api(
+          'getSession',
+          [token]
+        ),
+        api(
+          'getData',
+          []
+        )
+      ]);
+
+    const sessionResult =
+      results[0];
+
+    const dataResult =
+      results[1];
+
+    if (!sessionResult) {
+
+      sessionStorage.removeItem(
+        "mootboxd_token"
+      );
+
+      showLogin();
+
+      return;
+    }
+
+    session = {
+      token: token,
+      memberId: sessionResult.memberId,
+      name: sessionResult.name,
+      sigla: sessionResult.sigla
+    };
+
+    D = dataResult;
+
+    document.getElementById(
+      "loginScreen"
+    ).style.display = "none";
+
+    document.getElementById(
+      "adminPanel"
+    ).style.display = "none";
+
+    updateProfile();
+
+    render();
+
+  } catch (error) {
+
+    console.error(
+      "Errore controllo sessione:",
+      error
+    );
+
+    sessionStorage.removeItem(
+      "mootboxd_token"
+    );
+
+    session = null;
+
+    showLogin();
+  }
+}
+
+function updateProfile() {
+
+  if (adminSession) {
+
+    document.getElementById(
+      "profileName"
+    ).textContent = "Admin";
+
+    document.getElementById(
+      "profileSigla"
+    ).textContent = "Gestione club";
+
+    return;
+  }
+
+  if (!session) {
+    return;
+  }
+
+  document.getElementById(
+    "profileName"
+  ).textContent =
+    session.name;
+
+  document.getElementById(
+    "profileSigla"
+  ).textContent =
+    session.sigla
+      ? session.sigla
+      : "";
+}
+
+async function load() {
+
+  const start =
+    performance.now();
+
+  console.log(
+    "MOOTBOXD: inizio caricamento"
+  );
+
+  try {
+
+    const data =
+      await api(
+        'getData',
+        []
+      );
+
+    const afterGetData =
+      performance.now();
+
+    console.log(
+      "MOOTBOXD: getData completato in " +
+      Math.round(
+        afterGetData - start
+      ) +
+      " ms"
+    );
+
+    D = data;
+
+    render();
+
+    const afterRender =
+      performance.now();
+
+    console.log(
+      "MOOTBOXD: render completato in " +
+      Math.round(
+        afterRender - afterGetData
+      ) +
+      " ms"
+    );
+
+    console.log(
+      "MOOTBOXD: totale " +
+      Math.round(
+        afterRender - start
+      ) +
+      " ms"
+    );
+
+  } catch (error) {
+
+    console.error(
+      "MOOTBOXD: ERRORE REALE getData",
+      error
+    );
+
+    alert(
+      "Errore nel caricamento:\n\n" +
+      (
+        error && error.message
+          ? error.message
+          : String(error)
+      )
+    );
+  }
+}
+
+
+function renderRanking() {
+
+  const container =
+    document.getElementById('rankingList');
+
+  if (!container) {
+    return;
+  }
+
+  if (!D || !D.films) {
+
+    container.innerHTML =
+      '<div class="empty">Dati non disponibili.</div>';
+
+    return;
+  }
+
+  const films =
+    (D.films || []).filter(function(film) {
+
+      return film.media !== '' &&
+             film.media != null &&
+             !isNaN(Number(film.media));
+
+    });
+
+  if (!films.length) {
+
+    container.innerHTML =
+      '<div class="empty">Nessun film ancora valutato.</div>';
+
+    return;
+  }
+
+  // Mantiene l'ordine originale come terzo criterio.
+  films.forEach(function(film, index) {
+    film._originalIndex = index;
+  });
+
+  // =========================
+  // ORDINAMENTO
+  // =========================
+
+  films.sort(function(a, b) {
+
+    const mediaA =
+      Number(a.media);
+
+    const mediaB =
+      Number(b.media);
+
+    // 1. Media reale: più alta prima
+    if (mediaA !== mediaB) {
+      return mediaB - mediaA;
+    }
+
+    // 2. A parità di media:
+    // più persone lo hanno visto
+    const watchedA =
+      Number(a.vistoDa || 0);
+
+    const watchedB =
+      Number(b.vistoDa || 0);
+
+    if (watchedA !== watchedB) {
+      return watchedB - watchedA;
+    }
+
+    // 3. Se tutto è identico:
+    // mantiene l'ordine originale
+    return a._originalIndex -
+           b._originalIndex;
+
+  });
+
+  // =========================
+  // HTML
+  // =========================
+
+  container.innerHTML =
+    films.map(function(film, index) {
+
+      const position =
+        index + 1;
+
+      const media =
+        Number(film.media)
+          .toLocaleString('it-IT', {
+            minimumFractionDigits: 1,
+            maximumFractionDigits: 1
+          });
+
+      const vistoDa =
+        Number(film.vistoDa || 0);
+
+      const totalMembers =
+        Number(D.totalMembers || D.members.length || 0);
+
+      return `
+
+        <div
+          class="ranking-item"
+          onclick="openFilmModal('${film.id}')"
+        >
+
+          <div class="ranking-position">
+            #${position}
+          </div>
+
+          ${
+            film.poster
+              ? `
+                <img
+                  src="${esc(film.poster)}"
+                  class="ranking-poster"
+                  alt="${esc(film.title)}"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.style.display='none';"
+                >
+              `
+              : `
+                <div class="ranking-poster ranking-no-poster">
+                  Nessun poster
+                </div>
+              `
+          }
+
+          <div class="ranking-info">
+
+  <div class="ranking-film-title">
+    ${esc(film.title)}
+  </div>
+
+  ${
+    film.year
+      ? `
+        <div class="ranking-film-year">
+          ${esc(film.year)}
+        </div>
+      `
+      : ''
+  }
+
+  ${
+    film.regista
+      ? `
+        <div class="ranking-film-director">
+          ${esc(film.regista)}
+        </div>
+      `
+      : ''
+  }
+
+</div>
+
+<div class="ranking-rating">
+
+  <div
+    class="ranking-score ranking-rating-clickable"
+    onclick="event.stopPropagation(); openFilmRatings('${film.id}')"
+  >
+    ★ ${media}
+  </div>
+
+  <div
+    class="ranking-watched ranking-rating-clickable"
+    onclick="event.stopPropagation(); openFilmRatings('${film.id}')"
+  >
+    Visto da ${vistoDa}/${totalMembers}
+  </div>
+
+</div>
+
+        </div>
+
+      `;
+
+    }).join('');
+
+}
+
+
+function toggleMainMenu() {
+
+  const menu =
+    document.getElementById('mainNavMenu');
+
+  if (!menu) {
+    return;
+  }
+
+  menu.classList.toggle('open');
+}
+
+function showPage(page) {
+
+  const homePage =
+    document.getElementById('homePage');
+
+  const rankingPage =
+    document.getElementById('rankingPage');
+
+  const adminPage =
+    document.getElementById('adminPanel');
+
+  const menuItems =
+    document.querySelectorAll('.main-nav-item');
+
+  // =========================
+  // NASCONDE TUTTE LE PAGINE
+  // =========================
+
+  if (homePage) {
+    homePage.style.display = 'none';
+  }
+
+  if (rankingPage) {
+    rankingPage.style.display = 'none';
+  }
+
+  if (adminPage) {
+    adminPage.style.display = 'none';
+  }
+
+  // =========================
+  // MOSTRA PAGINA RICHIESTA
+  // =========================
+
+  if (page === 'home') {
+
+    if (homePage) {
+      homePage.style.display = 'block';
+    }
+
+  }
+
+  if (page === 'ranking') {
+
+    if (rankingPage) {
+      rankingPage.style.display = 'block';
+    }
+
+    renderRanking();
+
+  }
+
+  if (page === 'admin') {
+
+    // Sicurezza lato interfaccia:
+    // solo Admin può aprire Gestione.
+    if (!adminSession) {
+      showLogin();
+      return;
+    }
+
+    if (adminPage) {
+      adminPage.style.display = 'block';
+    }
+
+    // Aggiorna la lista film nel pannello Admin.
+    renderAdminFilms();
+
+  }
+
+  // =========================
+  // MENU ATTIVO
+  // =========================
+
+  menuItems.forEach(function(item) {
+    item.classList.remove('active');
+  });
+
+  if (page === 'home') {
+
+    if (menuItems[0]) {
+      menuItems[0].classList.add('active');
+    }
+
+  }
+
+  if (page === 'ranking') {
+
+    if (menuItems[1]) {
+      menuItems[1].classList.add('active');
+    }
+
+  }
+
+  if (page === 'admin' && adminSession) {
+
+    if (menuItems[2]) {
+      menuItems[2].classList.add('active');
+    }
+
+  }
+
+  // =========================
+  // CHIUDE IL MENU
+  // =========================
+
+  const menu =
+    document.getElementById('mainNavMenu');
+
+  if (menu) {
+    menu.classList.remove('open');
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+
+}
+
+function render() {
+
+    /* =========================
+     FILM DELLA SETTIMANA
+     ========================= */
+
+  const weeklyFilmPanel =
+    document.getElementById("weeklyFilmPanel");
+
+  const adminPanel =
+    document.getElementById("adminPanel");
+
+  if (weeklyFilmPanel && adminPanel) {
+
+    if (weeklyFilmPanel) {
+  weeklyFilmPanel.style.display = "block";
+}
+
+if (adminPanel) {
+  adminPanel.style.display = "none";
+}
+
+const adminNavItem =
+  document.getElementById('adminNavItem');
+
+if (adminNavItem) {
+  adminNavItem.style.display =
+    adminSession ? 'block' : 'none';
+}
+
+  }
+
+  const filmsCount = D.films.length;
+  const membersCount = D.members.length;
+
+  document.getElementById("filmsN").textContent = filmsCount;
+  document.getElementById("membersN").textContent = membersCount;
+
+
+  /* =========================
+     PERCENTUALI MEMBRI
+     ========================= */
+
+  const percentages = D.members.map(function(member) {
+
+    const watchedCount = D.films.filter(function(film) {
+      return D.watched[member.id + "|" + film.id];
+    }).length;
+
+    return filmsCount
+      ? (watchedCount / filmsCount) * 100
+      : 0;
+  });
+
+  const average = membersCount
+    ? percentages.reduce(function(a, b) {
+        return a + b;
+      }, 0) / membersCount
+    : 0;
+
+  document.getElementById("avg").textContent =
+    average.toFixed(1) + "%";
+
+
+  /* =========================
+     PROGRESSO PERSONALE
+     ========================= */
+
+  let myMember = null;
+  let myWatched = 0;
+  let myMissingFilms = [];
+
+  if (session) {
+
+    myMember = D.members.find(function(member) {
+      return member.id === session.memberId;
+    });
+
+    if (myMember) {
+
+      myMissingFilms = D.films.filter(function(film) {
+        return !D.watched[
+          myMember.id + "|" + film.id
+        ];
+      });
+
+      myWatched =
+        filmsCount - myMissingFilms.length;
+
+      const myMissing =
+        myMissingFilms.length;
+
+      const myPercentage =
+        filmsCount
+          ? (myWatched / filmsCount) * 100
+          : 0;
+
+
+      /* TESTO PRINCIPALE */
+
+      document.getElementById(
+        "missingText"
+      ).textContent =
+        myMissing === 0
+          ? "Hai recuperato tutti i film"
+          : "Ti mancano " + myMissing + " film";
+
+
+      /* STATISTICHE */
+
+      document.getElementById(
+        "personalStats"
+      ).textContent =
+        myWatched +
+        " / " +
+        filmsCount +
+        " film visti · " +
+        myPercentage.toFixed(1) +
+        "% completato";
+
+
+      /* BARRA */
+
+      document.getElementById(
+        "personalFill"
+      ).style.width =
+        myPercentage + "%";
+
+
+      /* =========================
+         FILM DA RECUPERARE
+         ========================= */
+
+      const missingFilmsContainer =
+        document.getElementById("missingFilms");
+
+      const missingCountLabel =
+        document.getElementById("missingCountLabel");
+
+
+      missingCountLabel.textContent =
+        myMissing === 0
+          ? "Hai completato tutta la lista."
+          : myMissing + " film ancora da vedere";
+
+
+      if (myMissing === 0) {
+
+  missingFilmsContainer.innerHTML =
+    '<div class="empty">Nessun film da recuperare.</div>';
+
+} else {
+
+  missingFilmsContainer.innerHTML = `
+    <div class="missing-grid">
+
+      ${myMissingFilms.map(function(film) {
+
+        return `
+          <div class="missing-card">
+
+            <div class="missing-poster-wrap">
+
+              ${
+                film.poster
+                  ? `
+                    <img
+                      src="${esc(film.poster)}"
+                      class="missing-poster"
+                      alt="${esc(film.title)}"
+                      loading="lazy"
+                      decoding="async"
+                      onclick="openFilmModal('${film.id}')"
+                      onerror="this.style.display='none';"
+                    >
+                  `
+                  : `
+                    <div class="missing-no-poster">
+                      Nessun poster
+                    </div>
+                  `
+              }
+
+            </div>
+
+            <div class="missing-info">
+
+              <div class="missing-title">
+                ${esc(film.title)}
+              </div>
+
+              <div class="missing-year">
+                ${esc(film.year || "")}
+              </div>
+
+              <div class="missing-action">
+                <button
+                  class="btn primary"
+                  onclick="toggleMyFilm('${film.id}')">
+                  Visto
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        `;
+
+      }).join("")}
+
+    </div>
+  `;
+}
+
+    }
+
+  } else {
+
+    document.getElementById("missingText").textContent = "—";
+    document.getElementById("personalStats").textContent = "";
+    document.getElementById("personalFill").style.width = "0%";
+
+  }
+
+    /* =========================
+     FILM DELLA SETTIMANA
+     ========================= */
+
+  const weeklyFilmContainer =
+    document.getElementById("weeklyFilm");
+
+  if (weeklyFilmContainer) {
+
+    if (!D.films || !D.films.length) {
+
+      weeklyFilmContainer.innerHTML =
+        '<div class="empty">Nessun film disponibile.</div>';
+
+    } else {
+
+      // L'ultimo film presente in Films
+      // è automaticamente il film della settimana.
+      const film =
+        D.films[D.films.length - 1];
+
+      weeklyFilmContainer.innerHTML = `
+
+        ${
+          film.poster
+            ? `
+              <div
+  class="weekly-film-poster-wrap"
+  onclick="openFilmModal('${film.id}')"
+>
+  <img
+    src="${esc(film.poster)}"
+    class="weekly-film-poster"
+    alt="${esc(film.title)}"
+    loading="lazy"
+    decoding="async"
+    onerror="this.style.display='none';"
+  >
+</div>
+            `
+            : `
+              <div
+                class="weekly-film-poster"
+                style="
+                  display:flex;
+                  align-items:center;
+                  justify-content:center;
+                  color:#6f7685;
+                  text-align:center;
+                  padding:12px;
+                "
+              >
+                Nessun poster
+              </div>
+            `
+        }
+
+        <div class="weekly-film-info">
+
+          <div class="weekly-film-title">
+            ${esc(film.title)}
+          </div>
+
+          ${
+            film.year
+              ? `
+                <div class="weekly-film-year">
+                  ${esc(film.year)}
+                </div>
+              `
+              : ''
+          }
+
+          <div class="weekly-film-details">
+
+            ${
+              film.regista
+                ? `
+                  <div class="weekly-film-detail">
+                    Regia: ${esc(film.regista)}
+                  </div>
+                `
+                : ''
+            }
+
+            ${
+              film.genere
+                ? `
+                  <div class="weekly-film-detail">
+                    ${esc(film.genere)}
+                  </div>
+                `
+                : ''
+            }
+
+          </div>
+
+          ${
+            film.sinossi
+              ? `
+                <div class="weekly-film-synopsis">
+                  ${esc(film.sinossi)}
+                </div>
+              `
+              : ''
+          }
+
+          ${
+            film.dataDiscussione
+              ? `
+                <div class="weekly-film-date">
+                  Discussione:
+                  <strong>
+                    ${esc(film.dataDiscussione)}
+                  </strong>
+                </div>
+              `
+              : ''
+          }
+
+        </div>
+
+      `;
+    }
+  }
+
+
+  /* =========================
+     MEMBRI
+     ========================= */
+
+  const membersContainer =
+    document.getElementById("members");
+
+
+  if (!membersCount) {
+
+    membersContainer.innerHTML =
+      '<div class="empty">Nessun membro.</div>';
+
+  } else {
+
+    const rankedMembers =
+      D.members.map(function(member) {
+
+        const watchedCount =
+          D.films.filter(function(film) {
+            return D.watched[
+              member.id + "|" + film.id
+            ];
+          }).length;
+
+        const percentage =
+          filmsCount
+            ? (watchedCount / filmsCount) * 100
+            : 0;
+
+        return {
+          member: member,
+          watchedCount: watchedCount,
+          percentage: percentage
+        };
+
+      });
+
+
+    rankedMembers.sort(function(a, b) {
+      return b.percentage - a.percentage;
+    });
+
+
+    membersContainer.innerHTML =
+      rankedMembers.map(function(item) {
+
+        const member = item.member;
+        const watchedCount = item.watchedCount;
+        const percentage = item.percentage;
+
+
+        return `
+          <div class="member">
+
+            <div class="row">
+
+              <div>
+
+                <div class="name">
+                  ${esc(member.name)}
+                </div>
+
+                <div class="stats">
+                  ${watchedCount} visti ·
+                  ${filmsCount - watchedCount} mancanti
+                </div>
+
+              </div>
+
+              <div class="pct">
+                ${percentage.toFixed(1)}%
+              </div>
+
+            </div>
+
+
+            <div class="bar">
+
+              <div
+                class="fill"
+                style="width:${percentage}%">
+              </div>
+
+            </div>
+
+          </div>
+        `;
+
+      }).join("");
+  }
+
+
+  /* =========================
+     LISTA MEMBRI
+     ========================= */
+
+  const memberList =
+    document.getElementById("memberList");
+
+
+  if (!membersCount) {
+
+    memberList.innerHTML =
+      '<div class="empty">Nessun membro.</div>';
+
+  } else {
+
+    memberList.innerHTML =
+      D.members.map(function(member) {
+
+        return `
+          <div class="item">
+
+            <span>
+              ${esc(member.name)}
+            </span>
+
+            <div style="
+              display:flex;
+              align-items:center;
+              gap:6px;
+              flex-wrap:wrap;
+              justify-content:flex-end;
+            ">
+
+              <input
+                id="sigla-${member.id}"
+                value="${esc(member.sigla || '')}"
+                maxlength="2"
+                placeholder="${esc(
+                  member.name[0].toUpperCase()
+                )}"
+                style="
+                  width:50px;
+                  text-align:center;
+                  padding:7px 5px;
+                "
+                title="Sigla">
+
+              <button
+                class="btn"
+                onclick="saveSigla('${member.id}')">
+                salva
+              </button>
+
+              <input
+                id="pin-${member.id}"
+                type="password"
+                inputmode="numeric"
+                maxlength="4"
+                placeholder="PIN"
+                style="
+                  width:65px;
+                  text-align:center;
+                  padding:7px 5px;
+                "
+                title="PIN a 4 cifre">
+
+              <button
+                class="btn"
+                onclick="savePin('${member.id}')">
+                salva PIN
+              </button>
+
+              <button
+                class="danger"
+                onclick="rmM('${member.id}')">
+                rimuovi
+              </button>
+
+            </div>
+
+          </div>
+        `;
+
+      }).join("");
+  }
+
+
+  /* =========================
+     FILM
+     ========================= */
+
+  const filmsContainer =
+    document.getElementById("films");
+
+
+  if (!filmsCount) {
+
+    filmsContainer.innerHTML =
+      '<div class="empty">Nessun film.</div>';
+
+  } else {
+
+    filmsContainer.innerHTML =
+      D.films.map(function(film) {
+
+        const buttons =
+          D.members.map(function(member) {
+
+            const key =
+              member.id + "|" + film.id;
+
+            const isWatched =
+              D.watched[key];
+
+            const isMe =
+              session &&
+              session.memberId === member.id;
+
+
+            /* =========================
+               LA TUA SIGLA
+               ========================= */
+
+            if (isMe) {
+
+              return `
+                <button
+                  class="check ${isWatched ? "on" : ""}"
+                  title="Segna come ${isWatched ? "non visto" : "visto"}"
+                  onclick="toggleMyFilm('${film.id}')">
+
+                  ${esc(
+                    member.sigla ||
+                    (member.name || "?")[0].toUpperCase()
+                  )}
+
+                </button>
+              `;
+
+            }
+
+
+            /* =========================
+   SIGLE DEGLI ALTRI
+   ========================= */
+
+if (adminSession) {
+
+  return `
+    <button
+      class="check ${isWatched ? "on" : ""}"
+      title="${esc(member.name)} — clicca per modificare"
+      onclick="toggleAdminFilm('${member.id}', '${film.id}')">
+
+      ${esc(
+        member.sigla ||
+        (member.name || "?")[0].toUpperCase()
+      )}
+
+    </button>
+  `;
+
+}
+
+/* Per i membri normali: solo informazione */
+
+return `
+  <button
+    class="check ${isWatched ? "on" : ""}"
+    title="${esc(member.name)}"
+    disabled
+    style="cursor:default;opacity:.75;">
+
+    ${esc(
+      member.sigla ||
+      (member.name || "?")[0].toUpperCase()
+    )}
+
+  </button>
+`;
+
+          }).join("");
+
+
+        return `
+  <div class="film">
+
+    <div class="film-info">
+
+  ${
+    film.poster
+      ? `
+        <img
+          src="${esc(film.poster)}"
+          class="film-poster"
+          loading="lazy"
+          decoding="async"
+          alt="${esc(film.title)}"
+          onclick="openFilmModal('${film.id}')"
+          onerror="this.style.display='none';"
+        >
+      `
+      : ''
+  }
+
+  <div>
+    <div class="title">
+      ${esc(film.title)}
+    </div>
+
+    <div class="meta">
+      ${esc(film.year)}
+    </div>
+  </div>
+
+</div>
+
+    <div class="checks">
+      ${buttons}
+    </div>
+
+  </div>
+`;
+
+      }).join("");
+  }
+  if (adminSession) {
+  renderAdminFilms();
+}
+}
+
+
+/* =========================
+   AGGIUNGI MEMBRO
+   ========================= */
+
+async function addM() {
+
+  const input =
+    document.getElementById("mn");
+
+  const name =
+    input.value.trim();
+
+  if (!name) {
+    alert("Inserisci un nome.");
+    return;
+  }
+
+  if (!adminSession) {
+    showLogin();
+    return;
+  }
+
+  setSaving(true);
+
+  try {
+
+    const member =
+      await api(
+        'addMember',
+        [
+          name,
+          adminSession.token
+        ]
+      );
+
+    D.members.push(member);
+
+    input.value = "";
+
+    render();
+
+  } catch (error) {
+
+    alert(
+      "Errore: " +
+      error.message
+    );
+
+  } finally {
+
+    setSaving(false);
+  }
+}
+
+
+/* =========================
+   AGGIUNGI FILM
+   ========================= */
+
+async function addF() {
+
+  const titleInput =
+    document.getElementById("ft");
+
+  const yearInput =
+    document.getElementById("fy");
+
+  const registaInput =
+    document.getElementById("fr");
+
+  const genereInput =
+    document.getElementById("fg");
+
+  const dataDiscussioneInput =
+    document.getElementById("fd");
+
+  const sinossiInput =
+    document.getElementById("fs");
+
+  const title =
+    titleInput.value.trim();
+
+  const year =
+    yearInput.value.trim();
+
+  const regista =
+    registaInput.value.trim();
+
+  const genere =
+    genereInput.value.trim();
+
+  const dataDiscussione =
+    dataDiscussioneInput.value.trim();
+
+  const sinossi =
+    sinossiInput.value.trim();
+
+  if (!title) {
+    alert("Inserisci un titolo.");
+    return;
+  }
+
+  if (!adminSession) {
+    showLogin();
+    return;
+  }
+
+  setSaving(true);
+
+  try {
+
+    const film =
+      await api(
+        'addFilm',
+        [
+          title,
+          year,
+          sinossi,
+          regista,
+          genere,
+          dataDiscussione,
+          adminSession.token
+        ]
+      );
+
+    D.films.push(film);
+
+    titleInput.value = "";
+    yearInput.value = "";
+    registaInput.value = "";
+    genereInput.value = "";
+    dataDiscussioneInput.value = "";
+    sinossiInput.value = "";
+
+    render();
+
+  } catch (error) {
+
+    alert(
+      "Errore: " +
+      error.message
+    );
+
+  } finally {
+
+    setSaving(false);
+  }
+}
+
+
+/* =========================
+   FILM — ADMIN
+   ========================= */
+
+function renderAdminFilms() {
+
+  const box =
+    document.getElementById("filmAdminList");
+
+  if (!box) {
+    return;
+  }
+
+  if (!D || !D.films) {
+    box.innerHTML = "";
+    return;
+  }
+
+  if (!D.films.length) {
+    box.innerHTML =
+      '<div class="empty">Nessun film.</div>';
+
+    return;
+  }
+
+  box.innerHTML = D.films.map(function(film) {
+
+    return `
+      <div
+        class="item"
+        id="admin-film-${film.id}"
+      >
+
+        <div
+          style="
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:12px;
+          "
+        >
+
+          <div
+            style="
+              flex:1;
+              min-width:0;
+            "
+          >
+
+            <div
+              style="
+                font-weight:700;
+                margin-bottom:3px;
+              "
+            >
+              ${esc(film.title)}
+            </div>
+
+            <div class="muted">
+              ${esc(film.year || "")}
+            </div>
+
+          </div>
+
+          <div
+            style="
+              display:flex;
+              gap:6px;
+              flex-shrink:0;
+            "
+          >
+
+            <button
+              class="btn"
+              onclick="editAdminFilm('${film.id}')"
+            >
+              Modifica
+            </button>
+
+            <button
+              class="btn"
+              onclick="deleteAdminFilm('${film.id}')"
+            >
+              Elimina
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+    `;
+
+  }).join("");
+}
+
+
+/* =========================
+   MODIFICA FILM — ADMIN
+   ========================= */
+
+function editAdminFilm(filmId) {
+
+  if (!adminSession) {
+    showLogin();
+    return;
+  }
+
+  const film =
+    D.films.find(function(f) {
+      return String(f.id) === String(filmId);
+    });
+
+  if (!film) {
+    alert("Film non trovato.");
+    return;
+  }
+
+  const box =
+    document.getElementById(
+      "admin-film-" + filmId
+    );
+
+  if (!box) {
+    return;
+  }
+
+  box.innerHTML = `
+    <div
+      class="film-admin-edit"
+      style="
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+      "
+    >
+
+      <input
+        id="edit-film-title-${filmId}"
+        value="${esc(film.title || "")}"
+        placeholder="Titolo"
+      >
+
+      <input
+        id="edit-film-year-${filmId}"
+        value="${esc(film.year || "")}"
+        placeholder="Anno"
+      >
+
+      <input
+        id="edit-film-regista-${filmId}"
+        value="${esc(film.regista || "")}"
+        placeholder="Regista"
+      >
+
+      <input
+        id="edit-film-genere-${filmId}"
+        value="${esc(film.genere || "")}"
+        placeholder="Genere"
+      >
+
+      <input
+        id="edit-film-data-${filmId}"
+        value="${esc(film.dataDiscussione || "")}"
+        placeholder="Data discussione"
+      >
+
+      <textarea
+        id="edit-film-sinossi-${filmId}"
+        placeholder="Sinossi"
+        style="
+          grid-column:1 / -1;
+          min-height:90px;
+          resize:vertical;
+        "
+      >${esc(film.sinossi || "")}</textarea>
+
+      <div
+        style="
+          grid-column:1 / -1;
+          display:flex;
+          gap:6px;
+        "
+      >
+
+        <button
+          class="btn primary"
+          onclick="saveAdminFilm('${filmId}')"
+        >
+          Salva
+        </button>
+
+        <button
+          class="btn"
+          onclick="renderAdminFilms()"
+        >
+          Annulla
+        </button>
+
+      </div>
+
+    </div>
+  `;
+}
+
+
+/* =========================
+   SALVA MODIFICA FILM
+   ========================= */
+
+async function saveAdminFilm(filmId) {
+
+  if (!adminSession) {
+    showLogin();
+    return;
+  }
+
+  const title =
+    document.getElementById(
+      "edit-film-title-" + filmId
+    ).value.trim();
+
+  const year =
+    document.getElementById(
+      "edit-film-year-" + filmId
+    ).value.trim();
+
+  const regista =
+    document.getElementById(
+      "edit-film-regista-" + filmId
+    ).value.trim();
+
+  const genere =
+    document.getElementById(
+      "edit-film-genere-" + filmId
+    ).value.trim();
+
+  const dataDiscussione =
+    document.getElementById(
+      "edit-film-data-" + filmId
+    ).value.trim();
+
+  const sinossi =
+    document.getElementById(
+      "edit-film-sinossi-" + filmId
+    ).value.trim();
+
+  if (!title) {
+    alert("Inserisci il titolo del film.");
+    return;
+  }
+
+  setSaving(true);
+
+  try {
+
+    const updatedFilm =
+      await api(
+        'updateFilm',
+        [
+          filmId,
+          title,
+          year,
+          sinossi,
+          regista,
+          genere,
+          dataDiscussione,
+          adminSession.token
+        ]
+      );
+
+    const index =
+      D.films.findIndex(function(film) {
+        return String(film.id) === String(filmId);
+      });
+
+    if (index !== -1) {
+      D.films[index] = updatedFilm;
+    }
+
+    renderAdminFilms();
+    render();
+
+  } catch (error) {
+
+    alert(
+      "Errore durante la modifica: " +
+      error.message
+    );
+
+  } finally {
+
+    setSaving(false);
+  }
+}
+
+/* =========================
+   ELIMINA FILM — ADMIN
+   ========================= */
+
+async function deleteAdminFilm(filmId) {
+
+  if (!adminSession) {
+    showLogin();
+    return;
+  }
+
+  const film =
+    D.films.find(function(f) {
+      return String(f.id) === String(filmId);
+    });
+
+  if (!film) {
+    alert("Film non trovato.");
+    return;
+  }
+
+  const confirmed =
+    confirm(
+      'Vuoi eliminare "' +
+      film.title +
+      '"?\n\n' +
+      'Verranno eliminati anche i dati relativi alla visione di questo film.'
+    );
+
+  if (!confirmed) {
+    return;
+  }
+
+  setSaving(true);
+
+  try {
+
+    const deletedId =
+      await api(
+        'removeFilm',
+        [
+          filmId,
+          adminSession.token
+        ]
+      );
+
+    D.films =
+      D.films.filter(function(f) {
+        return String(f.id) !== String(deletedId);
+      });
+
+    renderAdminFilms();
+    render();
+
+  } catch (error) {
+
+    alert(
+      "Errore durante l'eliminazione: " +
+      error.message
+    );
+
+  } finally {
+
+    setSaving(false);
+  }
+}
+
+/* =========================
+   SALVA PIN
+   ========================= */
+
+async function savePin(id) {
+
+  const input =
+    document.getElementById("pin-" + id);
+
+  const pin =
+    input.value.trim();
+
+  if (!/^\d{4}$/.test(pin)) {
+    alert(
+      "Il PIN deve essere formato da 4 cifre."
+    );
+    return;
+  }
+
+  if (!adminSession) {
+    showLogin();
+    return;
+  }
+
+  setSaving(true);
+
+  try {
+
+    await api(
+      'setMemberPin',
+      [
+        id,
+        pin,
+        adminSession.token
+      ]
+    );
+
+    input.value = "";
+
+    alert("PIN salvato.");
+
+  } catch (error) {
+
+    alert(
+      "Errore: " +
+      error.message
+    );
+
+  } finally {
+
+    setSaving(false);
+  }
+}
+
+/* =========================
+   SALVA SIGLA
+   ========================= */
+
+async function saveSigla(id) {
+
+  const input =
+    document.getElementById(
+      "sigla-" + id
+    );
+
+  const sigla =
+    input.value
+      .trim()
+      .toUpperCase()
+      .substring(0, 2);
+
+  if (!adminSession) {
+    showLogin();
+    return;
+  }
+
+  setSaving(true);
+
+  try {
+
+    const result =
+      await api(
+        'updateMemberSigla',
+        [
+          id,
+          sigla,
+          adminSession.token
+        ]
+      );
+
+    const member =
+      D.members.find(function(member) {
+        return member.id === result.id;
+      });
+
+    if (member) {
+      member.sigla = result.sigla;
+    }
+
+    render();
+
+  } catch (error) {
+
+    alert(
+      "Errore: " +
+      error.message
+    );
+
+  } finally {
+
+    setSaving(false);
+  }
+}
+
+
+async function toggleMyFilm(filmId) {
+
+  if (!session) {
+    showLogin();
+    return;
+  }
+
+  const token =
+    sessionStorage.getItem(
+      "mootboxd_token"
+    );
+
+  if (!token) {
+    showLogin();
+    return;
+  }
+
+  setSaving(true);
+
+  try {
+
+    const result =
+      await api(
+        'toggleMyWatched',
+        [
+          filmId,
+          token
+        ]
+      );
+
+    D.watched[
+      result.memberId +
+      "|" +
+      result.filmId
+    ] = result.watched;
+
+    render();
+
+  } catch (error) {
+
+    alert(
+      "Errore: " +
+      error.message
+    );
+
+  } finally {
+
+    setSaving(false);
+  }
+}
+
+async function toggleAdminFilm(memberId, filmId) {
+
+  if (!adminSession) {
+    showLogin();
+    return;
+  }
+
+  setSaving(true);
+
+  try {
+
+    const result =
+      await api(
+        'toggleWatchedAsAdmin',
+        [
+          memberId,
+          filmId,
+          adminSession.token
+        ]
+      );
+
+    D.watched[
+      result.memberId +
+      "|" +
+      result.filmId
+    ] = result.watched;
+
+    render();
+
+  } catch (error) {
+
+    alert(
+      "Errore: " +
+      error.message
+    );
+
+  } finally {
+
+    setSaving(false);
+  }
+}
+
+/* =========================
+   RIMUOVI MEMBRO
+   ========================= */
+
+async function rmM(id) {
+
+  if (!adminSession) {
+    showLogin();
+    return;
+  }
+
+  if (!confirm("Rimuovere questo membro?")) {
+    return;
+  }
+
+  setSaving(true);
+
+  try {
+
+    const removedId =
+      await api(
+        'removeMember',
+        [
+          id,
+          adminSession.token
+        ]
+      );
+
+    D.members =
+      D.members.filter(function(member) {
+        return member.id !== removedId;
+      });
+
+    Object.keys(D.watched).forEach(function(key) {
+
+      if (
+        key.indexOf(
+          removedId + "|"
+        ) === 0
+      ) {
+        delete D.watched[key];
+      }
+
+    });
+
+    render();
+
+  } catch (error) {
+
+    alert(
+      "Errore: " +
+      error.message
+    );
+
+  } finally {
+
+    setSaving(false);
+  }
+}
+
+/* =========================
+   TOGGLE FILM
+   ========================= */
+
+async function tog(memberId, filmId) {
+
+  const key =
+    memberId + "|" + filmId;
+
+  const previous =
+    !!D.watched[key];
+
+  D.watched[key] =
+    !previous;
+
+  render();
+
+  try {
+
+    const result =
+      await api(
+        'toggleMyWatched',
+        [
+          filmId,
+          sessionStorage.getItem(
+            "mootboxd_token"
+          )
+        ]
+      );
+
+    D.watched[
+      result.memberId +
+      "|" +
+      result.filmId
+    ] = result.watched;
+
+    render();
+
+  } catch (error) {
+
+    if (previous) {
+      D.watched[key] = true;
+    } else {
+      delete D.watched[key];
+    }
+
+    render();
+
+    alert(
+      "Errore: " +
+      error.message
+    );
+  }
+}
+
+
+/* =========================
+   INDICATORE SALVATAGGIO
+   ========================= */
+
+function setSaving(value) {
+
+  saving = value;
+
+  const buttons =
+    document.querySelectorAll(".btn.primary");
+
+  buttons.forEach(function(button) {
+    button.disabled = value;
+  });
+}
+
+
+/* =========================
+   ESCAPE HTML
+   ========================= */
+
+function esc(value) {
+
+  return String(value || "").replace(
+    /[&<>"']/g,
+    function(character) {
+
+      const replacements = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      };
+
+      return replacements[character];
+    }
+  );
+}
+
+
+checkSession();
+
+function openFilmModal(filmId) {
+
+  const film = D.films.find(function(f) {
+    return String(f.id) === String(filmId);
+  });
+
+  if (!film) return;
+
+  const modal =
+    document.getElementById("filmModal");
+
+  const poster =
+    document.getElementById("filmModalPoster");
+
+  const title =
+    document.getElementById("filmModalTitle");
+
+  const year =
+    document.getElementById("filmModalYear");
+
+  const details =
+    document.getElementById("filmModalDetails");
+
+  const synopsis =
+    document.getElementById("filmModalSynopsis");
+
+  const discussion =
+    document.getElementById("filmModalDiscussion");
+
+  const status =
+    document.getElementById("filmModalStatus");
+
+  const action =
+    document.getElementById("filmModalAction");
+
+
+  /* =========================
+     DATI PRINCIPALI
+     ========================= */
+
+  title.textContent =
+    film.title || "";
+
+  year.textContent =
+    film.year || "";
+
+
+  /* =========================
+     POSTER
+     ========================= */
+
+  if (film.poster) {
+
+    poster.src =
+      film.poster;
+
+    poster.alt =
+      film.title;
+
+    poster.style.display =
+      "block";
+
+  } else {
+
+    poster.style.display =
+      "none";
+
+  }
+
+
+  /* =========================
+     REGISTA + GENERE
+     ========================= */
+
+  let detailsHtml = "";
+
+  if (film.regista) {
+
+    detailsHtml += `
+      <div class="film-modal-detail">
+        <span class="film-modal-detail-label">
+          Regia
+        </span>
+
+        <span>
+          ${esc(film.regista)}
+        </span>
+      </div>
+    `;
+
+  }
+
+  if (film.genere) {
+
+    detailsHtml += `
+      <div class="film-modal-detail">
+        <span class="film-modal-detail-label">
+          Genere
+        </span>
+
+        <span>
+          ${esc(film.genere)}
+        </span>
+      </div>
+    `;
+
+  }
+
+  details.innerHTML =
+    detailsHtml;
+
+
+  /* =========================
+     SINOSSI
+     ========================= */
+
+  if (film.sinossi) {
+
+    synopsis.innerHTML = `
+      <div class="film-modal-section-label">
+        Sinossi
+      </div>
+
+      <div class="film-modal-synopsis-text">
+        ${esc(film.sinossi)}
+      </div>
+    `;
+
+    synopsis.style.display =
+      "block";
+
+  } else {
+
+    synopsis.innerHTML = "";
+
+    synopsis.style.display =
+      "none";
+
+  }
+
+
+  /* =========================
+     DATA DISCUSSIONE
+     ========================= */
+
+  if (film.dataDiscussione) {
+
+    discussion.innerHTML = `
+      <div class="film-modal-discussion-label">
+        Discussione
+      </div>
+
+      <div class="film-modal-discussion-date">
+        ${esc(film.dataDiscussione)}
+      </div>
+    `;
+
+    discussion.style.display =
+      "block";
+
+  } else {
+
+    discussion.innerHTML = "";
+
+    discussion.style.display =
+      "none";
+
+  }
+
+
+  /* =========================
+     STATO PERSONALE
+     ========================= */
+
+  action.innerHTML = "";
+
+  if (!session) {
+
+    status.textContent =
+      "Accedi per vedere il tuo stato.";
+
+    modal.classList.add("open");
+
+    return;
+
+  }
+
+
+  const key =
+    session.memberId + "|" + film.id;
+
+  const watched =
+    !!D.watched[key];
+
+
+  status.textContent =
+    watched
+      ? "Hai già visto questo film."
+      : "Devi ancora vedere questo film.";
+
+
+  action.innerHTML = `
+    <button
+      class="btn primary"
+      onclick="toggleFilmFromModal('${film.id}')">
+
+      ${watched
+        ? "Segna come non visto"
+        : "Segna come visto"}
+
+    </button>
+  `;
+
+
+  modal.classList.add("open");
+}
+
+function closeFilmModal(event) {
+
+  if (
+    event &&
+    event.target &&
+    event.target.id !== "filmModal"
+  ) {
+    return;
+  }
+
+  document
+    .getElementById("filmModal")
+    .classList.remove("open");
+}
+
+function openFilmRatings(filmId) {
+
+  const film =
+    (D.films || []).find(function(f) {
+      return String(f.id) === String(filmId);
+    });
+
+  if (!film) return;
+
+
+  /* =========================
+     VOTI
+     ========================= */
+
+  const voti =
+    film.voti || {};
+
+  const names =
+    Object.keys(voti);
+
+  names.sort(function(a, b) {
+
+    const votoA =
+      parseFloat(
+        String(voti[a])
+          .replace(',', '.')
+          .trim()
+      );
+
+    const votoB =
+      parseFloat(
+        String(voti[b])
+          .replace(',', '.')
+          .trim()
+      );
+
+    return votoB - votoA;
+
+  });
+
+
+  /* =========================
+     HTML
+     ========================= */
+
+  const ratingsHtml =
+    names.length
+      ? names.map(function(name) {
+
+          const voto =
+            Number(voti[name]).toLocaleString('it-IT', {
+              minimumFractionDigits: 1,
+              maximumFractionDigits: 1
+            });
+
+          return `
+            <div class="film-rating-row">
+
+              <div class="film-rating-name">
+                ${esc(name)}
+              </div>
+
+              <div class="film-rating-value">
+                ${voto}
+              </div>
+
+            </div>
+          `;
+
+        }).join('')
+
+      : `
+          <div class="film-rating-empty">
+            Nessun voto disponibile.
+          </div>
+        `;
+
+
+  /* =========================
+     MODAL SEPARATO
+     ========================= */
+
+  const modal =
+    document.getElementById('filmRatingsModal');
+
+  const title =
+    document.getElementById('filmRatingsModalTitle');
+
+  const year =
+    document.getElementById('filmRatingsModalYear');
+
+  const average =
+    document.getElementById('filmRatingsModalAverage');
+
+  const list =
+    document.getElementById('filmRatingsModalList');
+
+
+  if (!modal || !title || !year || !average || !list) {
+    return;
+  }
+
+
+  title.textContent =
+    film.title || '';
+
+  year.textContent =
+    film.year || '';
+
+
+  if (
+    film.media !== '' &&
+    film.media != null &&
+    !isNaN(Number(film.media))
+  ) {
+
+    average.textContent =
+      '★ ' +
+      Number(film.media).toLocaleString('it-IT', {
+        minimumFractionDigits: 1,
+        maximumFractionDigits: 1
+      });
+
+  } else {
+
+    average.textContent =
+      'Nessuna media';
+
+  }
+
+
+  list.innerHTML =
+    ratingsHtml;
+
+
+  modal.classList.add('open');
+
+}
+
+function closeFilmRatingsModal(event) {
+
+  if (
+    event &&
+    event.target &&
+    event.target.id !== "filmRatingsModal"
+  ) {
+    return;
+  }
+
+  document
+    .getElementById("filmRatingsModal")
+    .classList.remove("open");
+}
+
+document.addEventListener("keydown", function(event) {
+
+  if (event.key === "Escape") {
+    document
+      .getElementById("filmModal")
+      .classList.remove("open");
+  }
+
+});
+
+</script>
+<div id="filmModal" class="film-modal" onclick="closeFilmModal(event)">
+
+  <div class="film-modal-box">
+
+    <button
+      class="film-modal-close"
+      onclick="closeFilmModal()">
+      ×
+    </button>
+
+    <div class="film-modal-content">
+
+      <img
+        id="filmModalPoster"
+        class="film-modal-poster"
+        src=""
+        alt="">
+
+      <div class="film-modal-info">
+
+        <div
+          id="filmModalTitle"
+          class="film-modal-title">
+        </div>
+
+        <div
+          id="filmModalYear"
+          class="film-modal-year">
+        </div>
+
+        <div
+          id="filmModalDetails"
+          class="film-modal-details">
+        </div>
+
+        <div
+          id="filmModalSynopsis"
+          class="film-modal-synopsis">
+        </div>
+
+        <div
+          id="filmModalDiscussion"
+          class="film-modal-discussion">
+        </div>
+
+        <div
+          id="filmRatingsBox"
+          class="film-ratings-box"
+          style="display:none;">
+          </div>
+
+        <div class="film-modal-status">
+
+          <div class="film-modal-status-label">
+            Il tuo stato
+          </div>
+
+          <div
+            id="filmModalStatus"
+            class="film-modal-status-value">
+          </div>
+
+        </div>
+
+        <div
+          id="filmModalAction"
+          class="film-modal-action">
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<div
+  id="filmRatingsModal"
+  class="film-modal"
+  onclick="closeFilmRatingsModal(event)"
+>
+  <div class="film-ratings-modal-box">
+
+    <button
+      class="film-modal-close"
+      onclick="closeFilmRatingsModal()"
+      aria-label="Chiudi"
+    >
+      ×
+    </button>
+
+    <div class="film-ratings-modal-content">
+
+      <div
+        id="filmRatingsModalTitle"
+        class="film-ratings-modal-title"
+      ></div>
+
+      <div
+        id="filmRatingsModalYear"
+        class="film-ratings-modal-year"
+      ></div>
+
+      <div class="film-ratings-modal-average">
+        <span id="filmRatingsModalAverage"></span>
+      </div>
+
+      <div
+        id="filmRatingsModalList"
+        class="film-ratings-modal-list"
+      ></div>
+
+    </div>
+
+  </div>
+</div>
 </body>
-
 </html>
