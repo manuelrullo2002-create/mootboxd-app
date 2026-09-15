@@ -6,11 +6,10 @@
 
   <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-
->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+  >
 
   <title>MOOTBOXD</title>
 
@@ -39,37 +38,32 @@ content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
 
   <!-- iPhone / iPad -->
 
-<meta
-name="apple-mobile-web-app-capable"
-content="yes"
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
 
->
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+  >
 
-<meta
-name="apple-mobile-web-app-status-bar-style"
-content="black-translucent"
-
->
-
-<meta
-name="apple-mobile-web-app-title"
-content="MOOTBOXD"
-
->
+  <meta
+    name="apple-mobile-web-app-title"
+    content="MOOTBOXD"
+  >
 
   <!-- Android / browser -->
 
-<meta
-name="mobile-web-app-capable"
-content="yes"
+  <meta
+    name="mobile-web-app-capable"
+    content="yes"
+  >
 
->
-
-<meta
-name="theme-color"
-content="#0f1117"
-
->
+  <meta
+    name="theme-color"
+    content="#0f1117"
+  >
 
   <style>
 
@@ -125,19 +119,19 @@ content="#0f1117"
 
   <div class="screen">
 
-<img
-  class="logo"
-  src="./icons/mootboxd-icon.png.png"
-  alt="MOOTBOXD"
->
+    <img
+      class="logo"
+      src="./icons/mootboxd-icon.png.png"
+      alt="MOOTBOXD"
+    >
 
-<div class="title">
-  MOOTBOXD
-</div>
+    <div class="title">
+      MOOTBOXD
+    </div>
 
-<div class="subtitle">
-  App del club
-</div>
+    <div class="subtitle">
+      App del club
+    </div>
 
   </div>
 
@@ -146,75 +140,19 @@ content="#0f1117"
     const mootboxdUrl =
       "https://script.google.com/macros/s/AKfycbyEDc9UdRs4ZkrckSS1JSMAbIiG-FBEaIWd1e1qHUtGegM8yfduqPgLc_aaTLO_0g/exec";
 
-    const proxyUrl =
-  "https://mootboxd-api.manuelrullo2002.workers.dev/";
-
     const isStandalone =
       window.navigator.standalone === true ||
-      window.matchMedia("(display-mode: standalone)").matches;
+      window.matchMedia(
+        "(display-mode: standalone)"
+      ).matches;
 
-    async function testMootboxdApi() {
+    if (isStandalone) {
 
-  try {
+      window.location.replace(
+        mootboxdUrl
+      );
 
-    const response = await fetch(mootboxdUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'text/plain;charset=utf-8'
-      },
-      body: JSON.stringify({
-        action: 'getMembersForLogin',
-        args: []
-      })
-    });
-
-    const text = await response.text();
-
-    console.log('MOOTBOXD API RESPONSE:', text);
-
-  } catch (error) {
-
-    console.error(
-      'MOOTBOXD API ERROR:',
-      error
-    );
-
-  }
-}
-
-async function testMootboxdApi() {
-
-  try {
-
-    const response = await fetch(proxyUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'text/plain;charset=utf-8'
-      },
-      body: JSON.stringify({
-        action: 'getMembersForLogin',
-        args: []
-      })
-    });
-
-    const text = await response.text();
-
-    console.log(
-      'MOOTBOXD PROXY RESPONSE:',
-      text
-    );
-
-  } catch (error) {
-
-    console.error(
-      'MOOTBOXD PROXY ERROR:',
-      error
-    );
-
-  }
-}
-
-testMootboxdApi();
+    }
 
   </script>
 
