@@ -3423,17 +3423,25 @@ async function logout() {
     }
   }
 
+  /* =========================
+     PULIZIA SESSIONE
+     ========================= */
+
   sessionStorage.removeItem(
     "mootboxd_token"
   );
 
   session = null;
 
-document.getElementById(
-  "adminPanel"
-).style.display = "none";
+  document.getElementById(
+    "adminPanel"
+  ).style.display = "none";
 
-await showLogin();
+  /* =========================
+     TORNA AL LOGIN
+     ========================= */
+
+  showLogin();
 }
 
 
