@@ -150,6 +150,37 @@ content="#0f1117"
       window.navigator.standalone === true ||
       window.matchMedia("(display-mode: standalone)").matches;
 
+    async function testMootboxdApi() {
+
+  try {
+
+    const response = await fetch(mootboxdUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8'
+      },
+      body: JSON.stringify({
+        action: 'getMembersForLogin',
+        args: []
+      })
+    });
+
+    const text = await response.text();
+
+    console.log('MOOTBOXD API RESPONSE:', text);
+
+  } catch (error) {
+
+    console.error(
+      'MOOTBOXD API ERROR:',
+      error
+    );
+
+  }
+}
+
+testMootboxdApi();
+
     if (isStandalone) {
       window.location.replace(mootboxdUrl);
     }
