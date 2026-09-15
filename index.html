@@ -2670,7 +2670,7 @@ body {
 
     <button
       class="main-nav-item"
-      onclick="logout()"
+      onclick="()"
     >
       Esci
     </button>
@@ -3013,8 +3013,34 @@ async function showLogin() {
   const select =
     document.getElementById("loginMember");
 
+  const pin =
+    document.getElementById("loginPin");
+
+  const errorBox =
+    document.getElementById("loginError");
+
+  /*
+   * Mostra la schermata di login.
+   */
   loginScreen.style.display = "flex";
 
+  /*
+   * Reset dello stato del login.
+   */
+  if (pin) {
+    pin.value = "";
+  }
+
+  if (errorBox) {
+    errorBox.textContent = "";
+    errorBox.style.display = "none";
+  }
+
+  /*
+   * Se abbiamo già i membri caricati,
+   * ricostruiamo comunque il selettore
+   * e lo abilitiamo esplicitamente.
+   */
   if (D && D.members && D.members.length) {
 
     select.innerHTML =
@@ -3029,9 +3055,15 @@ async function showLogin() {
 
       }).join("");
 
+    select.disabled = false;
+
     return;
   }
 
+  /*
+   * Se i membri non sono ancora disponibili,
+   * li recuperiamo dal server.
+   */
   select.innerHTML =
     '<option value="">Caricamento nomi…</option>';
 
@@ -3040,7 +3072,10 @@ async function showLogin() {
   try {
 
     const members =
-      await api('getMembersForLogin', []);
+      await api(
+        'getMembersForLogin',
+        []
+      );
 
     if (!D) {
       D = {};
@@ -3073,10 +3108,8 @@ async function showLogin() {
       '<option value="">Errore nel caricamento</option>';
 
     select.disabled = false;
-
   }
 }
-
 async function login() {
 
   const memberId =
@@ -3396,13 +3429,11 @@ async function logout() {
 
   session = null;
 
-  document.getElementById(
-    "adminPanel"
-  ).style.display = "none";
+document.getElementById(
+  "adminPanel"
+).style.display = "none";
 
-  document.getElementById(
-    "loginScreen"
-  ).style.display = "flex";
+await showLogin();
 }
 
 
@@ -5270,6 +5301,20 @@ async function toggleMyFilm(filmId) {
 
     render();
 
+    /*
+     * Se il film è aperto nel modal,
+     * aggiorna immediatamente stato e pulsante.
+     */
+    const filmModal =
+      document.getElementById("filmModal");
+
+    if (
+      filmModal &&
+      filmModal.classList.contains("open")
+    ) {
+      openFilmModal(filmId);
+    }
+
   } catch (error) {
 
     alert(
@@ -5688,7 +5733,7 @@ function openFilmModal(filmId) {
   action.innerHTML = `
     <button
       class="btn primary"
-      onclick="toggleFilmFromModal('${film.id}')">
+      onclick="toggleMyFilm('${film.id}')">
 
       ${watched
         ? "Segna come non visto"
