@@ -1405,16 +1405,20 @@ body {
      MOBILE — PROGRESSO MEMBRI
      ===================================================== */
 
-  .dashboard-main-grid {
-    display: block !important;
-    width: 100% !important;
-  }
+.dashboard-main-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: 10px !important;
+  width: 100% !important;
+  align-items: stretch !important;
+}
 
-  .dashboard-main-grid > section {
-    width: 100% !important;
-    min-width: 0 !important;
-    margin-bottom: 14px !important;
-  }
+.dashboard-main-grid > section {
+  width: 100% !important;
+  min-width: 0 !important;
+  margin-bottom: 0 !important;
+  height: 100% !important;
+}
 
   .dashboard-main-grid .head h2 {
     font-size: 24px !important;
@@ -1580,11 +1584,11 @@ body {
     grid-template-columns:
       52px
       minmax(0, 1fr)
-      auto !important;
+      84px !important;
 
     grid-template-rows: auto !important;
 
-    column-gap: 9px !important;
+    column-gap: 12px !important;
 
     align-items: center !important;
 
