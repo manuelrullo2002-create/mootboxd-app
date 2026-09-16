@@ -34,7 +34,7 @@
   >
 
   <meta
-    name="apple-mobile-web-app-status-bar-style"
+    name="apple-mobile-web-app-status-bar-"
     content="black-translucent"
   >
 
@@ -2382,6 +2382,347 @@ html {
 body {
   overscroll-behavior-y: none !important;
 }
+
+  /* =========================================
+     MOOTBOXD — MOBILE FINALE
+     SOLO TELEFONO
+     ========================================= */
+
+  @media screen and (max-width: 600px) {
+
+    /* =====================================
+       1. PROGRESSO DEI MEMBRI
+       Più compatto verticalmente
+       ===================================== */
+
+    .dashboard-main-grid {
+      grid-template-columns: 1fr !important;
+      gap: 14px !important;
+    }
+
+    .dashboard-main-grid > section {
+      width: 100% !important;
+      min-width: 0 !important;
+    }
+
+    .dashboard-main-grid .member {
+      min-height: 0 !important;
+      padding: 13px 16px !important;
+    }
+
+    .dashboard-main-grid .member .row {
+      gap: 8px !important;
+    }
+
+    .dashboard-main-grid .member .name {
+      font-size: 17px !important;
+      line-height: 1.2 !important;
+    }
+
+    .dashboard-main-grid .member .stats {
+      font-size: 13px !important;
+      line-height: 1.25 !important;
+    }
+
+    .dashboard-main-grid .member .pct {
+      font-size: 20px !important;
+      line-height: 1 !important;
+    }
+
+    .dashboard-main-grid .member .bar {
+      height: 8px !important;
+      margin-top: 8px !important;
+    }
+
+
+    /* =====================================
+       2. FILM DELLA SETTIMANA
+       Poster + testo affiancati correttamente
+       ===================================== */
+
+    .weekly-film-panel {
+      width: 100% !important;
+      padding: 18px !important;
+      overflow: hidden !important;
+    }
+
+    .weekly-film {
+      display: grid !important;
+      grid-template-columns: 115px minmax(0, 1fr) !important;
+      gap: 14px !important;
+      width: 100% !important;
+      align-items: stretch !important;
+    }
+
+    /*
+       Override delle vecchie regole che impostavano
+       il poster a 145px o addirittura 300px.
+    */
+
+    .weekly-film-poster-wrap {
+      width: 115px !important;
+      min-width: 115px !important;
+      height: auto !important;
+      min-height: 0 !important;
+      align-self: stretch !important;
+      overflow: hidden !important;
+      border-radius: 8px !important;
+    }
+
+    .weekly-film-poster-wrap .weekly-film-poster {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 0 !important;
+      aspect-ratio: 2 / 3 !important;
+      object-fit: cover !important;
+      display: block !important;
+    }
+
+    /*
+       Se il poster non è dentro un wrapper,
+       questa regola gestisce direttamente l'immagine.
+    */
+
+    .weekly-film > .weekly-film-poster {
+      width: 115px !important;
+      height: auto !important;
+      aspect-ratio: 2 / 3 !important;
+      object-fit: cover !important;
+      align-self: start !important;
+    }
+
+    .weekly-film-info {
+      min-width: 0 !important;
+      width: 100% !important;
+      align-self: stretch !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    .weekly-film-title {
+      font-size: 22px !important;
+      line-height: 1.15 !important;
+      overflow-wrap: anywhere !important;
+    }
+
+    .weekly-film-year {
+      font-size: 14px !important;
+      line-height: 1.25 !important;
+      margin-top: 5px !important;
+    }
+
+    .weekly-film-details {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 6px !important;
+      margin-top: 11px !important;
+    }
+
+    .weekly-film-detail {
+      font-size: 12px !important;
+      line-height: 1.2 !important;
+      padding: 6px 8px !important;
+    }
+
+    .weekly-film-synopsis {
+      margin-top: 13px !important;
+      font-size: 14px !important;
+      line-height: 1.4 !important;
+    }
+
+    .weekly-film-date {
+      margin-top: auto !important;
+      padding-top: 10px !important;
+      font-size: 12px !important;
+      line-height: 1.3 !important;
+    }
+
+
+    /* =====================================
+       3. FILM DEL CLUB
+       Poster + titolo + sigle
+       senza sovrapposizioni
+       ===================================== */
+
+    .films {
+      width: 100% !important;
+      max-height: none !important;
+      height: auto !important;
+      overflow: visible !important;
+    }
+
+    #films {
+      width: 100% !important;
+      padding: 0 !important;
+    }
+
+    #films .film,
+    .films .film {
+      width: 100% !important;
+      display: grid !important;
+
+      /*
+         COLONNA 1 = poster
+         COLONNA 2 = titolo
+         COLONNA 3 = sigle
+      */
+
+      grid-template-columns:
+        58px
+        minmax(0, 1fr)
+        auto !important;
+
+      gap: 9px !important;
+
+      align-items: center !important;
+
+      padding: 12px 12px !important;
+      min-height: 82px !important;
+      margin: 0 !important;
+      margin-bottom: 6px !important;
+    }
+
+    .films .film-info {
+      display: contents !important;
+    }
+
+    .films .film-poster {
+      width: 58px !important;
+      height: 82px !important;
+      min-width: 58px !important;
+      max-width: 58px !important;
+      object-fit: cover !important;
+      border-radius: 7px !important;
+      grid-column: 1 !important;
+      grid-row: 1 !important;
+    }
+
+    .films .film-info > div:last-child {
+      min-width: 0 !important;
+      width: 100% !important;
+      grid-column: 2 !important;
+      grid-row: 1 !important;
+    }
+
+    .films .film .title {
+      font-size: 16px !important;
+      line-height: 1.2 !important;
+      font-weight: 700 !important;
+      overflow-wrap: anywhere !important;
+      word-break: normal !important;
+    }
+
+    .films .film .meta {
+      font-size: 12px !important;
+      line-height: 1.2 !important;
+      margin-top: 4px !important;
+    }
+
+    /*
+       SIGLE:
+       sempre nella terza colonna,
+       mai sopra titolo o poster.
+    */
+
+    .films .film .checks {
+      grid-column: 3 !important;
+      grid-row: 1 !important;
+
+      display: flex !important;
+      flex-direction: column !important;
+      flex-wrap: nowrap !important;
+
+      justify-content: center !important;
+      align-items: center !important;
+
+      gap: 4px !important;
+
+      width: auto !important;
+      min-width: 0 !important;
+
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .films .film .check {
+      width: 30px !important;
+      height: 30px !important;
+      min-width: 30px !important;
+      min-height: 30px !important;
+
+      padding: 0 !important;
+
+      border-radius: 6px !important;
+
+      font-size: 11px !important;
+      line-height: 1 !important;
+    }
+
+
+    /* =====================================
+       4. MEMBRI / SIGLE DENTRO FILM CLUB
+       ===================================== */
+
+    .films .member {
+      width: 100% !important;
+      padding: 7px 8px !important;
+      min-height: 0 !important;
+      gap: 5px !important;
+    }
+
+    .films .member .avatar {
+      width: 28px !important;
+      height: 28px !important;
+      min-width: 28px !important;
+      font-size: 11px !important;
+    }
+
+    .films .member .name {
+      font-size: 14px !important;
+      line-height: 1.15 !important;
+    }
+
+    .films .member .stats {
+      font-size: 11px !important;
+    }
+
+    .films .member .pct {
+      font-size: 14px !important;
+    }
+
+
+    /* =====================================
+       5. TITOLI DELLE SEZIONI
+       ===================================== */
+
+    .missing-panel .head h2,
+    .dashboard-main-grid .head h2,
+    .film-club-section .head h2 {
+      font-size: 25px !important;
+      line-height: 1.2 !important;
+    }
+
+    .weekly-film-label {
+      font-size: 16px !important;
+      margin-bottom: 14px !important;
+    }
+
+
+    /* =====================================
+       6. EVITA OVERFLOW ORIZZONTALE
+       ===================================== */
+
+    .dashboard-main-grid,
+    .weekly-film,
+    .weekly-film-info,
+    .films,
+    #films,
+    #films .film {
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+    }
+
+  }
 
 </style>
 </head>
