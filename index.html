@@ -1447,15 +1447,14 @@ body {
   gap: 20px !important;
 }
 
-  #weeklyFilm .weekly-film-mobile-layout {
+ #weeklyFilm .weekly-film-mobile-layout {
   width: 100% !important;
   min-width: 0 !important;
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: flex-start !important;
-  gap: 20px !important;
+  display: grid !important;
+  grid-template-columns: 125px minmax(0, 1fr) !important;
+  column-gap: 20px !important;
+  align-items: start !important;
 }
-
 
 /* =========================
    POSTER A SINISTRA
