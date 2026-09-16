@@ -7153,183 +7153,174 @@ document.addEventListener("keydown", function(event) {
 
 });
 
-```javascript
 /* =====================================================
    DIAGNOSTICA REALE — FILM DELLA SETTIMANA
    ===================================================== */
 
 function testWeeklyFilmSize() {
 
-  const panel = document.getElementById("weeklyFilmPanel");
-  const weekly = document.getElementById("weeklyFilm");
+  var panel = document.getElementById("weeklyFilmPanel");
+  var weekly = document.getElementById("weeklyFilm");
 
   if (!panel || !weekly) return;
 
-  const posterWrap =
+  var posterWrap =
     weekly.querySelector(".weekly-film-poster-wrap");
 
-  const poster =
+  var poster =
     weekly.querySelector(".weekly-film-poster");
 
-  const info =
+  var info =
     weekly.querySelector(".weekly-film-info");
 
-  const weeklyStyle =
+  var weeklyStyle =
     window.getComputedStyle(weekly);
 
-  const wrapStyle =
+  var wrapStyle =
     posterWrap
       ? window.getComputedStyle(posterWrap)
       : null;
 
-  const posterStyle =
+  var posterStyle =
     poster
       ? window.getComputedStyle(poster)
       : null;
 
-  const infoStyle =
+  var infoStyle =
     info
       ? window.getComputedStyle(info)
       : null;
 
 
-  let box =
+  var box =
     document.getElementById("weeklyDebugBox");
 
   if (!box) {
 
-    box =
-      document.createElement("div");
+    box = document.createElement("div");
 
     box.id = "weeklyDebugBox";
 
     panel.appendChild(box);
-
   }
 
 
-  box.innerHTML = `
+  var html = "";
 
-    <div style="font-weight:800;margin-bottom:8px;">
-      DEBUG FILM SETTIMANA
-    </div>
+  html += "<div style='font-weight:800;margin-bottom:8px;'>";
+  html += "DEBUG FILM SETTIMANA";
+  html += "</div>";
 
-    <div style="margin-bottom:8px;font-weight:700;">
-      CONTENITORE
-    </div>
 
-    <div>
-      display:
-      <strong>${weeklyStyle.display}</strong>
-    </div>
+  html += "<div style='margin-bottom:8px;font-weight:700;'>";
+  html += "CONTENITORE";
+  html += "</div>";
 
-    <div>
-      flex-direction:
-      <strong>${weeklyStyle.flexDirection}</strong>
-    </div>
+  html += "<div>display: <strong>";
+  html += weeklyStyle.display;
+  html += "</strong></div>";
 
-    <div>
-      align-items:
-      <strong>${weeklyStyle.alignItems}</strong>
-    </div>
+  html += "<div>flex-direction: <strong>";
+  html += weeklyStyle.flexDirection;
+  html += "</strong></div>";
 
-    <div>
-      width:
-      <strong>${Math.round(
-        weekly.getBoundingClientRect().width
-      )} px</strong>
-    </div>
+  html += "<div>align-items: <strong>";
+  html += weeklyStyle.alignItems;
+  html += "</strong></div>";
 
-    <hr>
+  html += "<div>width: <strong>";
+  html += Math.round(
+    weekly.getBoundingClientRect().width
+  );
+  html += " px</strong></div>";
 
-    <div style="margin-bottom:8px;font-weight:700;">
-      POSTER WRAP
-    </div>
 
-    <div>
-      trovato:
-      <strong>${posterWrap ? "SI" : "NO"}</strong>
-    </div>
+  html += "<hr>";
 
-    ${
-      posterWrap
-        ? `
-          <div>
-            width CSS:
-            <strong>${wrapStyle.width}</strong>
-          </div>
 
-          <div>
-            height CSS:
-            <strong>${wrapStyle.height}</strong>
-          </div>
+  html += "<div style='margin-bottom:8px;font-weight:700;'>";
+  html += "POSTER WRAP";
+  html += "</div>";
 
-          <div>
-            flex:
-            <strong>${wrapStyle.flex}</strong>
-          </div>
+  html += "<div>trovato: <strong>";
+  html += posterWrap ? "SI" : "NO";
+  html += "</strong></div>";
 
-          <div>
-            display:
-            <strong>${wrapStyle.display}</strong>
-          </div>
-        `
-        : ''
-    }
 
-    <hr>
+  if (posterWrap) {
 
-    <div style="margin-bottom:8px;font-weight:700;">
-      TESTO
-    </div>
+    html += "<div>width CSS: <strong>";
+    html += wrapStyle.width;
+    html += "</strong></div>";
 
-    <div>
-      trovato:
-      <strong>${info ? "SI" : "NO"}</strong>
-    </div>
+    html += "<div>height CSS: <strong>";
+    html += wrapStyle.height;
+    html += "</strong></div>";
 
-    ${
-      info
-        ? `
-          <div>
-            width CSS:
-            <strong>${infoStyle.width}</strong>
-          </div>
+    html += "<div>flex: <strong>";
+    html += wrapStyle.flex;
+    html += "</strong></div>";
 
-          <div>
-            flex:
-            <strong>${infoStyle.flex}</strong>
-          </div>
+    html += "<div>display: <strong>";
+    html += wrapStyle.display;
+    html += "</strong></div>";
 
-          <div>
-            display:
-            <strong>${infoStyle.display}</strong>
-          </div>
+    html += "<div>posizione X: <strong>";
+    html += Math.round(
+      posterWrap.getBoundingClientRect().left
+    );
+    html += " px</strong></div>";
+  }
 
-          <div>
-            posizione X:
-            <strong>${Math.round(
-              info.getBoundingClientRect().left
-            )} px</strong>
-          </div>
-        `
-        : ''
-    }
 
-    <hr>
+  html += "<hr>";
 
-    <div>
-      SCHERMO:
-      <strong>
-        ${window.innerWidth} × ${window.innerHeight}
-      </strong>
-    </div>
 
-  `;
+  html += "<div style='margin-bottom:8px;font-weight:700;'>";
+  html += "TESTO";
+  html += "</div>";
+
+  html += "<div>trovato: <strong>";
+  html += info ? "SI" : "NO";
+  html += "</strong></div>";
+
+
+  if (info) {
+
+    html += "<div>width CSS: <strong>";
+    html += infoStyle.width;
+    html += "</strong></div>";
+
+    html += "<div>flex: <strong>";
+    html += infoStyle.flex;
+    html += "</strong></div>";
+
+    html += "<div>display: <strong>";
+    html += infoStyle.display;
+    html += "</strong></div>";
+
+    html += "<div>posizione X: <strong>";
+    html += Math.round(
+      info.getBoundingClientRect().left
+    );
+    html += " px</strong></div>";
+  }
+
+
+  html += "<hr>";
+
+  html += "<div>SCHERMO: <strong>";
+  html += window.innerWidth;
+  html += " × ";
+  html += window.innerHeight;
+  html += " px</strong></div>";
+
+
+  box.innerHTML = html;
 }
 
 
-/* Aspetta che render() abbia creato il film */
+/* Aspetta che il film sia stato renderizzato */
 
 setTimeout(testWeeklyFilmSize, 500);
 
@@ -7346,7 +7337,6 @@ window.addEventListener("resize", function() {
   );
 
 });
-```
 
 
 </script>
