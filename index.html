@@ -3110,6 +3110,7 @@ async function showLogin() {
     select.disabled = false;
   }
 }
+  
 async function login() {
 
   const memberId =
@@ -3903,23 +3904,20 @@ function showPage(page) {
 
   }
 
-  if (page === 'admin') {
+ if (page === 'admin') {
 
-    // Sicurezza lato interfaccia:
-    // solo Admin può aprire Gestione.
-    if (!adminSession) {
-      showLogin();
-      return;
-    }
-
-    if (adminPage) {
-      adminPage.style.display = 'block';
-    }
-
-    // Aggiorna la lista film nel pannello Admin.
-    renderAdminFilms();
-
+  if (!adminSession) {
+    showLogin();
+    return;
   }
+
+  if (adminPage) {
+    adminPage.style.display = 'block';
+  }
+
+  renderAdminMembers();
+  renderAdminFilms();
+}
 
   // =========================
   // MENU ATTIVO
@@ -3972,44 +3970,8 @@ function showPage(page) {
 }
 
 function render() {
-
-    /* =========================
-     FILM DELLA SETTIMANA
-     ========================= */
-
-  const weeklyFilmPanel =
-  document.getElementById("weeklyFilmPanel");
-
-const adminPanel =
-  document.getElementById("adminPanel");
-
-const adminNavItem =
-  document.getElementById("adminNavItem");
-
-if (adminNavItem) {
-  adminNavItem.style.display =
-    adminSession ? "block" : "none";
-}
-
-/*
- * render() non cambia più la pagina corrente.
- * La navigazione viene gestita esclusivamente da showPage().
- */
-
-if (
-  currentPage !== "admin" &&
-  weeklyFilmPanel
-) {
-  weeklyFilmPanel.style.display = "block";
-}
-
-if (
-  currentPage === "admin" &&
-  adminPanel &&
-  adminSession
-) {
-  adminPanel.style.display = "block";
-}
+  
+  console.trace("RENDER CHIAMATO");
 
   const filmsCount = D.films.length;
   const membersCount = D.members.length;
@@ -4421,94 +4383,7 @@ if (
 
       }).join("");
   }
-
-
-  /* =========================
-     LISTA MEMBRI
-     ========================= */
-
-  const memberList =
-    document.getElementById("memberList");
-
-
-  if (!membersCount) {
-
-    memberList.innerHTML =
-      '<div class="empty">Nessun membro.</div>';
-
-  } else {
-
-    memberList.innerHTML =
-      D.members.map(function(member) {
-
-        return `
-          <div class="item">
-
-            <span>
-              ${esc(member.name)}
-            </span>
-
-            <div style="
-              display:flex;
-              align-items:center;
-              gap:6px;
-              flex-wrap:wrap;
-              justify-content:flex-end;
-            ">
-
-              <input
-                id="sigla-${member.id}"
-                value="${esc(member.sigla || '')}"
-                maxlength="2"
-                placeholder="${esc(
-                  member.name[0].toUpperCase()
-                )}"
-                style="
-                  width:50px;
-                  text-align:center;
-                  padding:7px 5px;
-                "
-                title="Sigla">
-
-              <button
-                class="btn"
-                onclick="saveSigla('${member.id}')">
-                salva
-              </button>
-
-              <input
-                id="pin-${member.id}"
-                type="password"
-                inputmode="numeric"
-                maxlength="4"
-                placeholder="PIN"
-                style="
-                  width:65px;
-                  text-align:center;
-                  padding:7px 5px;
-                "
-                title="PIN a 4 cifre">
-
-              <button
-                class="btn"
-                onclick="savePin('${member.id}')">
-                salva PIN
-              </button>
-
-              <button
-                class="danger"
-                onclick="rmM('${member.id}')">
-                rimuovi
-              </button>
-
-            </div>
-
-          </div>
-        `;
-
-      }).join("");
-  }
-
+  
 
   /* =========================
      FILM
@@ -4648,11 +4523,6 @@ return `
 `;
 
       }).join("");
-  }
-  if (adminSession) {
-  renderAdminFilms();
-}
-}
 
 
 /* =========================
@@ -4694,7 +4564,7 @@ async function addM() {
 
     input.value = "";
 
-    renderAdminFilms();
+    renderAdminMembers();
 
   } catch (error) {
 
@@ -4808,7 +4678,98 @@ async function addF() {
 /* =========================
    FILM — ADMIN
    ========================= */
+function renderAdminMembers() {
 
+  const memberList =
+    document.getElementById("memberList");
+
+  if (!memberList) {
+    return;
+  }
+
+  if (!D || !D.members) {
+    memberList.innerHTML = "";
+    return;
+  }
+
+  if (!D.members.length) {
+    memberList.innerHTML =
+      '<div class="empty">Nessun membro.</div>';
+
+    return;
+  }
+
+  memberList.innerHTML =
+    D.members.map(function(member) {
+
+      return `
+        <div class="item">
+
+          <span>
+            ${esc(member.name)}
+          </span>
+
+          <div style="
+            display:flex;
+            align-items:center;
+            gap:6px;
+            flex-wrap:wrap;
+            justify-content:flex-end;
+          ">
+
+            <input
+              id="sigla-${member.id}"
+              value="${esc(member.sigla || '')}"
+              maxlength="2"
+              placeholder="${esc(
+                member.name[0].toUpperCase()
+              )}"
+              style="
+                width:50px;
+                text-align:center;
+                padding:7px 5px;
+              "
+              title="Sigla">
+
+            <button
+              class="btn"
+              onclick="saveSigla('${member.id}')">
+              salva
+            </button>
+
+            <input
+              id="pin-${member.id}"
+              type="password"
+              inputmode="numeric"
+              maxlength="4"
+              placeholder="PIN"
+              style="
+                width:65px;
+                text-align:center;
+                padding:7px 5px;
+              "
+              title="PIN a 4 cifre">
+
+            <button
+              class="btn"
+              onclick="savePin('${member.id}')">
+              salva PIN
+            </button>
+
+            <button
+              class="danger"
+              onclick="rmM('${member.id}')">
+              rimuovi
+            </button>
+
+          </div>
+
+        </div>
+      `;
+
+    }).join("");
+}
+    
 function renderAdminFilms() {
 
   const box =
