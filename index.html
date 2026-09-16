@@ -7153,77 +7153,201 @@ document.addEventListener("keydown", function(event) {
 
 });
 
+```javascript
 /* =====================================================
-   TEST DIMENSIONI MOBILE — FILM DELLA SETTIMANA
+   DIAGNOSTICA REALE — FILM DELLA SETTIMANA
    ===================================================== */
 
 function testWeeklyFilmSize() {
 
   const panel = document.getElementById("weeklyFilmPanel");
   const weekly = document.getElementById("weeklyFilm");
-  const poster = weekly?.querySelector(".weekly-film-poster-wrap");
-  const info = weekly?.querySelector(".weekly-film-info");
 
   if (!panel || !weekly) return;
 
-  const panelRect = panel.getBoundingClientRect();
-  const weeklyRect = weekly.getBoundingClientRect();
-  const posterRect = poster
-    ? poster.getBoundingClientRect()
-    : null;
-  const infoRect = info
-    ? info.getBoundingClientRect()
-    : null;
+  const posterWrap =
+    weekly.querySelector(".weekly-film-poster-wrap");
 
-  let box = document.getElementById("weeklyDebugBox");
+  const poster =
+    weekly.querySelector(".weekly-film-poster");
+
+  const info =
+    weekly.querySelector(".weekly-film-info");
+
+  const weeklyStyle =
+    window.getComputedStyle(weekly);
+
+  const wrapStyle =
+    posterWrap
+      ? window.getComputedStyle(posterWrap)
+      : null;
+
+  const posterStyle =
+    poster
+      ? window.getComputedStyle(poster)
+      : null;
+
+  const infoStyle =
+    info
+      ? window.getComputedStyle(info)
+      : null;
+
+
+  let box =
+    document.getElementById("weeklyDebugBox");
 
   if (!box) {
-    box = document.createElement("div");
+
+    box =
+      document.createElement("div");
+
     box.id = "weeklyDebugBox";
+
     panel.appendChild(box);
+
   }
 
+
   box.innerHTML = `
-    <div style="font-weight:700;margin-bottom:6px;">
-      TEST DIMENSIONI
+
+    <div style="font-weight:800;margin-bottom:8px;">
+      DEBUG FILM SETTIMANA
     </div>
 
-    <div>Pannello: <strong>${Math.round(panelRect.width)} px</strong></div>
+    <div style="margin-bottom:8px;font-weight:700;">
+      CONTENITORE
+    </div>
 
-    <div>Contenitore: <strong>${Math.round(weeklyRect.width)} px</strong></div>
+    <div>
+      display:
+      <strong>${weeklyStyle.display}</strong>
+    </div>
 
-    <div>Poster: <strong>${
-      posterRect
-        ? Math.round(posterRect.width) + " × " + Math.round(posterRect.height) + " px"
-        : "—"
-    }</strong></div>
+    <div>
+      flex-direction:
+      <strong>${weeklyStyle.flexDirection}</strong>
+    </div>
 
-    <div>Testo disponibile: <strong>${
-      infoRect
-        ? Math.round(infoRect.width) + " px"
-        : "—"
-    }</strong></div>
+    <div>
+      align-items:
+      <strong>${weeklyStyle.alignItems}</strong>
+    </div>
 
-    <div>Gap: <strong>${
-      posterRect && infoRect
-        ? Math.round(infoRect.left - posterRect.right) + " px"
-        : "—"
-    }</strong></div>
+    <div>
+      width:
+      <strong>${Math.round(
+        weekly.getBoundingClientRect().width
+      )} px</strong>
+    </div>
 
-    <div>Schermo: <strong>${window.innerWidth} × ${window.innerHeight} px</strong></div>
+    <hr>
+
+    <div style="margin-bottom:8px;font-weight:700;">
+      POSTER WRAP
+    </div>
+
+    <div>
+      trovato:
+      <strong>${posterWrap ? "SI" : "NO"}</strong>
+    </div>
+
+    ${
+      posterWrap
+        ? `
+          <div>
+            width CSS:
+            <strong>${wrapStyle.width}</strong>
+          </div>
+
+          <div>
+            height CSS:
+            <strong>${wrapStyle.height}</strong>
+          </div>
+
+          <div>
+            flex:
+            <strong>${wrapStyle.flex}</strong>
+          </div>
+
+          <div>
+            display:
+            <strong>${wrapStyle.display}</strong>
+          </div>
+        `
+        : ''
+    }
+
+    <hr>
+
+    <div style="margin-bottom:8px;font-weight:700;">
+      TESTO
+    </div>
+
+    <div>
+      trovato:
+      <strong>${info ? "SI" : "NO"}</strong>
+    </div>
+
+    ${
+      info
+        ? `
+          <div>
+            width CSS:
+            <strong>${infoStyle.width}</strong>
+          </div>
+
+          <div>
+            flex:
+            <strong>${infoStyle.flex}</strong>
+          </div>
+
+          <div>
+            display:
+            <strong>${infoStyle.display}</strong>
+          </div>
+
+          <div>
+            posizione X:
+            <strong>${Math.round(
+              info.getBoundingClientRect().left
+            )} px</strong>
+          </div>
+        `
+        : ''
+    }
+
+    <hr>
+
+    <div>
+      SCHERMO:
+      <strong>
+        ${window.innerWidth} × ${window.innerHeight}
+      </strong>
+    </div>
+
   `;
 }
 
 
-/* Esegui dopo il caricamento */
+/* Aspetta che render() abbia creato il film */
+
+setTimeout(testWeeklyFilmSize, 500);
+
 setTimeout(testWeeklyFilmSize, 1500);
 
+setTimeout(testWeeklyFilmSize, 3000);
 
-/* Aggiorna se cambia orientamento */
+
 window.addEventListener("resize", function() {
-  setTimeout(testWeeklyFilmSize, 200);
+
+  setTimeout(
+    testWeeklyFilmSize,
+    300
+  );
+
 });
- 
+```
+
 
 </script>
 <div id="filmModal" class="film-modal" onclick="closeFilmModal(event)">
