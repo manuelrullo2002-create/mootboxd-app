@@ -3565,6 +3565,196 @@ body {
 
 }
 
+/* =====================================================
+   PROVA DEFINITIVA — FILM DELLA SETTIMANA MOBILE
+   ===================================================== */
+
+@media screen and (max-width: 600px) {
+
+  #weeklyFilmPanel #weeklyFilm {
+
+    display: grid !important;
+
+    grid-template-columns: 150px minmax(0, 1fr) !important;
+
+    column-gap: 16px !important;
+
+    align-items: start !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    box-sizing: border-box !important;
+
+  }
+
+
+  /* POSTER */
+
+  #weeklyFilmPanel #weeklyFilm
+  .weekly-film-poster-wrap {
+
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+
+    position: static !important;
+
+    width: 150px !important;
+    min-width: 150px !important;
+    max-width: 150px !important;
+
+    height: 225px !important;
+    min-height: 225px !important;
+    max-height: 225px !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+
+    overflow: hidden !important;
+
+  }
+
+
+  #weeklyFilmPanel #weeklyFilm
+  .weekly-film-poster-wrap
+  .weekly-film-poster {
+
+    display: block !important;
+
+    position: static !important;
+
+    width: 150px !important;
+    min-width: 150px !important;
+    max-width: 150px !important;
+
+    height: 225px !important;
+    min-height: 225px !important;
+    max-height: 225px !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    object-fit: cover !important;
+
+    box-sizing: border-box !important;
+
+  }
+
+
+  /* TESTO */
+
+  #weeklyFilmPanel #weeklyFilm
+  .weekly-film-info {
+
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+
+    position: static !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+
+    display: block !important;
+
+  }
+
+
+  /* TITOLO */
+
+  #weeklyFilmPanel #weeklyFilm
+  .weekly-film-title {
+
+    margin: 0 !important;
+
+    font-size: 20px !important;
+    line-height: 1.15 !important;
+
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+
+  }
+
+
+  /* ANNO */
+
+  #weeklyFilmPanel #weeklyFilm
+  .weekly-film-year {
+
+    margin-top: 5px !important;
+
+    font-size: 13px !important;
+
+  }
+
+
+  /* DETTAGLI */
+
+  #weeklyFilmPanel #weeklyFilm
+  .weekly-film-details {
+
+    display: flex !important;
+
+    flex-wrap: wrap !important;
+
+    gap: 5px !important;
+
+    margin-top: 9px !important;
+
+  }
+
+
+  #weeklyFilmPanel #weeklyFilm
+  .weekly-film-detail {
+
+    font-size: 10px !important;
+
+    line-height: 1.2 !important;
+
+    padding: 5px 7px !important;
+
+  }
+
+
+  /* SINOSSI */
+
+  #weeklyFilmPanel #weeklyFilm
+  .weekly-film-synopsis {
+
+    margin-top: 9px !important;
+
+    font-size: 12px !important;
+
+    line-height: 1.35 !important;
+
+  }
+
+
+  /* DATA */
+
+  #weeklyFilmPanel #weeklyFilm
+  .weekly-film-date {
+
+    margin-top: 9px !important;
+
+    font-size: 10px !important;
+
+    line-height: 1.2 !important;
+
+  }
+
+}
+
+
   
 </style>
 </head>
