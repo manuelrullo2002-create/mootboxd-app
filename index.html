@@ -3074,142 +3074,127 @@ body {
 
 
   /* =====================================================
-     MOBILE — FILM DELLA SETTIMANA
-     ===================================================== */
+   MOBILE — FILM DELLA SETTIMANA
+   ===================================================== */
 
-  #weeklyFilmPanel {
-    width: 100% !important;
-    padding: 16px !important;
-    overflow: hidden !important;
-  }
+#weeklyFilmPanel {
+  width: 100% !important;
+  padding: 16px !important;
+  overflow: hidden !important;
+}
 
-  #weeklyFilm {
-    width: 100% !important;
-    min-width: 0 !important;
-  }
+#weeklyFilm {
+  width: 100% !important;
+  min-width: 0 !important;
 
-  /*
-     Il JS genera direttamente:
-     poster + weekly-film-info
+  display: flex !important;
+  flex-direction: row !important;
 
-     Li trasformiamo in due colonne.
-  */
-
-  #weeklyFilm.weekly-film {
-    display: grid !important;
-
-    grid-template-columns: 110px minmax(0, 1fr) !important;
-
-    column-gap: 14px !important;
-
-    align-items: end !important;
-
-    width: 100% !important;
-  }
+  align-items: flex-start !important;
+  gap: 16px !important;
+}
 
 
-  /* POSTER */
+/* =========================
+   POSTER A SINISTRA
+   ========================= */
 
-  #weeklyFilm .weekly-film-poster-wrap {
-    grid-column: 1 !important;
-    grid-row: 1 !important;
+#weeklyFilm .weekly-film-poster-wrap {
+  flex: 0 0 125px !important;
 
-    width: 110px !important;
-    min-width: 110px !important;
-    max-width: 110px !important;
+  width: 125px !important;
+  min-width: 125px !important;
+  max-width: 125px !important;
 
-    height: 165px !important;
-    min-height: 165px !important;
-    max-height: 165px !important;
+  height: 188px !important;
+  min-height: 188px !important;
+  max-height: 188px !important;
 
-    align-self: end !important;
+  overflow: hidden !important;
 
-    overflow: hidden !important;
+  align-self: flex-start !important;
 
-    border-radius: 8px !important;
-  }
+  border-radius: 8px !important;
+}
 
-  #weeklyFilm .weekly-film-poster-wrap .weekly-film-poster {
-    display: block !important;
+#weeklyFilm .weekly-film-poster-wrap .weekly-film-poster {
+  display: block !important;
 
-    width: 110px !important;
-    min-width: 110px !important;
+  width: 125px !important;
+  min-width: 125px !important;
 
-    height: 165px !important;
-    min-height: 165px !important;
+  height: 188px !important;
+  min-height: 188px !important;
 
-    object-fit: cover !important;
-  }
+  object-fit: cover !important;
+}
 
 
-  /* TESTO */
+/* =========================
+   TESTO A DESTRA
+   ========================= */
 
-  #weeklyFilm .weekly-film-info {
-    grid-column: 2 !important;
-    grid-row: 1 !important;
+#weeklyFilm .weekly-film-info {
+  flex: 1 1 auto !important;
 
-    width: 100% !important;
-    min-width: 0 !important;
+  width: auto !important;
+  min-width: 0 !important;
 
-    align-self: end !important;
+  align-self: flex-start !important;
 
-    /*
-       Il testo NON deve creare una seconda altezza
-       maggiore del poster.
-    */
-    max-height: 165px !important;
+  display: block !important;
 
-    overflow: hidden !important;
-  }
+  max-height: none !important;
+  overflow: visible !important;
+}
 
-  #weeklyFilm .weekly-film-title {
-    margin: 0 !important;
+#weeklyFilm .weekly-film-title {
+  margin: 0 !important;
 
-    font-size: 20px !important;
-    line-height: 1.12 !important;
+  font-size: 20px !important;
+  line-height: 1.15 !important;
 
-    overflow-wrap: anywhere !important;
-  }
+  overflow-wrap: anywhere !important;
+}
 
-  #weeklyFilm .weekly-film-year {
-    margin-top: 3px !important;
+#weeklyFilm .weekly-film-year {
+  margin-top: 4px !important;
 
-    font-size: 13px !important;
-    line-height: 1.15 !important;
-  }
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+}
 
-  #weeklyFilm .weekly-film-details {
-    display: flex !important;
-    flex-wrap: wrap !important;
+#weeklyFilm .weekly-film-details {
+  display: flex !important;
+  flex-wrap: wrap !important;
 
-    gap: 4px !important;
+  gap: 5px !important;
 
-    margin-top: 7px !important;
-  }
+  margin-top: 9px !important;
+}
 
-  #weeklyFilm .weekly-film-detail {
-    padding: 4px 6px !important;
+#weeklyFilm .weekly-film-detail {
+  padding: 5px 7px !important;
 
-    font-size: 10px !important;
-    line-height: 1.1 !important;
-  }
+  font-size: 10px !important;
+  line-height: 1.15 !important;
+}
 
-  #weeklyFilm .weekly-film-synopsis {
-    margin-top: 7px !important;
+#weeklyFilm .weekly-film-synopsis {
+  margin-top: 9px !important;
 
-    font-size: 11px !important;
-    line-height: 1.25 !important;
-  }
+  font-size: 12px !important;
+  line-height: 1.3 !important;
+}
 
-  #weeklyFilm .weekly-film-date {
-    margin-top: 7px !important;
+#weeklyFilm .weekly-film-date {
+  margin-top: 9px !important;
 
-    padding-top: 0 !important;
+  padding-top: 0 !important;
 
-    font-size: 10px !important;
-    line-height: 1.15 !important;
-  }
-
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+}
 
   /* =====================================================
      MOBILE — FILM DEL CLUB
