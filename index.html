@@ -2724,6 +2724,332 @@ body {
 
   }
 
+  /* =========================================================
+   MOBILE OVERRIDE DEFINITIVO
+   NON MODIFICA IL DESKTOP
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+  /* =========================
+     TITOLI SEZIONI
+     ========================= */
+
+  .missing-panel .head h2,
+  .dashboard-main-grid .head h2,
+  .film-club-section .head h2 {
+    font-size: 24px !important;
+    line-height: 1.15 !important;
+  }
+
+
+  /* =========================
+     PROGRESSO DEI MEMBRI
+     ========================= */
+
+  .dashboard-main-grid {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .dashboard-main-grid > section {
+    width: 100% !important;
+    margin-bottom: 14px !important;
+  }
+
+  .dashboard-main-grid .member {
+    min-height: 0 !important;
+    padding: 11px 14px !important;
+  }
+
+  .dashboard-main-grid .member .row {
+    gap: 7px !important;
+  }
+
+  .dashboard-main-grid .member .name {
+    font-size: 16px !important;
+    line-height: 1.15 !important;
+  }
+
+  .dashboard-main-grid .member .stats {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+  }
+
+  .dashboard-main-grid .member .pct {
+    font-size: 18px !important;
+  }
+
+  .dashboard-main-grid .member .bar {
+    height: 7px !important;
+    margin-top: 7px !important;
+  }
+
+
+  /* =========================
+     FILM DELLA SETTIMANA
+     ========================= */
+
+  .weekly-film-panel {
+    width: 100% !important;
+    padding: 16px !important;
+    overflow: hidden !important;
+  }
+
+  .weekly-film {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-end !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  /* POSTER */
+  .weekly-film-poster-wrap {
+    width: 110px !important;
+    min-width: 110px !important;
+    max-width: 110px !important;
+
+    height: 165px !important;
+    min-height: 165px !important;
+    max-height: 165px !important;
+
+    flex: 0 0 110px !important;
+    align-self: flex-end !important;
+
+    overflow: hidden !important;
+    border-radius: 8px !important;
+  }
+
+  .weekly-film-poster-wrap .weekly-film-poster {
+    display: block !important;
+
+    width: 110px !important;
+    min-width: 110px !important;
+
+    height: 165px !important;
+    min-height: 165px !important;
+
+    object-fit: cover !important;
+  }
+
+  /* Se il poster non è dentro wrapper */
+  .weekly-film > .weekly-film-poster {
+    width: 110px !important;
+    min-width: 110px !important;
+
+    height: 165px !important;
+    min-height: 165px !important;
+
+    flex: 0 0 110px !important;
+    object-fit: cover !important;
+    align-self: flex-end !important;
+  }
+
+  /* COLONNA TESTO */
+  .weekly-film-info {
+    min-width: 0 !important;
+    width: auto !important;
+
+    flex: 1 1 auto !important;
+
+    align-self: flex-end !important;
+
+    display: block !important;
+  }
+
+  .weekly-film-title {
+    font-size: 20px !important;
+    line-height: 1.12 !important;
+
+    margin: 0 !important;
+
+    overflow-wrap: anywhere !important;
+  }
+
+  .weekly-film-year {
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+    margin-top: 4px !important;
+  }
+
+  .weekly-film-details {
+    display: flex !important;
+    flex-wrap: wrap !important;
+
+    gap: 4px !important;
+
+    margin-top: 8px !important;
+  }
+
+  .weekly-film-detail {
+    font-size: 10px !important;
+    line-height: 1.15 !important;
+
+    padding: 4px 6px !important;
+  }
+
+  .weekly-film-synopsis {
+    margin-top: 8px !important;
+
+    font-size: 12px !important;
+    line-height: 1.28 !important;
+  }
+
+  .weekly-film-date {
+    margin-top: 8px !important;
+    padding-top: 0 !important;
+
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+  }
+
+
+  /* =========================
+     FILM DEL CLUB
+     ========================= */
+
+  .films {
+    width: 100% !important;
+
+    height: auto !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+  }
+
+  #films {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  #films .film,
+  .films .film {
+    display: grid !important;
+
+    grid-template-columns: 52px minmax(0, 1fr) auto !important;
+
+    align-items: center !important;
+
+    width: 100% !important;
+
+    min-height: 74px !important;
+
+    margin: 0 0 6px !important;
+    padding: 8px !important;
+
+    gap: 8px !important;
+  }
+
+  /* POSTER FILM */
+  #films .film .film-poster,
+  .films .film .film-poster {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+
+    width: 52px !important;
+    min-width: 52px !important;
+    max-width: 52px !important;
+
+    height: 74px !important;
+    min-height: 74px !important;
+
+    object-fit: cover !important;
+
+    border-radius: 6px !important;
+  }
+
+  /* CONTENITORE INFO */
+  #films .film .film-info,
+  .films .film .film-info {
+    display: contents !important;
+  }
+
+  /* BLOCCO TITOLO + ANNO */
+  #films .film .film-info > div:last-child,
+  .films .film .film-info > div:last-child {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  #films .film .title,
+  .films .film .title {
+    font-size: 15px !important;
+    line-height: 1.15 !important;
+
+    margin: 0 !important;
+
+    overflow-wrap: anywhere !important;
+  }
+
+  #films .film .meta,
+  .films .film .meta {
+    font-size: 11px !important;
+    line-height: 1.15 !important;
+
+    margin-top: 3px !important;
+  }
+
+  /* SIGLE */
+  #films .film .checks,
+  .films .film .checks {
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 3px !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #films .film .check,
+  .films .film .check {
+    width: 26px !important;
+    min-width: 26px !important;
+
+    height: 26px !important;
+    min-height: 26px !important;
+
+    padding: 0 !important;
+
+    border-radius: 5px !important;
+
+    font-size: 10px !important;
+    line-height: 1 !important;
+  }
+
+
+  /* =========================
+     EVITA CHE IL CONTENUTO
+     ALLARGHI LA PAGINA
+     ========================= */
+
+  .dashboard-main-grid,
+  .dashboard-main-grid > section,
+  .weekly-film-panel,
+  .weekly-film,
+  .weekly-film-info,
+  .film-club-section,
+  .films,
+  #films,
+  #films .film {
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+
 </style>
 </head>
 <body>
