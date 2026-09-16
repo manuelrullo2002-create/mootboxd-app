@@ -3970,11 +3970,17 @@ function showPage(page) {
 }
 
 function render() {
-  
-  console.trace("RENDER CHIAMATO");
 
   const filmsCount = D.films.length;
   const membersCount = D.members.length;
+
+    const adminNavItem =
+    document.getElementById("adminNavItem");
+
+  if (adminNavItem) {
+    adminNavItem.style.display =
+      adminSession ? "block" : "none";
+  }
 
   document.getElementById("filmsN").textContent = filmsCount;
   document.getElementById("membersN").textContent = membersCount;
