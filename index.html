@@ -3886,8 +3886,13 @@ function showPage(page) {
 
   if (page === 'home') {
 
-    if (homePage) {
-      homePage.style.display = 'block';
+  if (homePage) {
+    homePage.style.display = 'block';
+  }
+
+  render();
+
+}
     }
 
   }
@@ -3899,12 +3904,15 @@ function showPage(page) {
 
   if (page === 'ranking') {
 
-    if (rankingPage) {
-      rankingPage.style.display = 'block';
-    }
+  if (rankingPage) {
+    rankingPage.style.display = 'block';
+  }
 
-    renderRanking();
+  render();
 
+  renderRanking();
+
+}
   }
 
 
