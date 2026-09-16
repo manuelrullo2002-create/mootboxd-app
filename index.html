@@ -3256,13 +3256,11 @@ async function loginAdmin() {
       "loginScreen"
     ).style.display = "none";
 
-    document.getElementById(
-      "adminPanel"
-    ).style.display = "block";
-
     updateProfile();
 
-    load();
+await load();
+
+showPage("admin");
 
   } catch (error) {
 
@@ -3324,15 +3322,13 @@ async function checkAdminSession() {
       "adminLoginScreen"
     ).style.display = "none";
 
-    document.getElementById(
-      "adminPanel"
-    ).style.display = "block";
-
     updateProfile();
 
-    load();
+await load();
 
-    return true;
+showPage("admin");
+
+return true;
 
   } catch (error) {
 
@@ -3851,7 +3847,7 @@ function toggleMainMenu() {
 let currentPage = "home";
 
 function showPage(page) {
-  
+
   currentPage = page;
 
   const homePage =
@@ -3866,9 +3862,10 @@ function showPage(page) {
   const menuItems =
     document.querySelectorAll('.main-nav-item');
 
-  // =========================
-  // NASCONDE TUTTE LE PAGINE
-  // =========================
+
+  /* =========================
+     NASCONDE TUTTE LE PAGINE
+     ========================= */
 
   if (homePage) {
     homePage.style.display = 'none';
@@ -3882,9 +3879,10 @@ function showPage(page) {
     adminPage.style.display = 'none';
   }
 
-  // =========================
-  // MOSTRA PAGINA RICHIESTA
-  // =========================
+
+  /* =========================
+     HOME
+     ========================= */
 
   if (page === 'home') {
 
@@ -3893,6 +3891,11 @@ function showPage(page) {
     }
 
   }
+
+
+  /* =========================
+     CLASSIFICA
+     ========================= */
 
   if (page === 'ranking') {
 
@@ -3904,56 +3907,53 @@ function showPage(page) {
 
   }
 
- if (page === 'admin') {
 
-  if (!adminSession) {
-    showLogin();
-    return;
+  /* =========================
+     GESTIONE ADMIN
+     ========================= */
+
+  if (page === 'admin') {
+
+    if (!adminSession) {
+      showLogin();
+      return;
+    }
+
+    if (adminPage) {
+      adminPage.style.display = 'block';
+    }
+
+    renderAdminMembers();
+    renderAdminFilms();
+
   }
 
-  if (adminPage) {
-    adminPage.style.display = 'block';
-  }
 
-  renderAdminMembers();
-  renderAdminFilms();
-}
-
-  // =========================
-  // MENU ATTIVO
-  // =========================
+  /* =========================
+     MENU ATTIVO
+     ========================= */
 
   menuItems.forEach(function(item) {
+
     item.classList.remove('active');
+
   });
 
-  if (page === 'home') {
+  const activeItem =
+    document.querySelector(
+      '.main-nav-item[data-page="' +
+      page +
+      '"]'
+    );
 
-    if (menuItems[0]) {
-      menuItems[0].classList.add('active');
-    }
-
+  if (activeItem) {
+    activeItem.classList.add('active');
   }
 
-  if (page === 'ranking') {
 
-    if (menuItems[1]) {
-      menuItems[1].classList.add('active');
-    }
-
-  }
-
-  if (page === 'admin' && adminSession) {
-
-    if (menuItems[2]) {
-      menuItems[2].classList.add('active');
-    }
-
-  }
-
-  // =========================
-  // CHIUDE IL MENU
-  // =========================
+  /* =========================
+     CHIUDI MENU MOBILE
+     ========================= */
 
   const menu =
     document.getElementById('mainNavMenu');
@@ -3961,6 +3961,7 @@ function showPage(page) {
   if (menu) {
     menu.classList.remove('open');
   }
+
 
   window.scrollTo({
     top: 0,
