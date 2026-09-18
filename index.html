@@ -5748,7 +5748,8 @@ document.addEventListener("keydown", function(event) {
 
 <script>
 (function () {
-  function debugMobileLayout() {
+  function debugViewport() {
+    const meta = document.querySelector('meta[name="viewport"]');
     const grid = document.querySelector('.dashboard-main-grid');
     const weekly = document.querySelector('#weeklyFilmPanel');
 
@@ -5758,41 +5759,48 @@ document.addEventListener("keydown", function(event) {
 
     box.style.cssText = `
       position: fixed;
-      left: 8px;
-      bottom: 8px;
+      left: 5px;
+      bottom: 5px;
       z-index: 999999;
       background: #000;
       color: #fff;
-      padding: 8px;
+      padding: 9px;
       border-radius: 6px;
       font: 11px monospace;
-      line-height: 1.4;
-      max-width: 360px;
+      line-height: 1.45;
+      max-width: calc(100vw - 10px);
     `;
 
-    const gridStyle = grid
-      ? getComputedStyle(grid)
-      : null;
-
-    const weeklyRect = weekly
-      ? weekly.getBoundingClientRect()
-      : null;
+    const gs = grid ? getComputedStyle(grid) : null;
+    const wr = weekly ? weekly.getBoundingClientRect() : null;
 
     box.textContent =
-      'width=' + window.innerWidth +
+      'innerWidth=' + window.innerWidth +
+      ' | clientWidth=' + document.documentElement.clientWidth +
+      ' | visualWidth=' + (
+        window.visualViewport
+          ? Math.round(window.visualViewport.width)
+          : 'N/A'
+      ) +
+      ' | dpr=' + window.devicePixelRatio +
+      ' | screen=' + screen.width + 'x' + screen.height +
+      ' | orientation=' + screen.orientation?.type +
+      ' | meta=' + (meta ? meta.content : 'MISSING') +
       ' | media600=' + window.matchMedia('(max-width:600px)').matches +
-      ' | display=' + (gridStyle ? gridStyle.display : 'N/A') +
-      ' | direction=' + (gridStyle ? gridStyle.flexDirection : 'N/A') +
-      ' | weeklyLeft=' + (weeklyRect ? Math.round(weeklyRect.left) : 'N/A') +
-      ' | weeklyTop=' + (weeklyRect ? Math.round(weeklyRect.top) : 'N/A');
+      ' | grid=' + (gs ? gs.display + '/' + gs.flexDirection : 'N/A') +
+      ' | weekly=' + (
+        wr
+          ? Math.round(wr.left) + ',' + Math.round(wr.top)
+          : 'N/A'
+      );
 
     document.body.appendChild(box);
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', debugMobileLayout);
+    document.addEventListener('DOMContentLoaded', debugViewport);
   } else {
-    debugMobileLayout();
+    debugViewport();
   }
 })();
 </script>
