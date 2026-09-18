@@ -5745,5 +5745,57 @@ document.addEventListener("keydown", function(event) {
 
   </div>
 </div>
+
+<script>
+(function () {
+  function debugMobileLayout() {
+    const grid = document.querySelector('.dashboard-main-grid');
+    const weekly = document.querySelector('#weeklyFilmPanel');
+
+    const box = document.createElement('div');
+
+    box.id = 'mobileDebugBox';
+
+    box.style.cssText = `
+      position: fixed;
+      left: 8px;
+      bottom: 8px;
+      z-index: 999999;
+      background: #000;
+      color: #fff;
+      padding: 8px;
+      border-radius: 6px;
+      font: 11px monospace;
+      line-height: 1.4;
+      max-width: 360px;
+    `;
+
+    const gridStyle = grid
+      ? getComputedStyle(grid)
+      : null;
+
+    const weeklyRect = weekly
+      ? weekly.getBoundingClientRect()
+      : null;
+
+    box.textContent =
+      'width=' + window.innerWidth +
+      ' | media600=' + window.matchMedia('(max-width:600px)').matches +
+      ' | display=' + (gridStyle ? gridStyle.display : 'N/A') +
+      ' | direction=' + (gridStyle ? gridStyle.flexDirection : 'N/A') +
+      ' | weeklyLeft=' + (weeklyRect ? Math.round(weeklyRect.left) : 'N/A') +
+      ' | weeklyTop=' + (weeklyRect ? Math.round(weeklyRect.top) : 'N/A');
+
+    document.body.appendChild(box);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', debugMobileLayout);
+  } else {
+    debugMobileLayout();
+  }
+})();
+</script>
+    
 </body>
 </html>
