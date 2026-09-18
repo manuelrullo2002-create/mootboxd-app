@@ -2024,6 +2024,21 @@ body {
   }
 }  
 
+@media screen and (max-width: 600px) {
+  body::after {
+    content: "MOBILE CSS ATTIVO";
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 99999;
+    padding: 6px 10px;
+    background: black;
+    color: white;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+}  
+
   
 </style>
 </head>
