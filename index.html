@@ -5535,65 +5535,6 @@ document.addEventListener("keydown", function(event) {
 
   </div>
 </div>
-
-<script>
-(function () {
-  function debugViewport() {
-    const meta = document.querySelector('meta[name="viewport"]');
-    const grid = document.querySelector('.dashboard-main-grid');
-    const weekly = document.querySelector('#weeklyFilmPanel');
-
-    const box = document.createElement('div');
-
-    box.id = 'mobileDebugBox';
-
-    box.style.cssText = `
-      position: fixed;
-      left: 5px;
-      bottom: 5px;
-      z-index: 999999;
-      background: #000;
-      color: #fff;
-      padding: 9px;
-      border-radius: 6px;
-      font: 11px monospace;
-      line-height: 1.45;
-      max-width: calc(100vw - 10px);
-    `;
-
-    const gs = grid ? getComputedStyle(grid) : null;
-    const wr = weekly ? weekly.getBoundingClientRect() : null;
-
-    box.textContent =
-      'innerWidth=' + window.innerWidth +
-      ' | clientWidth=' + document.documentElement.clientWidth +
-      ' | visualWidth=' + (
-        window.visualViewport
-          ? Math.round(window.visualViewport.width)
-          : 'N/A'
-      ) +
-      ' | dpr=' + window.devicePixelRatio +
-      ' | screen=' + screen.width + 'x' + screen.height +
-      ' | orientation=' + screen.orientation?.type +
-      ' | meta=' + (meta ? meta.content : 'MISSING') +
-      ' | media600=' + window.matchMedia('(max-width:600px)').matches +
-      ' | grid=' + (gs ? gs.display + '/' + gs.flexDirection : 'N/A') +
-      ' | weekly=' + (
-        wr
-          ? Math.round(wr.left) + ',' + Math.round(wr.top)
-          : 'N/A'
-      );
-
-    document.body.appendChild(box);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', debugViewport);
-  } else {
-    debugViewport();
-  }
-})();
-</script>
     
 </body>
 </html>
