@@ -51,30 +51,30 @@
 
 <style>
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
   width: 100%;
   min-width: 0;
-  min-height: 100%;
+  min-height: 100vh;
   background-color: #0f1117 !important;
 }
 
 html {
   min-height: 100%;
+  overscroll-behavior-y: none !important;
 }
 
 body {
-  color: #ffffff;
   min-height: 100vh;
   min-height: 100dvh;
-}
-
-html,
-body {
-  width: 100%;
-  min-height: 100vh;
-  background-color: #0f1117 !important;
+  color: #f5f6fa;
+  font: 15px system-ui, -apple-system, Segoe UI, sans-serif;
+  overscroll-behavior-y: none !important;
 }
 
 body::before {
@@ -86,57 +86,295 @@ body::before {
   pointer-events: none;
 }
 
-*{box-sizing:border-box}body{margin:0;background:#0f1117;color:#f5f6fa;font:15px system-ui,-apple-system,Segoe UI,sans-serif}
-.wrap{max-width:1150px;margin:auto;padding:28px 18px 55px}h1{margin:0;font-size:30px}.sub,.muted{color:#9ca3b2}.top{display:flex;justify-content:space-between;gap:20px;margin-bottom:24px;align-items:start}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}.card,.panel{background:#171a23;border:1px solid #2a2f3d;border-radius:14px}.card{padding:17px}.big{font-size:27px;font-weight:750;margin-top:3px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{overflow:hidden}.head{padding:15px 17px;border-bottom:1px solid #2a2f3d;display:flex;justify-content:space-between;gap:10px;align-items:center}.head h2{font-size:17px;margin:0}
-.member{padding:15px 17px;border-bottom:1px solid #2a2f3d}.member:last-child,.film:last-child{border:0}.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.name{font-weight:700}.stats{font-size:12px;color:#9ca3b2}.pct{font-size:20px;font-weight:750}.bar{height:9px;background:#292e3a;border-radius:99px;margin-top:10px;overflow:hidden}.fill{height:100%;background:#d9b36c}
-.form{display:grid;grid-template-columns:1fr auto auto;gap:7px;padding:13px 17px;border-bottom:1px solid #2a2f3d}input{background:#1e2230;color:#fff;border:1px solid #2a2f3d;border-radius:8px;padding:9px 10px;min-width:0}.btn{border:1px solid #2a2f3d;background:#1e2230;color:#fff;padding:9px 12px;border-radius:8px;cursor:pointer}.primary{background:#d9b36c;color:#16130d;border-color:#d9b36c;font-weight:700}
-.list{padding:8px 17px}.item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #2a2f3d}.films{max-height:560px;overflow:auto}.film{display:grid;grid-template-columns:1fr auto;gap:12px;padding:12px 17px;border-bottom:1px solid #2a2f3d}.title{font-weight:650}.meta{font-size:12px;color:#9ca3b2}.checks{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}.check{
-  width:38px;
-  height:31px;
-  padding:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid #2a2f3d;
-  border-radius:7px;
-  background:#1e2230;
-  color:#9ca3b2;
-  cursor:pointer;
-  font-size:12px;
-  font-weight:600;
-  line-height:1;
-}.check.on{background:#78c6a3;color:#0d1712;font-weight:800}.danger{background:none;border:0;color:#9ca3b2;cursor:pointer}.empty{text-align:center;padding:25px;color:#9ca3b2}
 
-/* =========================
-   SPAZIATURA INTERNA
-   ========================= */
+/* =========================================================
+   STRUTTURA BASE
+   ========================================================= */
+
+.wrap {
+  max-width: 1150px;
+  margin: auto;
+  padding: 28px 18px 55px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.sub,
+.muted {
+  color: #9ca3b2;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+  align-items: start;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.card,
+.panel {
+  background: #171a23;
+  border: 1px solid #2a2f3d;
+  border-radius: 14px;
+}
+
+.card {
+  padding: 17px;
+}
+
+.big {
+  font-size: 27px;
+  font-weight: 750;
+  margin-top: 3px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
 
 .panel {
+  overflow: hidden;
   padding: 22px;
 }
 
-.item {
-  padding: 12px 14px;
+.head {
+  padding: 15px 17px;
+  border-bottom: 1px solid #2a2f3d;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.head h2 {
+  font-size: 17px;
+  margin: 0;
 }
 
 .member {
   padding: 14px 4px;
+  border-bottom: 1px solid #2a2f3d;
+}
+
+.member:last-child,
+.film:last-child {
+  border: 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.name {
+  font-weight: 700;
+}
+
+.stats {
+  font-size: 12px;
+  color: #9ca3b2;
+  padding-left: 2px;
+}
+
+.pct {
+  font-size: 20px;
+  font-weight: 750;
+}
+
+.bar {
+  height: 9px;
+  background: #292e3a;
+  border-radius: 99px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: #d9b36c;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 7px;
+  padding: 13px 17px;
+  border-bottom: 1px solid #2a2f3d;
+}
+
+input {
+  background: #1e2230;
+  color: #fff;
+  border: 1px solid #2a2f3d;
+  border-radius: 8px;
+  padding: 9px 10px;
+  min-width: 0;
+}
+
+.btn {
+  border: 1px solid #2a2f3d;
+  background: #1e2230;
+  color: #fff;
+  padding: 9px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.primary {
+  background: #d9b36c;
+  color: #16130d;
+  border-color: #d9b36c;
+  font-weight: 700;
+}
+
+.list {
+  padding: 8px 17px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 1px solid #2a2f3d;
+}
+
+.empty {
+  text-align: center;
+  padding: 25px;
+  color: #9ca3b2;
+}
+
+
+/* =========================================================
+   FILM DEL CLUB
+   ========================================================= */
+
+.films {
+  max-height: 560px;
+  overflow: auto;
+}
+
+#films {
+  padding: 4px 0;
+}
+
+#films .film {
+  margin-bottom: 8px;
 }
 
 .film {
-  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 90px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #2a2f3d;
+}
+
+.film-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  flex: 1;
+}
+
+.film-info > div:last-child {
+  min-width: 0;
+}
+
+.film-poster {
+  width: 64px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 7px;
+  flex-shrink: 0;
+  display: block;
+  background: #1e2230;
+  cursor: pointer;
 }
 
 .title {
+  font-weight: 650;
   padding-left: 2px;
 }
 
-.meta,
-.stats {
+.film .title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.meta {
+  font-size: 12px;
+  color: #9ca3b2;
   padding-left: 2px;
 }
+
+.film .meta {
+  margin-top: 5px;
+}
+
+.checks {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  padding-left: 8px;
+}
+
+.check {
+  width: 38px;
+  height: 31px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2a2f3d;
+  border-radius: 7px;
+  background: #1e2230;
+  color: #9ca3b2;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.check.on {
+  background: #78c6a3;
+  color: #0d1712;
+  font-weight: 800;
+}
+
+.danger {
+  background: none;
+  border: 0;
+  color: #9ca3b2;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   FILM DA RECUPERARE
+   ========================================================= */
+
 .missing-panel {
   padding: 24px;
 }
@@ -148,174 +386,6 @@ body::before {
 #missingFilms .item {
   padding: 14px 16px;
 }
-#films {
-  padding: 4px 0;
-}
-
-#films .film {
-  margin-bottom: 8px;
-}
-
-#films .checks {
-  padding-left: 12px;
-}
-
-.film-info {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  min-width: 0;
-  flex: 1;
-}
-
-.film-poster {
-  width: 64px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 7px;
-  flex-shrink: 0;
-  display: block;
-  background: #1e2230;
-}
-
-.film-info > div:last-child {
-  min-width: 0;
-}
-
-.film .title {
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.3;
-}
-
-.film .meta {
-  margin-top: 5px;
-}
-
-.film {
-  padding: 12px 16px;
-  min-height: 90px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.film .checks {
-  flex-shrink: 0;
-  padding-left: 8px;
-}
-
-/* MODAL FILM */
-
-.film-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.78);
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.film-modal.open {
-  display: flex;
-}
-
-.film-modal-box {
-  width: min(760px, 100%);
-  max-height: 90vh;
-  overflow-y: auto;
-  background: #151821;
-  border: 1px solid #2a2f3d;
-  border-radius: 14px;
-  padding: 24px;
-  position: relative;
-  box-shadow: 0 20px 60px rgba(0,0,0,.45);
-}
-
-.film-modal-close {
-  position: absolute;
-  top: 12px;
-  right: 14px;
-  width: 34px;
-  height: 34px;
-  border: 0;
-  border-radius: 50%;
-  background: #252a38;
-  color: #fff;
-  cursor: pointer;
-  font-size: 20px;
-  line-height: 1;
-}
-
-.film-modal-content {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-}
-
-.film-modal-poster {
-  width: 220px;
-  max-width: 40%;
-  border-radius: 9px;
-  display: block;
-  object-fit: cover;
-}
-
-.film-modal-info {
-  padding-top: 8px;
-  flex: 1;
-}
-
-.film-modal-title {
-  font-size: 28px;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 8px;
-}
-
-.film-modal-year {
-  color: #9ca3b2;
-  margin-bottom: 24px;
-}
-
-
-.film-modal-status {
-  padding: 14px 16px;
-  border-radius: 9px;
-  background: #1e2230;
-  border: 1px solid #2a2f3d;
-  margin-bottom: 16px;
-}
-
-.film-modal-status-label {
-  color: #9ca3b2;
-  font-size: 12px;
-  margin-bottom: 5px;
-}
-
-.film-modal-status-value {
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.film-modal-action {
-  margin-top: 12px;
-}
-
-.film-modal-action .btn {
-  width: 100%;
-}
-
-.film-poster {
-  cursor: pointer;
-}
-
-
-/* =========================
-   FILM DA RECUPERARE
-   ========================= */
 
 .missing-grid {
   display: grid;
@@ -329,12 +399,16 @@ body::before {
   border: 1px solid #2a2f3d;
   border-radius: 12px;
   overflow: hidden;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
 }
 
 .missing-poster-wrap {
   aspect-ratio: 2 / 3;
   background: #151821;
   overflow: hidden;
+  flex-shrink: 0 !important;
 }
 
 .missing-poster {
@@ -359,6 +433,10 @@ body::before {
 
 .missing-info {
   padding: 12px;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+  min-height: 0 !important;
 }
 
 .missing-title {
@@ -374,20 +452,20 @@ body::before {
 }
 
 .missing-action {
-  margin-top: 10px;
+  margin-top: auto !important;
+  padding-top: 16px !important;
+  flex-shrink: 0 !important;
 }
 
 .missing-action .btn {
-  width: 100%;
+  width: 100% !important;
+  display: block !important;
 }
 
-/* =========================
-   PROGRESSO MEMBRI / FILM SETTIMANA
-   ========================= */
 
-/* =========================
+/* =========================================================
    PROGRESSO MEMBRI / FILM SETTIMANA
-   ========================= */
+   ========================================================= */
 
 .dashboard-main-grid {
   display: grid !important;
@@ -409,8 +487,9 @@ body::before {
 .weekly-film-label {
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
   color: #9ca3b2;
   margin-bottom: 22px;
 }
@@ -487,17 +566,153 @@ body::before {
 }
 
 
-@media (hover: none) and (pointer: coarse) {
+/* =========================================================
+   TITOLI SEZIONI
+   ========================================================= */
 
-  .film-admin-form {
-    grid-template-columns: 1fr;
-  }
+.missing-panel .head h2,
+.dashboard-main-grid .head h2,
+.film-club-section .head h2 {
+  font-size: 35px !important;
+  line-height: 1.25 !important;
+}
 
-  .film-admin-form textarea,
-  .film-admin-submit {
-    grid-column: auto;
-  }
+.missing-panel-title {
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+}
 
+#missingCountLabel {
+  font-size: 24px !important;
+  line-height: 1.3 !important;
+  margin-top: 5px !important;
+}
+
+
+/* =========================================================
+   SUGGERIMENTI FILM DEL CLUB
+   ========================================================= */
+
+.film-club-hint,
+.film-club-action-hint {
+  font-size: 12px !important;
+  line-height: 1.3 !important;
+}
+
+.film-club-hint {
+  margin-top: 4px !important;
+}
+
+.film-club-action-hint {
+  text-align: right !important;
+  max-width: 220px !important;
+  white-space: normal !important;
+}
+
+
+/* =========================================================
+   MODAL FILM
+   ========================================================= */
+
+.film-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.78);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.film-modal.open {
+  display: flex;
+}
+
+.film-modal-box {
+  width: min(760px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #151821;
+  border: 1px solid #2a2f3d;
+  border-radius: 14px;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+
+.film-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: #252a38;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.film-modal-content {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.film-modal-poster {
+  width: 220px;
+  max-width: 40%;
+  border-radius: 9px;
+  display: block;
+  object-fit: cover;
+}
+
+.film-modal-info {
+  padding-top: 8px;
+  flex: 1;
+}
+
+.film-modal-title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.film-modal-year {
+  color: #9ca3b2;
+  margin-bottom: 24px;
+}
+
+.film-modal-status {
+  padding: 14px 16px;
+  border-radius: 9px;
+  background: #1e2230;
+  border: 1px solid #2a2f3d;
+  margin-bottom: 16px;
+}
+
+.film-modal-status-label {
+  color: #9ca3b2;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.film-modal-status-value {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.film-modal-action {
+  margin-top: 12px;
+}
+
+.film-modal-action .btn {
+  width: 100%;
 }
 
 .film-modal-details {
@@ -561,212 +776,49 @@ body::before {
   font-weight: 700;
 }
 
-/* =========================
-   FILM DELLA SETTIMANA
-   LAYOUT DESKTOP
-   ========================= */
 
-@media (min-width: 1001px) {
+/* =========================================================
+   ADMIN FORM FILM
+   ========================================================= */
 
-  .weekly-film {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 36px !important;
-    width: 100% !important;
+.film-admin-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.film-admin-form textarea {
+  grid-column: 1 / -1;
+  min-height: 90px;
+  resize: vertical;
+}
+
+.film-admin-submit {
+  grid-column: 1 / -1;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .film-admin-form {
+    grid-template-columns: 1fr;
   }
 
-  .weekly-film-poster {
-    width: 280px !important;
-    height: 400px !important;
-    flex-shrink: 0 !important;
-  }
-
-  .weekly-film-info {
-    width: 100% !important;
-    text-align: left !important;
-  }
-
-  .weekly-film-title {
-    font-size: 36px !important;
-  }
-
-  .weekly-film-year {
-    font-size: 19px !important;
-  }
-
-  .weekly-film-synopsis {
-    font-size: 18px !important;
-    line-height: 1.6 !important;
-  }
-
-}
-
-/* =========================
-   weeklyfilmpanel
-   ULTIME REGOLE RESPONSIVE
-   ========================= */
-
-
-/* COMPUTER */
-
-@media (min-width: 1001px) {
-
-  .dashboard-main-grid {
-    align-items: stretch !important;
-  }
-
-  .weekly-film-panel {
-    height: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-}
-
-/* =========================================
-   FILM DA RECUPERARE — ALLINEAMENTO VISTO
-   ========================================= */
-
-.missing-card {
-  display: flex !important;
-  flex-direction: column !important;
-  height: 100% !important;
-}
-
-.missing-poster-wrap {
-  flex-shrink: 0 !important;
-}
-
-.missing-info {
-  display: flex !important;
-  flex-direction: column !important;
-  flex: 1 !important;
-  min-height: 0 !important;
-}
-
-.missing-action {
-  margin-top: auto !important;
-  padding-top: 16px !important;
-  flex-shrink: 0 !important;
-}
-
-.missing-action .btn {
-  width: 100% !important;
-  display: block !important;
-}
-
-
-/* =========================================
-   SUGGERIMENTI FILM DEL CLUB
-   ========================================= */
-
-.film-club-hint,
-.film-club-action-hint {
-  font-size: 12px !important;
-  line-height: 1.3 !important;
-}
-
-.film-club-hint {
-  margin-top: 4px !important;
-}
-
-.film-club-action-hint {
-  text-align: right !important;
-  max-width: 220px !important;
-  white-space: normal !important;
-}
-
-@media screen and (max-width: 600px) {
-
-  .film-club-hint,
-  .film-club-action-hint {
-    font-size: 12px !important;
-    line-height: 1.3 !important;
-  }
-
-    .film-club-action-hint {
-    max-width: 180px !important;
-    text-align: right !important;
-    flex-shrink: 0 !important;
-    white-space: normal !important;
-  }
-
-}
-
-
-#missingCountLabel {
-  font-size: 12px !important;
-  line-height: 1.3 !important;
-}
-
-/* =========================================
-   TITOLI SEZIONI PRINCIPALI
-   ========================================= */
-
-.missing-panel .head h2,
-.dashboard-main-grid .head h2,
-.film-club-section .head h2 {
-  font-size: 35px !important;
-  line-height: 1.25 !important;
-}
-
-@media screen and (max-width: 600px) {
-  .missing-panel .head h2,
-  .dashboard-main-grid .head h2,
-  .film-club-section .head h2 {
-    font-size: 35px !important;
-    line-height: 1.25 !important;
+  .film-admin-form textarea,
+  .film-admin-submit {
+    grid-column: auto;
   }
 }
 
-.missing-panel-title {
-  font-size: 26px !important;
-  font-weight: 800 !important;
-  line-height: 1.25 !important;
-}
 
-#missingCountLabel {
-  font-size: 12px !important;
-}
-
-.weekly-film-label {
-  font-size: 20px !important;
-  line-height: 1.25 !important;
-  font-weight: 800 !important;
-}
-
-#missingCountLabel {
-  font-size: 16px !important;
-  line-height: 1.3 !important;
-  margin-top: 5px !important;
-}
-
-@media screen and (max-width: 600px) {
-  #missingCountLabel {
-    font-size: 16px !important;
-    line-height: 1.3 !important;
-  }
-}
-
-#missingCountLabel {
-  font-size: 24px !important;
-  line-height: 1.3 !important;
-  margin-top: 5px !important;
-}
-
-/* =========================================
+/* =========================================================
    ADMIN LOGIN
-   ========================================= */
+   ========================================================= */
 
-/* Desktop: stessa larghezza del login membri */
 #adminLoginScreen .admin-login-box {
   width: 100% !important;
   max-width: 380px !important;
   box-sizing: border-box !important;
 }
 
-
-/* Tablet / schermi intermedi */
 @media screen and (max-width: 1000px) {
 
   #adminLoginScreen .admin-login-box {
@@ -776,17 +828,43 @@ body::before {
     box-sizing: border-box !important;
   }
 
+  #loginScreen > div,
+  #adminLoginScreen .admin-login-box {
+    width: calc(100% - 32px) !important;
+    max-width: 620px !important;
+    padding: 36px 30px !important;
+    border-radius: 20px !important;
+  }
+
+  #loginScreen h2,
+  #adminLoginScreen h2 {
+    font-size: 30px !important;
+    margin-bottom: 12px !important;
+  }
+
+  #loginScreen p,
+  #adminLoginScreen p {
+    font-size: 19px !important;
+    line-height: 1.4 !important;
+  }
+
+  #loginScreen select,
+  #loginScreen input,
+  #loginScreen button,
+  #adminLoginScreen select,
+  #adminLoginScreen input,
+  #adminLoginScreen button {
+    min-height: 58px !important;
+    font-size: 20px !important;
+  }
 }
 
-
-/* Telefono */
 @media screen and (max-width: 600px) {
 
   #adminLoginScreen .admin-login-box {
     width: 100% !important;
     max-width: none !important;
     padding: 36px 26px !important;
-    box-sizing: border-box !important;
   }
 
   #adminLoginScreen .admin-login-box #adminPin {
@@ -794,93 +872,38 @@ body::before {
     min-height: 100px !important;
     padding: 20px 15px !important;
     font-size: 18px !important;
+    margin-bottom: 20px !important;
   }
 
   #adminLoginScreen .admin-login-box button {
-    height: 100px !important;
-    min-height: 100px !important;
+    width: 100% !important;
+    min-height: 72px !important;
+    height: 72px !important;
     padding: 20px !important;
     font-size: 18px !important;
+    line-height: 1.2 !important;
+    box-sizing: border-box !important;
   }
 
-#adminLoginScreen .admin-login-box #adminPin {
-  margin-bottom: 20px !important;
-}
-
-#adminLoginScreen .admin-login-box button {
-  width: 100% !important;
-  min-height: 72px !important;
-  height: 72px !important;
-  padding: 20px !important;
-  font-size: 18px !important;
-  line-height: 1.2 !important;
-  box-sizing: border-box !important;
-}
-
-#adminLoginScreen .admin-login-box button + button {
-  margin-top: 12px !important;
-}
-}
-
-@media screen and (max-width: 1000px) {
-
-  /* LOGIN MEMBRI + ADMIN */
-
-  #loginScreen > div,
-  #adminLoginScreen .admin-login-box {
-
-    width: calc(100% - 32px) !important;
-
-    max-width: 620px !important;
-
-    padding: 36px 30px !important;
-
-    border-radius: 20px !important;
-
+  #adminLoginScreen .admin-login-box button + button {
+    margin-top: 12px !important;
   }
-
-
-  #loginScreen h2,
-  #adminLoginScreen h2 {
-
-    font-size: 30px !important;
-
-    margin-bottom: 12px !important;
-
-  }
-
-
-  #loginScreen p,
-  #adminLoginScreen p {
-
-    font-size: 19px !important;
-
-    line-height: 1.4 !important;
-
-  }
-
-
-  #loginScreen select,
-  #loginScreen input,
-  #loginScreen button,
-
-  #adminLoginScreen select,
-  #adminLoginScreen input,
-  #adminLoginScreen button {
-
-    min-height: 58px !important;
-
-    font-size: 20px !important;
-
-  }
-
 }
+
+
+/* =========================================================
+   RANKING
+   ========================================================= */
 
 .ranking-panel {
   padding: 30px;
 }
 
 .ranking-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
   margin-bottom: 24px;
 }
 
@@ -894,6 +917,13 @@ body::before {
   margin-top: 5px;
   color: #9ca3b2;
   font-size: 20px;
+}
+
+.ranking-hint {
+  color: #9ca3b2;
+  font-size: 15px;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .ranking-item {
@@ -943,7 +973,7 @@ body::before {
   min-width: 0;
   text-align: right;
   align-self: center;
-  transform: translateY(0px);
+  transform: translateY(0);
   padding-right: 12px;
 }
 
@@ -968,17 +998,18 @@ body::before {
 
 .ranking-score {
   margin-top: 0;
-  font-size: 40px;
+  font-size: 20px;
   font-weight: 800;
   text-align: right;
 }
 
-.ranking-score-clickable {
+.ranking-score-clickable,
+.ranking-rating-clickable {
   cursor: pointer;
-  transition: opacity 0.15s ease;
 }
 
-.ranking-score-clickable:hover {
+.ranking-score-clickable:hover,
+.ranking-rating-clickable:hover {
   opacity: 0.75;
 }
 
@@ -989,65 +1020,10 @@ body::before {
   text-align: right;
 }
 
-@media (max-width: 600px) {
 
-  .ranking-panel {
-    padding: 20px 14px;
-  }
-
-  .ranking-title {
-    font-size: 30px;
-  }
-
-  .ranking-subtitle {
-    font-size: 20px;
-  }
-
-  .ranking-item {
-    grid-template-columns: 32px 70px minmax(0, 1fr) 82px;
-    gap: 9px;
-    padding: 12px 0;
-  }
-
-  .ranking-position {
-    font-size: 17px;
-  }
-
-  .ranking-poster {
-    width: 70px;
-    height: 105px;
-    border-radius: 7px;
-  }
-
-  .ranking-film-title {
-    font-size: 17px;
-  }
-
-  .ranking-film-year,
-  .ranking-film-director {
-    font-size: 12px;
-  }
-
-  .ranking-score {
-    font-size: 25px;
-    text-align: right;
-  }
-
-  .ranking-watched {
-    font-size: 12px;
-    text-align: right;
-  }
-
-}
-
-@media (max-width: 600px) {
-  .ranking-rating {
-    align-self: start;
-    padding-top: 20px;
-    transform: translateY(0);
-    padding-right: 6px;
-  }
-}
+/* =========================================================
+   MENU + PROFILO
+   ========================================================= */
 
 .main-nav {
   position: relative;
@@ -1060,35 +1036,36 @@ body::before {
 .main-nav-toggle {
   width: 46px;
   height: 42px;
-
   background: #171a23;
   color: #f5f6fa;
-
   border: 1px solid #2a2f3d;
   border-radius: 8px;
-
   font-size: 22px;
   line-height: 1;
-
   cursor: pointer;
+}
+
+.top .main-nav-toggle {
+  width: 52px;
+  height: 52px;
+  font-size: 28px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main-nav-menu {
   position: absolute;
   top: 50px;
   right: 0;
-
   width: 190px;
-
   display: none;
   flex-direction: column;
-
   padding: 6px;
-
   background: #171a23;
   border: 1px solid #2a2f3d;
   border-radius: 10px;
-
   box-shadow: 0 12px 30px rgba(0,0,0,.35);
 }
 
@@ -1098,18 +1075,13 @@ body::before {
 
 .main-nav-item {
   width: 100%;
-
   padding: 11px 12px;
-
   background: transparent;
   border: 0;
   border-radius: 7px;
-
   color: #c8ccd6;
-
   font-size: 15px;
   text-align: left;
-
   cursor: pointer;
 }
 
@@ -1124,6 +1096,32 @@ body::before {
   font-weight: 700;
 }
 
+#mainNavMenu {
+  padding: 8px;
+  min-width: 220px;
+}
+
+#mainNavMenu .main-nav-item {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 15px 18px;
+  min-height: 52px;
+}
+
+#profileName {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+}
+
+#profileSigla {
+  font-size: 14px !important;
+}
+
+
+/* =========================================================
+   LISTE ADMIN
+   ========================================================= */
+
 #memberList,
 #filmAdminList {
   max-height: 420px;
@@ -1132,7 +1130,6 @@ body::before {
   padding-right: 6px;
 }
 
-/* Scrollbar */
 #memberList::-webkit-scrollbar,
 #filmAdminList::-webkit-scrollbar {
   width: 7px;
@@ -1156,42 +1153,9 @@ body::before {
 }
 
 
-/* Mobile */
-@media screen and (max-width: 600px) {
-
-  #memberList,
-  #filmAdminList {
-    max-height: 360px;
-    padding-right: 4px;
-  }
-
-}
-
-.ranking-score {
-  margin-top: 0;
-  font-size: 20px;
-  font-weight: 800;
-}
-
-.ranking-watched {
-  margin-top: 5px;
-  color: #9ca3b2;
-  font-size: 14px;
-}
-
-@media (max-width: 600px) {
-  .ranking-rating {
-    transform: translateY(-6px);
-  }
-
-  .ranking-score {
-    font-size: 17px;
-  }
-
-  .ranking-watched {
-    font-size: 12px;
-  }
-}
+/* =========================================================
+   MODAL VALUTAZIONI
+   ========================================================= */
 
 .film-ratings-modal-box {
   position: relative;
@@ -1264,15 +1228,557 @@ body::before {
   text-align: center;
 }
 
-.ranking-rating-clickable {
-  cursor: pointer;
+
+/* =========================================================
+   DESKTOP — FILM DELLA SETTIMANA
+   ========================================================= */
+
+@media (min-width: 1001px) {
+
+  .weekly-film {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 36px !important;
+    width: 100% !important;
+  }
+
+  .weekly-film-poster {
+    width: 280px !important;
+    height: 400px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .weekly-film-info {
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  .weekly-film-title {
+    font-size: 36px !important;
+  }
+
+  .weekly-film-year {
+    font-size: 19px !important;
+  }
+
+  .weekly-film-synopsis {
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+  }
+
+  .dashboard-main-grid {
+    align-items: stretch !important;
+  }
+
+  .weekly-film-panel {
+    height: 100% !important;
+    box-sizing: border-box !important;
+  }
 }
 
-.ranking-rating-clickable:hover {
-  opacity: 0.75;
-}
 
-@media (max-width: 600px) {
+/* =========================================================
+   MOBILE — UNICO BLOCCO RESPONSIVE
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+  /* -------------------------------------------------------
+     STRUTTURA GENERALE
+     ------------------------------------------------------- */
+
+  body {
+    overflow-x: hidden;
+    font-size: 15px;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 20px 14px 50px;
+  }
+
+  .top {
+    width: 100%;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .card {
+    padding: 15px 17px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .panel {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px;
+  }
+
+
+  /* -------------------------------------------------------
+     TITOLI SEZIONI
+     ------------------------------------------------------- */
+
+  .missing-panel .head h2,
+  .dashboard-main-grid .head h2,
+  .film-club-section .head h2 {
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+  }
+
+  .missing-panel-title {
+    font-size: 21px !important;
+  }
+
+  #missingCountLabel {
+    font-size: 14px !important;
+    line-height: 1.3 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     PROGRESSO MEMBRI
+     ------------------------------------------------------- */
+
+  .dashboard-main-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin-bottom: 12px !important;
+    align-items: stretch !important;
+  }
+
+  .dashboard-main-grid > section {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .dashboard-main-grid > section:first-child {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .dashboard-main-grid > section:first-child .panel {
+    height: auto !important;
+  }
+
+  #members {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #members .member {
+    padding: 10px 4px;
+  }
+
+  #members .pct {
+    font-size: 18px;
+  }
+
+  #members .stats {
+    font-size: 12px;
+  }
+
+  #members .bar {
+    height: 7px;
+    margin-top: 7px;
+  }
+
+
+  /* -------------------------------------------------------
+     FILM DELLA SETTIMANA
+     ------------------------------------------------------- */
+
+  #weeklyFilmPanel {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 16px !important;
+    overflow: visible !important;
+  }
+
+  #weeklyFilm {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  #weeklyFilm .weekly-film-mobile-layout {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  #weeklyFilm .weekly-film-poster-wrap {
+    flex: 0 0 115px !important;
+    width: 115px !important;
+    min-width: 115px !important;
+    max-width: 115px !important;
+    height: 173px !important;
+    min-height: 173px !important;
+    max-height: 173px !important;
+    overflow: hidden !important;
+    border-radius: 7px !important;
+    align-self: flex-start !important;
+  }
+
+  #weeklyFilm .weekly-film-poster {
+    display: block !important;
+    width: 115px !important;
+    min-width: 115px !important;
+    max-width: 115px !important;
+    height: 173px !important;
+    min-height: 173px !important;
+    max-height: 173px !important;
+    object-fit: cover !important;
+    border-radius: 7px !important;
+  }
+
+  #weeklyFilm .weekly-film-info {
+    flex: 1 1 auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-self: flex-start !important;
+  }
+
+  #weeklyFilm .weekly-film-label {
+    font-size: 16px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 12px !important;
+  }
+
+  #weeklyFilm .weekly-film-title {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 18px !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+
+  #weeklyFilm .weekly-film-year {
+    margin-top: 4px !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+  }
+
+  #weeklyFilm .weekly-film-details {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+    margin-top: 8px !important;
+    width: 100% !important;
+  }
+
+  #weeklyFilm .weekly-film-detail {
+    max-width: 100% !important;
+    padding: 4px 6px !important;
+    font-size: 9px !important;
+    line-height: 1.15 !important;
+  }
+
+  #weeklyFilm .weekly-film-synopsis {
+    width: 100% !important;
+    margin-top: 8px !important;
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+
+  #weeklyFilm .weekly-film-date {
+    width: 100% !important;
+    margin-top: 8px !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+    font-size: 9px !important;
+    line-height: 1.25 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     FILM DEL CLUB
+     Poster | titolo/anno | sigle
+     ------------------------------------------------------- */
+
+  #films {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 4px 0 !important;
+  }
+
+  #films .film {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 74px !important;
+    margin: 0 0 7px 0 !important;
+    padding: 8px !important;
+    gap: 10px !important;
+  }
+
+  #films .film-info {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 100% !important;
+  }
+
+  #films .film-poster {
+    flex: 0 0 52px !important;
+    width: 52px !important;
+    min-width: 52px !important;
+    max-width: 52px !important;
+    height: 74px !important;
+    min-height: 74px !important;
+    max-height: 74px !important;
+    object-fit: cover !important;
+    border-radius: 6px !important;
+  }
+
+  #films .film-info > div:last-child {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  #films .film .title {
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+
+  #films .film .meta {
+    margin-top: 3px !important;
+    padding-left: 0 !important;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+  }
+
+  #films .film .checks {
+    flex: 0 0 auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 4px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #films .film .check {
+    flex: 0 0 24px !important;
+    width: 24px !important;
+    min-width: 24px !important;
+    max-width: 24px !important;
+    height: 25px !important;
+    min-height: 25px !important;
+    max-height: 25px !important;
+    padding: 0 !important;
+    border-radius: 5px !important;
+    font-size: 9px !important;
+    line-height: 1 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     FILM DA RECUPERARE
+     ------------------------------------------------------- */
+
+  .missing-panel {
+    padding: 16px !important;
+  }
+
+  .missing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .missing-card {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .missing-info {
+    padding: 10px !important;
+  }
+
+  .missing-title {
+    font-size: 14px !important;
+    line-height: 1.25 !important;
+  }
+
+  .missing-year {
+    font-size: 11px !important;
+  }
+
+  .missing-action {
+    margin-top: 9px !important;
+    padding-top: 0 !important;
+  }
+
+  .missing-action .btn {
+    padding: 8px 6px !important;
+    font-size: 12px !important;
+  }
+
+
+  /* -------------------------------------------------------
+     RANKING
+     ------------------------------------------------------- */
+
+  .ranking-panel {
+    padding: 20px 14px;
+  }
+
+  .ranking-header {
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .ranking-title {
+    font-size: 30px;
+  }
+
+  .ranking-subtitle {
+    font-size: 20px;
+  }
+
+  .ranking-hint {
+    font-size: 20px;
+    white-space: normal;
+    max-width: 150px;
+  }
+
+  .ranking-item {
+    grid-template-columns: 32px 70px minmax(0, 1fr) 82px;
+    gap: 9px;
+    padding: 12px 0;
+  }
+
+  .ranking-position {
+    font-size: 17px;
+  }
+
+  .ranking-poster {
+    width: 70px;
+    height: 105px;
+    border-radius: 7px;
+  }
+
+  .ranking-film-title {
+    font-size: 17px;
+  }
+
+  .ranking-film-year,
+  .ranking-film-director {
+    font-size: 12px;
+  }
+
+  .ranking-rating {
+    align-self: start;
+    padding-top: 20px;
+    padding-right: 6px;
+    transform: translateY(-6px);
+  }
+
+  .ranking-score {
+    font-size: 17px;
+  }
+
+  .ranking-watched {
+    font-size: 12px;
+  }
+
+
+  /* -------------------------------------------------------
+     MENU + PROFILO
+     ------------------------------------------------------- */
+
+  #profileName {
+    font-size: 19px !important;
+  }
+
+  #profileSigla {
+    font-size: 13px !important;
+  }
+
+  .top .main-nav-toggle {
+    width: 50px;
+    height: 50px;
+    font-size: 27px;
+  }
+
+  #mainNavMenu {
+    min-width: 250px;
+    padding: 10px;
+  }
+
+  #mainNavMenu .main-nav-item {
+    font-size: 19px;
+    padding: 17px 20px;
+    min-height: 56px;
+  }
+
+
+  /* -------------------------------------------------------
+     LISTE ADMIN
+     ------------------------------------------------------- */
+
+  #memberList,
+  #filmAdminList {
+    max-height: 360px;
+    padding-right: 4px;
+  }
+
+
+  /* -------------------------------------------------------
+     MODAL VALUTAZIONI
+     ------------------------------------------------------- */
 
   .film-ratings-modal-box {
     width: calc(100% - 24px);
@@ -1301,1057 +1807,29 @@ body::before {
     font-size: 16px;
   }
 
-  .ranking-header {
-  align-items: flex-start;
-  }
 
-  .ranking-hint {
-  font-size: 20px;
-  white-space: normal;
-  max-width: 150px;
-  }
-
-  #profileName {
-  font-size: 19px !important;
-  }
-
-#profileSigla {
-  font-size: 13px !important;
-  }
-
-.top .main-nav-toggle {
-  width: 50px;
-  height: 50px;
-  font-size: 27px;
-  }
-
-#mainNavMenu {
-  min-width: 250px;
-  padding: 10px;
-  }
-
-#mainNavMenu .main-nav-item {
-  font-size: 19px;
-  padding: 17px 20px;
-  min-height: 56px;
-  }
-
-}
-
-.ranking-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 24px;
-}
-
-.ranking-hint {
-  color: #9ca3b2;
-  font-size: 15px;
-  text-align: right;
-  white-space: nowrap;
-}
-
-/* =========================
-   MENU + PROFILO
-   ========================= */
-
-#profileName {
-  font-size: 20px !important;
-  font-weight: 800 !important;
-}
-
-#profileSigla {
-  font-size: 14px !important;
-}
-
-/* Pulsante menu affianco al nome */
-.top .main-nav-toggle {
-  width: 52px;
-  height: 52px;
-  font-size: 28px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Contenitore del menu */
-#mainNavMenu {
-  padding: 8px;
-  min-width: 220px;
-}
-
-/* Voci del menu */
-#mainNavMenu .main-nav-item {
-  font-size: 18px;
-  font-weight: 700;
-  padding: 15px 18px;
-  min-height: 52px;
-}
-
-html {
-  overscroll-behavior-y: none !important;
-}
-
-body {
-  overscroll-behavior-y: none !important;
-}
-
-/* =========================
-   MOBILE — PROGRESSO + FILM SETTIMANA
-   ========================= */
-
-@media screen and (max-width: 600px) {
-
-  .dashboard-main-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    gap: 10px !important;
-    align-items: stretch !important;
-  }
-
-  .dashboard-main-grid > section {
-    width: 100% !important;
-    min-width: 0 !important;
-    margin-bottom: 0 !important;
-    align-self: stretch !important;
-  }
-
-}
-
-
-  @media screen and (max-width: 600px) {
-  #weeklyFilmPanel {
-    width: 100% !important;
-    padding: 16px !important;
-    overflow: hidden !important;
-  }
-
-  #weeklyFilm {
-    width: 100% !important;
-    min-width: 0 !important;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: flex-start !important;
-    gap: 16px !important;
-  }
-
-  #weeklyFilm .weekly-film-poster-wrap {
-    flex: 0 0 125px !important;
-    width: 125px !important;
-    min-width: 125px !important;
-    max-width: 125px !important;
-    height: 188px !important;
-    min-height: 188px !important;
-    max-height: 188px !important;
-    overflow: hidden !important;
-    align-self: flex-start !important;
-    border-radius: 8px !important;
-  }
-
-  #weeklyFilm .weekly-film-poster-wrap .weekly-film-poster {
-    display: block !important;
-    width: 125px !important;
-    min-width: 125px !important;
-    height: 188px !important;
-    min-height: 188px !important;
-    object-fit: cover !important;
-  }
-
-  #weeklyFilm .weekly-film-info {
-    flex: 1 1 auto !important;
-    width: auto !important;
-    min-width: 0 !important;
-    align-self: flex-start !important;
-    display: block !important;
-    max-height: none !important;
-    overflow: visible !important;
-  }
-
-  #weeklyFilm .weekly-film-title {
-    margin: 0 !important;
-    font-size: 20px !important;
-    line-height: 1.15 !important;
-    overflow-wrap: anywhere !important;
-  }
-
-  #weeklyFilm .weekly-film-year {
-    margin-top: 4px !important;
-    font-size: 13px !important;
-    line-height: 1.2 !important;
-  }
-
-  #weeklyFilm .weekly-film-details {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 5px !important;
-    margin-top: 9px !important;
-  }
-
-  #weeklyFilm .weekly-film-detail {
-    padding: 5px 7px !important;
-    font-size: 10px !important;
-    line-height: 1.15 !important;
-  }
-
-  #weeklyFilm .weekly-film-synopsis {
-    margin-top: 9px !important;
-    font-size: 12px !important;
-    line-height: 1.3 !important;
-  }
-
-  #weeklyFilm .weekly-film-date {
-    margin-top: 9px !important;
-    padding-top: 0 !important;
-    font-size: 10px !important;
-    line-height: 1.2 !important;
-  }
-
-  #weeklyFilmPanel,
-  #weeklyFilm,
-  #films,
-  #films .film,
-  #films .film-info,
-  #films .film .title {
-    box-sizing: border-box !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-  }
-}
-  
-  
- /* =========================
-   MOBILE — LISTA FILM DEL CLUB
-   ========================= */
-
-@media screen and (max-width: 600px) {
-
-  #films {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    padding: 4px 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  #films .film {
-    display: grid !important;
-
-    /*
-     * Poster | Titolo | Sigle
-     */
-    grid-template-columns: 52px minmax(0, 1fr) 34px !important;
-
-    column-gap: 9px !important;
-
-    align-items: center !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-
-    min-height: 74px !important;
-
-    margin: 0 0 6px !important;
-    padding: 8px !important;
-
-    box-sizing: border-box !important;
-  }
-
-  /* Fa usare direttamente alla griglia
-     poster, testo e sigle */
-  #films .film-info {
-    display: contents !important;
-  }
-
-  /* Poster */
-  #films .film-poster {
-    grid-column: 1 !important;
-    grid-row: 1 !important;
-
-    width: 52px !important;
-    min-width: 52px !important;
-    max-width: 52px !important;
-
-    height: 74px !important;
-    min-height: 74px !important;
-    max-height: 74px !important;
-
-    object-fit: cover !important;
-    border-radius: 6px !important;
-
-    align-self: center !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Blocco titolo + anno */
-  #films .film-info > div:last-child {
-    grid-column: 2 !important;
-    grid-row: 1 !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-
-    overflow: hidden !important;
-
-    box-sizing: border-box !important;
-  }
-
-  /* Titolo */
-  #films .film .title {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    font-size: 15px !important;
-    line-height: 1.2 !important;
-    font-weight: 700 !important;
-
-    /*
-     * Permette di andare a capo solo quando
-     * serve realmente.
-     */
-    overflow-wrap: break-word !important;
-    word-break: normal !important;
-  }
-
-  /* Anno */
-  #films .film .meta {
-    margin-top: 3px !important;
-
-    font-size: 11px !important;
-    line-height: 1.15 !important;
-  }
-
-  /* Colonna delle sigle */
-  #films .film .checks {
-    grid-column: 3 !important;
-    grid-row: 1 !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-
-    justify-content: center !important;
-    align-items: center !important;
-
-    gap: 3px !important;
-
-    width: 34px !important;
-    min-width: 34px !important;
-    max-width: 34px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    box-sizing: border-box !important;
-  }
-
-  /* Singole sigle */
-  #films .film .check {
-    display: flex !important;
-
-    align-items: center !important;
-    justify-content: center !important;
-
-    width: 26px !important;
-    min-width: 26px !important;
-    max-width: 26px !important;
-
-    height: 24px !important;
-    min-height: 24px !important;
-    max-height: 24px !important;
-
-    padding: 0 !important;
-
-    border-radius: 5px !important;
-
-    font-size: 9px !important;
-    line-height: 1 !important;
-
-    box-sizing: border-box !important;
-  }
-
-}
-
-  
-  /* =====================================================
-     TITOLI
-     ===================================================== */
-
-  #weeklyFilmPanel .weekly-film-label {
-    font-size: 16px !important;
-    margin-bottom: 12px !important;
-  }
-
-  .film-club-section .head h2 {
-    font-size: 24px !important;
-    line-height: 1.15 !important;
-  }
-
-
-  /* =====================================================
+  /* -------------------------------------------------------
      SICUREZZA LAYOUT
-     ===================================================== */
-
-  #weeklyFilmPanel,
-  #weeklyFilm,
-  #films,
-  #films .film,
-  #films .film-info,
-  #films .film .title {
-    box-sizing: border-box !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-  }
-}  
-
-  /* =========================================================
-   MOBILE — FIX LAYOUT
-   ========================================================= */
-
-@media screen and (max-width: 600px) {
-
-  /* ---------------------------------------------------------
-     PROGRESSO MEMBRI + FILM DELLA SETTIMANA
-     Uno sotto l'altro
-     --------------------------------------------------------- */
-
-  .dashboard-main-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    gap: 10px !important;
-    align-items: stretch !important;
-  }
-
-  .dashboard-main-grid > section {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-  }
-
-
-  /* ---------------------------------------------------------
-     FILM DELLA SETTIMANA
-     Poster + testo affiancati
-     --------------------------------------------------------- */
-
-  #weeklyFilmPanel {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 16px !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-  }
-
-  #weeklyFilm {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-  }
-
-  #weeklyFilm .weekly-film-mobile-layout {
-    display: grid !important;
-    grid-template-columns: 115px minmax(0, 1fr) !important;
-    column-gap: 14px !important;
-    align-items: start !important;
-
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-  }
-
-  #weeklyFilm .weekly-film-poster-wrap {
-    width: 115px !important;
-    min-width: 115px !important;
-    max-width: 115px !important;
-
-    height: 174px !important;
-    min-height: 174px !important;
-    max-height: 174px !important;
-
-    overflow: hidden !important;
-    align-self: start !important;
-    border-radius: 7px !important;
-  }
-
-  #weeklyFilm .weekly-film-poster {
-    display: block !important;
-
-    width: 115px !important;
-    min-width: 115px !important;
-    max-width: 115px !important;
-
-    height: 174px !important;
-    min-height: 174px !important;
-    max-height: 174px !important;
-
-    object-fit: cover !important;
-    border-radius: 7px !important;
-  }
-
-  #weeklyFilm .weekly-film-info {
-    width: auto !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    align-self: start !important;
-    overflow: visible !important;
-  }
-
-  #weeklyFilm .weekly-film-title {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    font-size: 19px !important;
-    line-height: 1.15 !important;
-
-    overflow-wrap: break-word !important;
-    word-break: normal !important;
-  }
-
-  #weeklyFilm .weekly-film-year {
-    margin-top: 4px !important;
-    font-size: 12px !important;
-    line-height: 1.2 !important;
-  }
-
-  #weeklyFilm .weekly-film-details {
-    display: flex !important;
-    flex-wrap: wrap !important;
-
-    gap: 4px !important;
-    margin-top: 8px !important;
-
-    width: 100% !important;
-  }
-
-  #weeklyFilm .weekly-film-detail {
-    max-width: 100% !important;
-
-    padding: 4px 6px !important;
-
-    font-size: 9px !important;
-    line-height: 1.15 !important;
-
-    box-sizing: border-box !important;
-  }
-
-  #weeklyFilm .weekly-film-synopsis {
-    width: 100% !important;
-
-    margin-top: 8px !important;
-
-    font-size: 11px !important;
-    line-height: 1.35 !important;
-  }
-
-  #weeklyFilm .weekly-film-date {
-    width: 100% !important;
-
-    margin-top: 8px !important;
-    padding-top: 0 !important;
-
-    border-top: none !important;
-
-    font-size: 9px !important;
-    line-height: 1.25 !important;
-  }
-
-
-  /* ---------------------------------------------------------
-     FILM DEL CLUB
-     Più spazio ai titoli, sigle più compatte
-     --------------------------------------------------------- */
-
-  #films {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-
-    padding: 4px 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  #films .film {
-    display: grid !important;
-
-    grid-template-columns: 52px minmax(0, 1fr) 34px !important;
-
-    column-gap: 9px !important;
-
-    align-items: center !important;
-
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-
-    min-height: 74px !important;
-
-    margin: 0 0 6px !important;
-    padding: 8px !important;
-
-    box-sizing: border-box !important;
-  }
-
-  #films .film-info {
-    display: contents !important;
-  }
-
-  #films .film-poster {
-    grid-column: 1 !important;
-    grid-row: 1 !important;
-
-    width: 52px !important;
-    min-width: 52px !important;
-    max-width: 52px !important;
-
-    height: 74px !important;
-    min-height: 74px !important;
-    max-height: 74px !important;
-
-    object-fit: cover !important;
-    border-radius: 6px !important;
-
-    align-self: center !important;
-  }
-
-  #films .film-info > div:last-child {
-    grid-column: 2 !important;
-    grid-row: 1 !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-
-    overflow: hidden !important;
-  }
-
-  #films .film .title {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    font-size: 15px !important;
-    line-height: 1.2 !important;
-    font-weight: 700 !important;
-
-    overflow-wrap: break-word !important;
-    word-break: normal !important;
-  }
-
-  #films .film .meta {
-    margin-top: 3px !important;
-
-    font-size: 11px !important;
-    line-height: 1.15 !important;
-  }
-
-  #films .film .checks {
-    grid-column: 3 !important;
-    grid-row: 1 !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-
-    justify-content: center !important;
-    align-items: center !important;
-
-    gap: 3px !important;
-
-    width: 34px !important;
-    min-width: 34px !important;
-    max-width: 34px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    box-sizing: border-box !important;
-  }
-
-  #films .film .check {
-    display: flex !important;
-
-    align-items: center !important;
-    justify-content: center !important;
-
-    width: 26px !important;
-    min-width: 26px !important;
-    max-width: 26px !important;
-
-    height: 24px !important;
-    min-height: 24px !important;
-    max-height: 24px !important;
-
-    padding: 0 !important;
-
-    border-radius: 5px !important;
-
-    font-size: 9px !important;
-    line-height: 1 !important;
-
-    box-sizing: border-box !important;
-  }
-
-}
-
-@media screen and (max-width: 600px) {
-  #weeklyFilm .weekly-film-mobile-layout {
-    display: grid !important;
-    grid-template-columns: 115px minmax(0, 1fr) !important;
-    gap: 14px !important;
-    align-items: start !important;
-    width: 100% !important;
-  }
-}  
-
-@media screen and (max-width: 600px) {
-  body::after {
-    content: "MOBILE CSS ATTIVO";
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    z-index: 99999;
-    padding: 6px 10px;
-    background: black;
-    color: white;
-    font-size: 12px;
-    border-radius: 6px;
-  }
-}  
-
-/* =========================================================
-   MOBILE - LAYOUT PULITO
-   ========================================================= */
-
-@media screen and (max-width: 600px) {
-
-  /* =====================================================
-     STRUTTURA PRINCIPALE
-     ===================================================== */
-
-  .dashboard-main-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 16px !important;
-    width: 100% !important;
-    margin: 0 0 16px 0 !important;
-    align-items: stretch !important;
-  }
-
-  .dashboard-main-grid > section {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-  }
-
-
-  /* =====================================================
-     PROGRESSO DEI MEMBRI
-     ===================================================== */
-
-  .dashboard-main-grid > section:first-child {
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    overflow: visible !important;
-  }
-
-  .dashboard-main-grid > section:first-child .panel {
-    height: auto !important;
-  }
-
-
-  /* =====================================================
-     FILM DELLA SETTIMANA
-     ===================================================== */
-
-  #weeklyFilmPanel {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 16px !important;
-    box-sizing: border-box !important;
-    overflow: visible !important;
-  }
-
-  #weeklyFilm {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-  }
-
-  #weeklyFilm .weekly-film-mobile-layout {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: flex-start !important;
-    gap: 14px !important;
-    width: 100% !important;
-    min-width: 0 !important;
-  }
-
-  #weeklyFilm .weekly-film-poster-wrap {
-    flex: 0 0 115px !important;
-    width: 115px !important;
-    min-width: 115px !important;
-    max-width: 115px !important;
-
-    height: 173px !important;
-    min-height: 173px !important;
-    max-height: 173px !important;
-
-    overflow: hidden !important;
-    border-radius: 7px !important;
-    align-self: flex-start !important;
-  }
-
-  #weeklyFilm .weekly-film-poster {
-    display: block !important;
-
-    width: 115px !important;
-    min-width: 115px !important;
-    max-width: 115px !important;
-
-    height: 173px !important;
-    min-height: 173px !important;
-    max-height: 173px !important;
-
-    object-fit: cover !important;
-    border-radius: 7px !important;
-  }
-
-  #weeklyFilm .weekly-film-info {
-    flex: 1 1 auto !important;
-    width: auto !important;
-    min-width: 0 !important;
-    max-width: none !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    align-self: flex-start !important;
-  }
-
-  #weeklyFilm .weekly-film-title {
-    margin: 0 !important;
-    padding: 0 !important;
-
-    font-size: 18px !important;
-    line-height: 1.2 !important;
-    font-weight: 800 !important;
-
-    overflow-wrap: normal !important;
-    word-break: normal !important;
-  }
-
-  #weeklyFilm .weekly-film-year {
-    margin-top: 4px !important;
-    font-size: 12px !important;
-    line-height: 1.2 !important;
-  }
-
-  #weeklyFilm .weekly-film-details {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 4px !important;
-    margin-top: 8px !important;
-  }
-
-  #weeklyFilm .weekly-film-detail {
-    padding: 4px 6px !important;
-    font-size: 9px !important;
-    line-height: 1.15 !important;
-  }
-
-  #weeklyFilm .weekly-film-synopsis {
-    margin-top: 8px !important;
-
-    font-size: 11px !important;
-    line-height: 1.35 !important;
-
-    overflow-wrap: normal !important;
-    word-break: normal !important;
-  }
-
-  #weeklyFilm .weekly-film-date {
-    margin-top: 8px !important;
-    padding-top: 0 !important;
-    border-top: none !important;
-
-    font-size: 9px !important;
-    line-height: 1.25 !important;
-  }
-
-
-  /* =====================================================
-     FILM DEL CLUB
-     ===================================================== */
-
-  #films {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 4px 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  #films .film {
-    display: flex !important;
-    align-items: center !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-
-    min-height: 74px !important;
-
-    margin: 0 0 7px 0 !important;
-    padding: 8px !important;
-
-    gap: 10px !important;
-
-    box-sizing: border-box !important;
-  }
-
-  #films .film-info {
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-
-    flex: 1 1 auto !important;
-    min-width: 0 !important;
-    width: auto !important;
-  }
-
-  #films .film-poster {
-    flex: 0 0 52px !important;
-
-    width: 52px !important;
-    min-width: 52px !important;
-    max-width: 52px !important;
-
-    height: 74px !important;
-    min-height: 74px !important;
-    max-height: 74px !important;
-
-    object-fit: cover !important;
-    border-radius: 6px !important;
-  }
-
-  #films .film-info > div:last-child {
-    flex: 1 1 auto !important;
-    min-width: 0 !important;
-    width: auto !important;
-    max-width: none !important;
-    overflow: hidden !important;
-  }
-
-  #films .film .title {
-    width: auto !important;
-    max-width: 100% !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    font-size: 14px !important;
-    line-height: 1.25 !important;
-    font-weight: 700 !important;
-
-    overflow-wrap: normal !important;
-    word-break: normal !important;
-  }
-
-  #films .film .meta {
-    margin-top: 3px !important;
-
-    font-size: 11px !important;
-    line-height: 1.2 !important;
-  }
-
-  #films .film .checks {
-    flex: 0 0 auto !important;
-
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-
-    gap: 4px !important;
-
-    width: auto !important;
-    min-width: 0 !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  #films .film .check {
-    flex: 0 0 24px !important;
-
-    width: 24px !important;
-    min-width: 24px !important;
-    max-width: 24px !important;
-
-    height: 25px !important;
-    min-height: 25px !important;
-    max-height: 25px !important;
-
-    padding: 0 !important;
-
-    border-radius: 5px !important;
-
-    font-size: 9px !important;
-    line-height: 1 !important;
-  }
-
-
-  /* =====================================================
-     TESTO GENERALE MOBILE
-     ===================================================== */
+     ------------------------------------------------------- */
 
   #homePage,
   #homePage * {
     min-width: 0;
   }
 
-  .panel {
-    max-width: 100% !important;
+  #weeklyFilmPanel,
+  #weeklyFilm,
+  #films,
+  #films .film,
+  #films .film-info,
+  #films .film .title {
     box-sizing: border-box !important;
-  }
-}  
-
-@media screen and (max-width: 600px) {
-  .missing-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 10px !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
   }
 
-  .missing-card {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-  }
-}  
+}
 
-  
 </style>
 </head>
 <body>
