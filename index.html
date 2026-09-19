@@ -2014,6 +2014,11 @@ input {
     margin-top: 8px !important;
   }
 
+  .film-modal-poster-wrap {
+    grid-column: 1 !important;
+    grid-row: 1 / 4 !important;
+  }
+
 }
 </style>
 </head>
@@ -5617,11 +5622,15 @@ document.addEventListener("keydown", function(event) {
 
     <div class="film-modal-content">
 
-      <img
-        id="filmModalPoster"
-        class="film-modal-poster"
-        src=""
-        alt="">
+      <div class="film-modal-poster-wrap">
+
+        <img
+          id="filmModalPoster"
+          class="film-modal-poster"
+          src=""
+          alt="">
+      
+      </div>
 
       <div class="film-modal-info">
 
