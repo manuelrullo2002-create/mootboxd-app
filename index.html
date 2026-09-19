@@ -1925,6 +1925,37 @@ input {
 
 }
 
+@media screen and (max-width: 600px) {
+
+  .film-modal-content {
+    display: grid !important;
+    grid-template-columns: 115px minmax(0, 1fr) !important;
+    column-gap: 14px !important;
+    row-gap: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    align-items: start !important;
+  }
+
+  .film-modal-poster {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: 115px !important;
+    max-width: 115px !important;
+    height: 173px !important;
+    object-fit: cover !important;
+    border-radius: 7px !important;
+  }
+
+  .film-modal-info {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    min-width: 0 !important;
+    padding-top: 0 !important;
+  }
+
+}  
+
 </style>
 </head>
 <body>
