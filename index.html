@@ -2037,6 +2037,28 @@ input {
     line-height: 22px !important;
   }
 
+ @media screen and (max-width: 600px) {
+
+    .film-info {
+      flex: 1 1 0 !important;
+      min-width: 0 !important;
+      max-width: calc(100% - 190px) !important;
+    }
+  
+    .film-info > div {
+      min-width: 0 !important;
+    }
+  
+    .film-info .title {
+      min-width: 0 !important;
+      max-width: 100% !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+    }
+
+  } 
+
 }
   
 </style>
