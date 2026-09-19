@@ -1937,18 +1937,21 @@ input {
     align-items: start !important;
   }
 
-  .film-modal-poster {
-    grid-column: 1 !important;
-    grid-row: 1 !important;
-    width: 115px !important;
-    max-width: 115px !important;
-    height: 173px !important;
-    object-fit: cover !important;
-    border-radius: 7px !important;
-  }
-
   .film-modal-info {
     display: contents !important;
+  }
+
+  .film-modal-poster {
+    grid-column: 1 !important;
+    grid-row: 1 / 5 !important;
+    width: 115px !important;
+    min-width: 115px !important;
+    max-width: 115px !important;
+    height: 173px !important;
+    min-height: 173px !important;
+    max-height: 173px !important;
+    object-fit: cover !important;
+    border-radius: 7px !important;
   }
 
   .film-modal-title {
@@ -1959,12 +1962,13 @@ input {
     padding: 0 !important;
     font-size: 18px !important;
     line-height: 1.2 !important;
+    font-weight: 800 !important;
   }
 
   .film-modal-year {
     grid-column: 2 !important;
     grid-row: 2 !important;
-    margin: 4px 0 0 0 !important;
+    margin: -4px 0 0 0 !important;
     padding: 0 !important;
     font-size: 14px !important;
     line-height: 1.2 !important;
@@ -1977,41 +1981,37 @@ input {
     flex-wrap: wrap !important;
     gap: 4px !important;
     width: 100% !important;
-    margin: 5px 0 0 0 !important;
+    margin: 3px 0 0 0 !important;
     padding: 0 !important;
   }
 
   .film-modal-synopsis {
     grid-column: 1 / -1 !important;
-    grid-row: 4 !important;
+    grid-row: 5 !important;
     width: 100% !important;
-    margin: 14px 0 0 0 !important;
+    margin: 12px 0 0 0 !important;
     padding: 0 !important;
   }
 
   .film-modal-discussion {
-    grid-column: 1 / -1 !important;
-    grid-row: 5 !important;
-    width: 100% !important;
-    margin: 16px 0 0 0 !important;
-  }
-
-  .film-modal-status {
     grid-column: 1 / -1 !important;
     grid-row: 6 !important;
     width: 100% !important;
     margin: 16px 0 0 0 !important;
   }
 
-  .film-modal-action {
+  .film-modal-status {
     grid-column: 1 / -1 !important;
     grid-row: 7 !important;
     width: 100% !important;
-    margin-top: 8px !important;
+    margin: 16px 0 0 0 !important;
   }
 
-  #filmRatingsBox {
-    display: none !important;
+  .film-modal-action {
+    grid-column: 1 / -1 !important;
+    grid-row: 8 !important;
+    width: 100% !important;
+    margin-top: 8px !important;
   }
 
 }
