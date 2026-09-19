@@ -1609,29 +1609,25 @@ input {
   }
 
   #films .film {
-    display: flex !important;
+    display: grid !important;
+    grid-template-columns: 52px minmax(0, 1fr) 82px !important;
+    column-gap: 8px !important;
     align-items: center !important;
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
-    min-height: 74px !important;
+    min-height: 0 !important;
     margin: 0 0 7px 0 !important;
-    padding: 8px !important;
-    gap: 10px !important;
+    padding: 7px !important;
   }
 
   #films .film-info {
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    flex: 1 1 auto !important;
-    min-width: 0 !important;
-    width: auto !important;
-    max-width: 100% !important;
+    display: contents !important;
   }
 
   #films .film-poster {
-    flex: 0 0 52px !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
     width: 52px !important;
     min-width: 52px !important;
     max-width: 52px !important;
@@ -1643,20 +1639,21 @@ input {
   }
 
   #films .film-info > div:last-child {
-    flex: 1 1 auto !important;
+    grid-column: 2 !important;
+    grid-row: 1 !important;
     min-width: 0 !important;
-    width: auto !important;
+    width: 100% !important;
     max-width: 100% !important;
     overflow: hidden !important;
   }
 
   #films .film .title {
-    width: auto !important;
+    width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
-    font-size: 14px !important;
-    line-height: 1.25 !important;
+    font-size: 13px !important;
+    line-height: 1.2 !important;
     font-weight: 700 !important;
     overflow-wrap: normal !important;
     word-break: normal !important;
@@ -1665,37 +1662,38 @@ input {
   #films .film .meta {
     margin-top: 3px !important;
     padding-left: 0 !important;
-    font-size: 11px !important;
+    font-size: 10px !important;
     line-height: 1.2 !important;
   }
 
   #films .film .checks {
-    flex: 0 0 auto !important;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-    gap: 4px !important;
-    width: auto !important;
-    min-width: 0 !important;
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 24px) !important;
+    grid-auto-rows: 20px !important;
+    gap: 3px !important;
+    align-content: center !important;
+    justify-content: end !important;
+    width: 78px !important;
+    min-width: 78px !important;
+    max-width: 78px !important;
     margin: 0 !important;
     padding: 0 !important;
   }
 
   #films .film .check {
-    flex: 0 0 24px !important;
     width: 24px !important;
     min-width: 24px !important;
     max-width: 24px !important;
-    height: 25px !important;
-    min-height: 25px !important;
-    max-height: 25px !important;
+    height: 20px !important;
+    min-height: 20px !important;
+    max-height: 20px !important;
     padding: 0 !important;
-    border-radius: 5px !important;
-    font-size: 9px !important;
+    border-radius: 4px !important;
+    font-size: 8px !important;
     line-height: 1 !important;
   }
-
 
   /* -------------------------------------------------------
      FILM DA RECUPERARE
