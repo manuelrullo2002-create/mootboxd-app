@@ -1465,6 +1465,8 @@ input {
      FILM DELLA SETTIMANA
      ------------------------------------------------------- */
 
+@media screen and (max-width: 600px) {
+
   #weeklyFilmPanel {
     width: 100% !important;
     max-width: 100% !important;
@@ -1479,44 +1481,23 @@ input {
   }
 
   #weeklyFilm .weekly-film-mobile-layout {
-  display:grid !important;
-  grid-template-columns:115px minmax(0,1fr) !important;
-  column-gap:14px !important;
-  row-gap:2px !important;
-  width:100% !important;
-  min-width:0 !important;
-  max-width:100% !important;
-  align-items:start !important;
-}
-
-@media screen and (max-width: 600px) {
-#weeklyFilm .weekly-film-info {
-  display: contents !important;
-  }
-}  
-
-@media screen and (max-width: 600px) {
-  #weeklyFilm .weekly-film-poster-wrap {
-    grid-column: 1;
-    grid-row: 1 / 4;
+    display: grid !important;
+    grid-template-columns: 115px minmax(0, 1fr) !important;
+    column-gap: 14px !important;
+    row-gap: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    align-items: start !important;
   }
 
-  #weeklyFilm .weekly-film-synopsis {
-    grid-column: 1 / -1;
-    grid-row: 4;
+  #weeklyFilm .weekly-film-info {
+    display: contents !important;
   }
-
-  #weeklyFilm .weekly-film-date {
-  grid-column: 2;
-  grid-row: 4;
-  margin-top: -14px !important;
-  padding-top: 0 !important;
-  border-top: none !important;
-  }
-}
 
   #weeklyFilm .weekly-film-poster-wrap {
-    flex: 0 0 115px !important;
+    grid-column: 1 !important;
+    grid-row: 1 / 5 !important;
     width: 115px !important;
     min-width: 115px !important;
     max-width: 115px !important;
@@ -1525,7 +1506,6 @@ input {
     max-height: 173px !important;
     overflow: hidden !important;
     border-radius: 7px !important;
-    align-self: flex-start !important;
   }
 
   #weeklyFilm .weekly-film-poster {
@@ -1540,138 +1520,67 @@ input {
     border-radius: 7px !important;
   }
 
-  #weeklyFilm .weekly-film-info {
-    flex: 1 1 auto !important;
-    width: auto !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    align-self: flex-start !important;
-  }
-
-  #weeklyFilm .weekly-film-label {
-    font-size: 16px !important;
-    line-height: 1.25 !important;
-    margin-bottom: 12px !important;
-  }
-
   #weeklyFilm .weekly-film-title {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
     font-size: 18px !important;
     line-height: 1.2 !important;
     font-weight: 800 !important;
-    overflow-wrap: normal !important;
-    word-break: normal !important;
   }
 
   #weeklyFilm .weekly-film-year {
-    margin-top: 4px !important;
-    font-size: 12px !important;
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    margin: 2px 0 0 0 !important;
+    padding: 0 !important;
+    font-size: 14px !important;
     line-height: 1.2 !important;
   }
 
   #weeklyFilm .weekly-film-details {
+    grid-column: 2 !important;
+    grid-row: 3 !important;
     display: flex !important;
     flex-wrap: wrap !important;
     gap: 4px !important;
-    margin-top: 8px !important;
     width: 100% !important;
+    margin: 3px 0 0 0 !important;
+    padding: 0 !important;
   }
 
   #weeklyFilm .weekly-film-detail {
     max-width: 100% !important;
-    padding: 4px 6px !important;
-    font-size: 9px !important;
+    padding: 4px 7px !important;
+    font-size: 11px !important;
     line-height: 1.15 !important;
   }
 
-  #weeklyFilm .weekly-film-synopsis {
+  #weeklyFilm .weekly-film-date {
+    grid-column: 2 !important;
+    grid-row: 4 !important;
     width: 100% !important;
-    margin-top: 8px !important;
+    margin: 4px 0 0 0 !important;
+    padding: 0 !important;
+    border-top: none !important;
+    font-size: 15px !important;
+    line-height: 1.25 !important;
+  }
+
+  #weeklyFilm .weekly-film-synopsis {
+    grid-column: 1 / -1 !important;
+    grid-row: 5 !important;
+    width: 100% !important;
+    margin: 12px 0 0 0 !important;
+    padding: 0 !important;
     font-size: 11px !important;
     line-height: 1.35 !important;
     overflow-wrap: normal !important;
     word-break: normal !important;
   }
 
-  #weeklyFilm .weekly-film-date {
-    width: 100% !important;
-    margin-top: 8px !important;
-    padding-top: 0 !important;
-    border-top: none !important;
-    font-size: 9px !important;
-    line-height: 1.25 !important;
-  }
-
-  @media screen and (max-width: 600px) {
-  #weeklyFilm .weekly-film-title,
-  #weeklyFilm .weekly-film-year,
-  #weeklyFilm .weekly-film-details,
-  #weeklyFilm .weekly-film-date {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  #weeklyFilm .weekly-film-year {
-    margin-top: -14px !important;
-  }
-
-  #weeklyFilm .weekly-film-details {
-    margin-top: -24px !important;
-  }
-
-  #weeklyFilm .weekly-film-date {
-    margin-top: -18px !important;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #weeklyFilm .weekly-film-year {
-    font-size: 14px !important;
-  }
-
-  #weeklyFilm .weekly-film-detail {
-    font-size: 11px !important;
-    padding: 4px 7px !important;
-  }
-
-  #weeklyFilm .weekly-film-date {
-    font-size: 15px !important;
-  }
-}  
-
-  @media screen and (max-width: 600px) {
-  #weeklyFilm .weekly-film-title {
-    grid-column: 2 !important;
-    grid-row: 1 !important;
-  }
-
-#weeklyFilm .weekly-film-year {
-  grid-column: 2 !important;
-  grid-row: 2 !important;
-  margin-top: -14px !important;
-  transform: translateY(-8px) !important;
-}
-
-  #weeklyFilm .weekly-film-details {
-    grid-column: 2 !important;
-    grid-row: 3 !important;
-    margin-top: -24px !important;
-  }
-
-  #weeklyFilm .weekly-film-date {
-    grid-column: 2 !important;
-    grid-row: 4 !important;
-    margin-top: -18px !important;
-  }
-
-  #weeklyFilm .weekly-film-synopsis {
-    grid-column: 1 / -1 !important;
-    grid-row: 5 !important;
-  }
 }
 
 
